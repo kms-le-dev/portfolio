@@ -1,0 +1,36 @@
+.fullscreen-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;               /* active flexbox */
+  justify-content: center;     /* centre horizontalement */
+  align-items: center;         /* centre verticalement */
+  overflow: hidden;
+}
+
+.fullscreen-image {
+  width: 50%;                  /* moitié de l'écran */
+  height: 50%;                 /* moitié de l'écran */
+  object-fit: cover;           /* garde les proportions */
+  display: block;
+}
+
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: translateY(-3px);
+}
