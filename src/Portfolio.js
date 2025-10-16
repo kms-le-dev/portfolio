@@ -10,7 +10,7 @@ import emailjs from "emailjs-com";
 import img1 from "./assets/moinschere.webp";
 import img2 from "./assets/dashbord.webp";
 import img3 from "./assets/odholding.PNG";
-import img4 from "./assets/projet4.webp";
+import img4 from "./assets/gsf.jpg";
 import headerImg from "./assets/IMG_3257.webp";
 import img5 from "./assets/IMG_8A244AF8-65AE-4CAF-A55D-4473CC241732.jpeg";
 import img6 from "./assets/projet4.webp";

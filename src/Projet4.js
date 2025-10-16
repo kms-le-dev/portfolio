@@ -3,8 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { Github, ExternalLink, MessageCircle, Facebook, Music, Mail, ArrowLeft, Play, Pause, Volume2, VolumeX, Maximize2, X } from "lucide-react";
 // import de la vidéo depuis le dossier assets
-import demoVideo from "./assets/moinschere.mp4";
-import projet4Img from "./assets/projet4.webp";
+import demoVideo from "./assets/gsf.mp4";
+import projet4Img from "./assets/gsf.jpg";
 
 
 function Projet1() {
@@ -186,10 +186,10 @@ useEffect(() => {
           <div className="projet-badge">
             <span>Projet Full Stack</span>
           </div>
-          <h1 className="projet-title">Application E-Commerce</h1>
+          <h1 className="projet-title">Application web d'etablissement supérieur</h1>
           <p className="projet-description">
-            Une application e-commerce moderne développée avec HTML, CSS, PHP, MYSQL. 
-            Interface utilisateur intuitive, paiements sécurisés et gestion avancée des produits.
+            Une application web moderne développée avec HTML, CSS, PHP, MYSQL. 
+            Interface utilisateur intuitive, paiements sécurisés, possibilité de poster des affiches par l'admin, telecharger les formulaires rempli par les utilisateurs sous forme de pdf, etc...
           </p>
           
           {/* Video Demo */}
@@ -231,25 +231,25 @@ useEffect(() => {
             <div className="detail-card">
               <div className="card-icon">🎯</div>
               <h3>Objectif</h3>
-              <p>Créer une plateforme e-commerce complète avec une expérience utilisateur exceptionnelle et des performances optimales.</p>
+              <p>Créer une plateforme web complète avec une expérience utilisateur exceptionnelle et des performances optimales.</p>
             </div>
             
             <div className="detail-card">
               <div className="card-icon">⚡</div>
               <h3>Fonctionnalités</h3>
-              <p>Catalogue produits, panier intelligent, paiements sécurisés, gestion des commandes et dashboard administrateur.</p>
+              <p>espace utilisateur, admin, mode de paiement securisé, stockage des informations dans l'espace admin.</p>
             </div>
             
             <div className="detail-card">
               <div className="card-icon">🚀</div>
               <h3>Performance</h3>
-              <p>Temps de chargement &lt; 2s, responsive design, optimisation SEO et architecture scalable.</p>
+              <p>Temps de chargement &lt; 4s, responsive design, optimisation SEO et architecture scalable.</p>
             </div>
           </div>
           
           <div className="project-stats">
             <div className="stat">
-              <div className="stat-number">3</div>
+              <div className="stat-number">1</div>
               <div className="stat-label">Mois de développement</div>
             </div>
             <div className="stat">
@@ -261,7 +261,7 @@ useEffect(() => {
               <div className="stat-label">Score Performance</div>
             </div>
             <div className="stat">
-              <div className="stat-number">500+</div>
+              <div className="stat-number">240+</div>
               <div className="stat-label">Utilisateurs</div>
             </div>
           </div>
@@ -344,7 +344,7 @@ useEffect(() => {
         </div>
 
         <div className="cta-section"> 
-          <button className="cta-button secondary" onClick={() => window.open("https://www.moinschere.ci", "_blank")}>
+          <button className="cta-button secondary" onClick={() => window.open("https://gsformation.ct.ws/groupe-sup-formation/supformation/public/index.php", "_blank")}>
           <span>Tester la Demo</span> 
           <div className="cta-bg"></div> 
           </button> 
