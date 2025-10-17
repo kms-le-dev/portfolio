@@ -33,6 +33,8 @@ function PortFolio() {
   const navigate = useNavigate();
   const mountRef = useRef(null);
 
+  
+
   // ✅ CORRECTION : Un seul useEffect pour gérer la vidéo
   useEffect(() => {
     const handleVideoAutoplay = () => {
@@ -696,12 +698,87 @@ function PortFolio() {
               Envoyer le message
             </button>
           </form>
+
+          <div className="contact-info">
+            <h3>Informations de contact</h3>
+            <div className="contact-links">              
+              <a 
+                href="https://wa.me/2250757109835" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="contact-link"
+              >
+                <i className="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+              </a>
+              <a 
+                href="tel:+2250757109835" 
+                className="contact-link"
+              >
+                <i className="fas fa-phone"></i>
+                <span>Appel</span>
+              </a>
+            </div>
+          </div>
         </div>
-        <div className="footer">2025 Kanigui Moise Silué. @ Tous droits réservés.</div>
+        
       </section>
+
+      <div className="footer">2025 Kanigui Moise Silué. @ Tous droits réservés.</div>
 
       {/* ✅ CORRECTION : CSS amélioré pour la vidéo */}
       <style jsx>{`
+
+        /* Styles pour les informations de contact */
+        .contact-info {
+          margin-top: 3rem;
+          padding-top: 2rem;
+          border-top: 2px solid rgba(0, 255, 136, 0.1);
+        }
+
+        .contact-info h3 {
+          text-align: center;
+          color: white;
+          font-size: 1.8rem;
+          margin-bottom: 2rem;
+        }
+
+        .contact-links {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          padding: 1rem;
+        }
+
+        .contact-link {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1rem 2rem;
+          background: linear-gradient(45deg, #00ff88, #00d4aa);
+          color: white;
+          text-decoration: none;
+          border-radius: 10px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+        }
+
+        .contact-link:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+          background: linear-gradient(45deg, #00d4aa, #00ff88);
+        }
+
+        .contact-link i {
+          font-size: 1.5rem;
+        }
+
+        .contact-link span {
+          font-size: 1.1rem;
+        }
+
+        
         .scroll-arrow {
           position: fixed;
           bottom: 20px;
@@ -1600,6 +1677,32 @@ function PortFolio() {
             padding: 0.3rem 0.7rem;
           }
         }
+
+        @media (max-width: 768px) {
+  .contact-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    padding: 0.5rem;
+  }
+  .contact-link {
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+  .contact-link {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.3rem;
+  }
+  .contact-link i {
+    font-size: 1.2rem;
+  }
+}
       `}</style>
     </div>
   );
