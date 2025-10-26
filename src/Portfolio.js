@@ -15,8 +15,9 @@ import headerImg from "./assets/IMG_3257.webp";
 import img5 from "./assets/IMG_8A244AF8-65AE-4CAF-A55D-4473CC241732.jpeg";
 import img6 from "./assets/projet4.webp";
 import img7 from "./assets/projet4.webp";
-import momo1 from "./assets/momo1.webp";
-import animationVideo from "./assets/animation.mp4";
+import cvFile from "./assets/Cv Pro KANIGUI MOISE SILUE.pdf";
+
+
 
 // Images de fond pour le carousel
 import bg1 from "./assets/carousel1.jpeg";
@@ -498,6 +499,7 @@ function PortFolio() {
             <li><button onClick={() => {scrollToSection('certificats'); setMenuOpen(false);}}>Certificats</button></li>
             <li><button onClick={() => {scrollToSection('projets'); setMenuOpen(false);}}>Projets</button></li>
             <li><button onClick={() => {scrollToSection('contact'); setMenuOpen(false);}}>Contact</button></li>
+            <li><a href={cvFile} download="CV_KANIGUI_MOISE_SILUE.pdf" className="cv-download-btn">Télécharger CV</a></li>
           </ul>
         </nav>
       </header>
@@ -529,41 +531,7 @@ function PortFolio() {
 
       {/* ✅ CORRECTION : À propos avec vidéo corrigée */}
       <main id="apropos" className="about" data-aos="fade-up">
-        <div className="about-bg-video">
-          <video
-            ref={videoRef}
-            src={animationVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="about-video-bg"
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              minWidth: '100%',
-              minHeight: '100%',
-              width: 'auto',
-              height: 'auto',
-              transform: 'translate(-50%, -50%)',
-              objectFit: 'cover',
-              zIndex: -1,
-              opacity: 0.6,
-              filter: 'brightness(0.7) contrast(1.1)',
-              display: 'block',
-              background: '#000',
-            }}
-            onLoadedData={() => {
-              videoRef.current && (videoRef.current.style.display = 'block');
-              console.log("Vidéo chargée");
-            }}
-            onError={(e) => {
-              if (videoRef.current) videoRef.current.style.display = 'none';
-              console.error("Erreur vidéo:", e);
-            }}
-          />
-        </div>
+        <div className="about-bg"></div>
         
         <div className="about-content">
           <div className="about-image">
@@ -819,7 +787,7 @@ function PortFolio() {
         .gradient-text {
           font-size: 1.25rem;
           font-weight: 700;
-          background: linear-gradient(90deg, #00ff88 0%, #1a6cf6 100%);
+          background: white;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -912,8 +880,8 @@ function PortFolio() {
 
         .section-animate-in {
           animation: sectionFadeSlideIn3D 1.1s cubic-bezier(.22,1,.36,1);
-          box-shadow: 0 24px 64px 0 #00ff88aa, 0 0 32px #1a6cf6cc;
-          background: linear-gradient(120deg, #00ff88 0%, #1a6cf6 100%);
+          box-shadow: 0 24px 64px 0 #584ef1aa, 0 0 32px #1a6cf6cc;
+          background: linear-gradient(120deg, #4057d8ff 0%, #1a6cf6 100%);
           border-radius: 32px;
           perspective: 900px;
           position: relative;
@@ -1131,6 +1099,23 @@ function PortFolio() {
           transform: translateY(-2px);
         }
 
+        .cv-download-btn {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background: linear-gradient(45deg, #00ff88, #00d4aa);
+          color: #1a1a2e;
+          text-decoration: none;
+          border-radius: 5px;
+          font-weight: bold;
+          transition: all 0.3s ease;
+        }
+
+        .cv-download-btn:hover {
+          transform: translateY(-2px);
+          background: linear-gradient(45deg, #00d4aa, #00ff88);
+          box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+        }
+
         /* Hero Section */
         .hero {
           position: relative;
@@ -1179,7 +1164,7 @@ function PortFolio() {
         .about {
           position: relative;
           padding: 5rem 2rem;
-          background: #000; /* Fallback */
+          background: #ffffff;
           overflow: hidden;
           min-height: 600px;
           display: flex;
@@ -1197,6 +1182,16 @@ function PortFolio() {
           align-items: center;
         }
 
+        .about-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #ffffff;
+          z-index: -1;
+        }
+
         .about-image img {
           width: 100%;
           max-width: 400px;
@@ -1212,19 +1207,19 @@ function PortFolio() {
         .about-text h2 {
           font-size: 2.5rem;
           margin-bottom: 2rem;
-          color: #00ff88;
+          color: black;
         }
 
         .about-text p {
           font-size: 1.15rem;
           margin-bottom: 2rem;
-          color: #fff;
+          color: #333;
           line-height: 1.7;
           position: relative;
-          background: linear-gradient(90deg, #01040aff 0%, #031e3aff 100%);
+          background: #f8f9fa;
           border-radius: 18px;
           padding: 1.2rem 1.5rem;
-          box-shadow: 0 4px 24px 0 rgba(246,106,46,0.08);
+          box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
           transition: box-shadow 0.3s, background 0.3s;
           overflow: hidden;
         }
@@ -1232,11 +1227,11 @@ function PortFolio() {
         
 
         .about-animated-text .highlight {
-          color: #00ff88;
+          color: blue;
           font-weight: bold;
           font-size: 1.18em;
           letter-spacing: 0.5px;
-          background: #00ff88;
+          background: blue;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           transition: background 0.4s, color 0.4s;
@@ -1261,7 +1256,7 @@ function PortFolio() {
         }
 
         .gradient {
-          background: #00ff88;
+          background: blue;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           font-weight: bold;
@@ -1291,12 +1286,12 @@ function PortFolio() {
         .animated-skill {
           position: relative;
           padding: 0.7rem 1.3rem;
-          background: linear-gradient(90deg, #00ff88 0%, #1a6cf6 100%);
+          background: black;
           color: #fff;
           border-radius: 30px;
           font-size: 1.05rem;
           font-weight: bold;
-          box-shadow: 0 4px 18px 0 #00ff8855, 0 0 12px #1a6cf6cc;
+          box-shadow: 0 4px 18px 0;
           cursor: pointer;
           transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
           animation: skillStaggerIn 0.85s cubic-bezier(.22,1,.36,1) backwards;
@@ -1306,8 +1301,8 @@ function PortFolio() {
 
         .animated-skill:hover {
           transform: scale(1.13) rotate(-2deg);
-          box-shadow: 0 12px 32px 0 #00ff88cc, 0 0 32px #1a6cf6cc;
-          background: linear-gradient(90deg, #1a6cf6 0%, #00ff88 100%);
+          box-shadow: 0 12px 32px 0;
+          
           z-index: 2;
         }
 
@@ -1322,7 +1317,7 @@ function PortFolio() {
           width: 120%;
           height: 120%;
           border-radius: 40px;
-          background: radial-gradient(circle, #00ff88 0%, #1a6cf6 80%, transparent 100%);
+          
           opacity: 0.18;
           filter: blur(12px);
           transform: translate(-50%, -50%) scale(1.1);
@@ -1379,22 +1374,22 @@ function PortFolio() {
         /* Projects Section */
         .projects {
           padding: 5rem 2rem;
-          background: url(${momo1}) center/cover no-repeat;
-          color: white;
+          background: #ffffff;
+          color: #333;
         }
 
         .projects h2 {
           text-align: center;
           font-size: 2.5rem;
           margin-bottom: 3rem;
-          color: #00ff88;
+          color: #1a1a2e;
         }
 
         .certificats-section h2 {
           text-align: center;
           font-size: 2.5rem;
           margin-bottom: 2.5rem;
-          color: #00ff88;
+          color: white;
         }
 
         .projects-grid {
@@ -1409,16 +1404,16 @@ function PortFolio() {
           position: relative;
           border-radius: 18px;
           overflow: hidden;
-          box-shadow: 0 15px 35px rgba(0, 255, 136, 0.13), 0 2px 12px rgba(0,255,136,0.08);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05);
           transition: transform 0.5s cubic-bezier(.22,1,.36,1), box-shadow 0.4s, filter 0.4s;
-          background: linear-gradient(135deg, #1a1a2e 60%, #00ff88 100%);
+          background: #ffffff;
         }
 
         .project-card:hover {
-          transform: scale(1.06) rotate(2deg) translateY(-12px);
-          box-shadow: 0 32px 64px 0 rgba(0,255,136,0.25), 0 0 32px 0 #00ff88aa;
-          filter: brightness(1.08) saturate(1.2) drop-shadow(0 0 18px #00ff88);
-          background: linear-gradient(135deg, #00ff88 60%, #1a6cf6 100%);
+          transform: scale(1.06) translateY(-12px);
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1);
+          filter: brightness(1.02);
+          background: #ffffff;
         }
 
         .project-card img {
@@ -1443,8 +1438,8 @@ function PortFolio() {
           bottom: 0;
           left: 0;
           right: 0;
-          background: linear-gradient(transparent, rgba(26, 26, 46, 0.9));
-          color: white;
+          background: linear-gradient(transparent, rgba(255, 255, 255, 0.9));
+          color: #333;
           padding: 2rem;
           transform: translateY(100%);
           transition: transform 0.3s ease;
