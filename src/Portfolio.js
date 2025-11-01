@@ -512,7 +512,7 @@ function PortFolio() {
             <li><button onClick={() => {scrollToSection('projets'); setMenuOpen(false);}}>Projets</button></li>
             <li><button onClick={() => {scrollToSection('experiences'); setMenuOpen(false);}}>Experiences</button></li>
             <li><button onClick={() => {scrollToSection('contact'); setMenuOpen(false);}}>Contact</button></li>
-            <li><a href={cvFile} download="CV_KANIGUI_MOISE_SILUE.pdf" className="cv-download-btn">Télécharger CV</a></li>
+            <li><a href={cvFile} download="CV_KANIGUI_MOISE_SILUE.pdf" className="cv-download-btn">Voir Mon CV</a></li>
           </ul>
         </nav>
       </header>
@@ -552,10 +552,9 @@ function PortFolio() {
           </div>
           <div className="about-text">
             <h2>À propos de moi</h2>
-            <TypewriterText
-              text={`Je suis développeur full stack passionné, spécialisé dans la création d'applications modernes, performantes et adaptées aux besoins de chaque client.`}
-              speed={15}
-            />
+            <p className="hero-description">
+              Je conçois des applications web modernes qui propulsent votre business. De l'idée au déploiement, je transforme votre vision en réalité digitale.
+            </p>
 
             <p className="about-animated-text" data-aos="fade-right">
               <span className="highlight">Je suis développeur full stack passionné</span>, spécialisé dans la création d'applications modernes, performantes et adaptées aux besoins de chaque client.<br/>
@@ -805,7 +804,7 @@ function PortFolio() {
         .gradient-text {
           font-size: 1.25rem;
           font-weight: 700;
-          background: white;
+          background: #00ff88cc;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -1040,9 +1039,10 @@ function PortFolio() {
           gap: 1rem;
         }
 
+        /* Pour agrandir la photo */
         .header-img-rect {
-          width: 48px;
-          height: 48px;
+          width: 80px; /* Agrandi de 48px à 60px */
+          height: 80px;
           border-radius: 12px;
           overflow: hidden;
           background: #fff;
@@ -1058,11 +1058,20 @@ function PortFolio() {
           object-fit: cover;
         }
 
-        .nav-links {
+                .nav-links {
           display: flex;
+          flex-direction: row;
+          align-items: center;
           list-style: none;
           gap: 2rem;
           transition: right 0.3s;
+          flex-wrap: nowrap; /* Empêche le retour à la ligne */
+        }
+
+        .nav-links li {
+          display: inline-block;
+          margin: 0;
+          white-space: nowrap; /* Empêche le texte de se couper */
         }
 
         .burger {
@@ -1116,6 +1125,7 @@ function PortFolio() {
           color: #1a1a2e;
           transform: translateY(-2px);
         }
+        
 
         .cv-download-btn {
           display: inline-block;
@@ -1645,10 +1655,7 @@ function PortFolio() {
           .nav-links.show {
             right: 0;
           }
-          .nav-links li {
-            width: 100%;
-            text-align: left;
-          }
+          
           .nav-links button {
             font-size: 1.1rem;
             padding: 0.7rem 1.2rem;
