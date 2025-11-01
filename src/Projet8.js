@@ -346,7 +346,7 @@ useEffect(() => {
         </div>
 
         <div className="cta-section"> 
-          <button className="cta-button secondary" onClick={() => window.open("https://gsformation.ct.ws/groupe-sup-formation/supformation/public/index.php", "_blank")}>
+          <button className="cta-button secondary" onClick={() => window.open("https://lesdocuments-ci.vercel.app", "_blank")}>
           <span>Tester la Demo</span> 
           <div className="cta-bg"></div> 
           </button> 

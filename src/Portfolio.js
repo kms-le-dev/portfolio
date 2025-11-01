@@ -604,8 +604,14 @@ function PortFolio() {
                 <button
                   className="project-btn"
                   onClick={() => {
+                    // Navigate first, then ensure we scroll to top after the new route mounts.
+                    // Calling window.scrollTo immediately can run before navigation completes,
+                    // which sometimes leaves the new page scrolled down. A short timeout
+                    // ensures the scroll runs on the destination page.
                     navigate(projectRoutes[idx]);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setTimeout(() => {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }, 80);
                   }}
                 >
                   Voir plus
