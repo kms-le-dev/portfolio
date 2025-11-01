@@ -1,0 +1,210 @@
+/* Section Expériences */
+.experiences-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.experiences-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experiences-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #2c3e50;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.experiences-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 80px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border: 4px solid #667eea;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px rgba(102, 126, 234, 0.3);
+}
+
+/* Card d'expérience */
+.experience-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #667eea;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.experience-header {
+  margin-bottom: 20px;
+}
+
+.experience-periode {
+  display: inline-block;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.experience-poste {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 10px 0 8px 0;
+  line-height: 1.3;
+}
+
+.experience-entreprise {
+  font-size: 1.1rem;
+  color: #667eea;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Tâches */
+.experience-taches {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e1e8ed;
+}
+
+.experience-taches h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 12px;
+}
+
+.experience-taches ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-taches li {
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: #5a6c7d;
+  line-height: 1.6;
+  position: relative;
+}
+
+.experience-taches li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experiences-section {
+    padding: 60px 15px;
+  }
+
+  .experiences-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .timeline::before {
+    left: 15px;
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+  }
+
+  .timeline-dot {
+    left: 5px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .experience-card {
+    padding: 20px;
+  }
+
+  .experience-poste {
+    font-size: 1.2rem;
+  }
+
+  .experience-entreprise {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experiences-title {
+    font-size: 1.6rem;
+  }
+
+  .experience-periode {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+
+  .experience-taches li {
+    font-size: 0.9rem;
+  }
+}

@@ -31,6 +31,7 @@ import bg3 from "./assets/carousel3.jpeg";
 
 // components 
 import Certificats from "./Components/certificats";
+import Experiences from "./Components/Experiences.js";
 
 function PortFolio() {
   // ✅ CORRECTION : Référence pour la vidéo
@@ -509,6 +510,7 @@ function PortFolio() {
             <li><button onClick={() => {scrollToSection('apropos'); setMenuOpen(false);}}>À propos</button></li>
             <li><button onClick={() => {scrollToSection('certificats'); setMenuOpen(false);}}>Certificats</button></li>
             <li><button onClick={() => {scrollToSection('projets'); setMenuOpen(false);}}>Projets</button></li>
+            <li><button onClick={() => {scrollToSection('experiences'); setMenuOpen(false);}}>Experiences</button></li>
             <li><button onClick={() => {scrollToSection('contact'); setMenuOpen(false);}}>Contact</button></li>
             <li><a href={cvFile} download="CV_KANIGUI_MOISE_SILUE.pdf" className="cv-download-btn">Télécharger CV</a></li>
           </ul>
@@ -614,6 +616,11 @@ function PortFolio() {
           ))}
         </div>
       </section>
+
+      {/* Experiences  */}
+      <div id="experiences" className="experiences-section">
+        <Experiences />
+      </div>
 
       {/* Contact */}
       <section id="contact" className="contact" data-aos="fade-up">
@@ -1401,6 +1408,13 @@ function PortFolio() {
           font-size: 2.5rem;
           margin-bottom: 2.5rem;
           color: white;
+        }
+
+        .experiences-section h2 {
+          text-align: center;
+          font-size: 2.5rem;
+          margin-bottom: 2.5rem;
+          color: black;
         }
 
         .projects-grid {
