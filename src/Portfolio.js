@@ -13,8 +13,13 @@ import img3 from "./assets/odholding.PNG";
 import img4 from "./assets/gsf.jpg";
 import headerImg from "./assets/IMG_3257.webp";
 import img5 from "./assets/IMG_8A244AF8-65AE-4CAF-A55D-4473CC241732.jpeg";
-import img6 from "./assets/projet4.webp";
-import img7 from "./assets/projet4.webp";
+import img6 from "./assets/cafechoco.jpg";
+import img7 from "./assets/digitrobotiq.jpg";
+import img8 from "./assets/ledeveloppeur.jpg";
+import img9 from "./assets/lesdocuments.jpg";
+import img10 from "./assets/moins.jpg";
+import img11 from "./assets/fcferke.jpg";
+import img12 from "./assets/formationdev.jpg";
 import cvFile from "./assets/Cv Pro KANIGUI MOISE SILUE.pdf";
 
 
@@ -110,7 +115,13 @@ function PortFolio() {
     "/projet3",
     "/projet4",
     "/projet5",
-    "/projet6"
+    "/projet6",
+    "/projet7",
+    "/projet8",
+    "/projet9",
+    "/projet10",
+    "/projet11",
+    "/projet12"
   ];
 
   // Direction de la flèche ("down" ou "up")
@@ -585,7 +596,7 @@ function PortFolio() {
       <section id="projets" className="projects" data-aos="fade-up">
         <h2>Mes Projets</h2>
         <div className="projects-grid">
-          {[img1, img2, img3, img4, img6, img7].map((imgSrc, idx) => (
+          {[img1, img2, img3, img4, img6, img7, img8, img9, img10, img11, img12 ].map((imgSrc, idx) => (
             <div key={idx} className="project-card" data-aos="zoom-in-up">
               <img src={imgSrc} alt={`Projet ${idx + 1}`} />
               <div className="project-overlay">              

@@ -3,11 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { Github, ExternalLink, MessageCircle, Facebook, Music, Mail, ArrowLeft, Play, Pause, Volume2, VolumeX, Maximize2, X } from "lucide-react";
 // import de la vidéo depuis le dossier assets
-import demoVideo from "./assets/moinschere.mp4";
-import projet5Img from "./assets/projet5.webp";
+import demoVideo from "./assets/cafechoco.mp4";
+import projet5Img from "./assets/cafechoco.jpg";
 
 
-function Projet1() {
+function Projet5() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -15,7 +15,7 @@ function Projet1() {
   const containerRef = useRef(null);
   const backgroundRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showGithubPopup, setShowGithubPopup] = useState(false);
+
 
 
   // Remplacez la section "Animation Three.js pour le background" dans votre useEffect par ce code :
@@ -120,7 +120,7 @@ useEffect(() => {
     {
       name: 'GitHub',
       icon: <Github size={24} />,
-      onClick: () => setShowGithubPopup(true),
+      url: 'https://github.com/kms-le-dev/cafe-choco',
       color: '#333',
       hoverColor: '#000'
     },
@@ -188,8 +188,7 @@ useEffect(() => {
           </div>
           <h1 className="projet-title">Application E-Commerce</h1>
           <p className="projet-description">
-            Une application e-commerce moderne développée avec HTML, CSS, PHP, MYSQL. 
-            Interface utilisateur intuitive, paiements sécurisés et gestion avancée des produits.
+            Une Site vitrine développée avec HTML, CSS, Js. 
           </p>
           
           {/* Video Demo */}
@@ -231,13 +230,13 @@ useEffect(() => {
             <div className="detail-card">
               <div className="card-icon">🎯</div>
               <h3>Objectif</h3>
-              <p>Créer une plateforme e-commerce complète avec une expérience utilisateur exceptionnelle et des performances optimales.</p>
+              <p>Créer un site vitrine pour presenter un restaurant de café au chocolat chaud.</p>
             </div>
             
             <div className="detail-card">
               <div className="card-icon">⚡</div>
               <h3>Fonctionnalités</h3>
-              <p>Catalogue produits, panier intelligent, paiements sécurisés, gestion des commandes et dashboard administrateur.</p>
+              <p>Présentation de produits, localisation etc...</p>
             </div>
             
             <div className="detail-card">
@@ -249,11 +248,11 @@ useEffect(() => {
           
           <div className="project-stats">
             <div className="stat">
-              <div className="stat-number">3</div>
-              <div className="stat-label">Mois de développement</div>
+              <div className="stat-number">1</div>
+              <div className="stat-label">Semaine de développement</div>
             </div>
             <div className="stat">
-              <div className="stat-number">10+</div>
+              <div className="stat-number">3+</div>
               <div className="stat-label">Fonctionnalités</div>
             </div>
             <div className="stat">
@@ -261,7 +260,7 @@ useEffect(() => {
               <div className="stat-label">Score Performance</div>
             </div>
             <div className="stat">
-              <div className="stat-number">500+</div>
+              <div className="stat-number">150+</div>
               <div className="stat-label">Utilisateurs</div>
             </div>
           </div>
@@ -286,14 +285,8 @@ useEffect(() => {
               <div className="tech-items">
                 <span className="tech-item react">Html</span>
                 <span className="tech-item">Css</span>
+                <span className="tech-item">Bootstrap</span>
                 <span className="tech-item">Js</span>
-              </div>
-            </div>
-            
-            <div className="tech-category">
-              <h3>Backend</h3>
-              <div className="tech-items">
-                <span className="tech-item">Php</span>
               </div>
             </div>
             
@@ -344,7 +337,7 @@ useEffect(() => {
         </div>
 
         <div className="cta-section"> 
-          <button className="cta-button secondary" onClick={() => window.open("https://www.moinschere.ci", "_blank")}>
+          <button className="cta-button secondary" onClick={() => window.open("https://cafechoco.vercel.app", "_blank")}>
           <span>Tester la Demo</span> 
           <div className="cta-bg"></div> 
           </button> 
@@ -352,22 +345,6 @@ useEffect(() => {
 
       </div>
       </section>
-
-       {/* Popup GitHub */}
-      {showGithubPopup && (
-        <div className="popup-overlay" onClick={() => setShowGithubPopup(false)}>
-          <div className="popup-box" onClick={(e) => e.stopPropagation()}>
-            <button className="popup-close" onClick={() => setShowGithubPopup(false)}>
-              <X size={20} />
-            </button>
-            <h3>Accès GitHub restreint</h3>
-            <p>
-              Désolé, pour des raisons de sécurité le code reste privé.<br />
-              Veuillez cliquer sur <strong>Tester la Demo</strong> pour avoir un aperçu de l’application.
-            </p>
-          </div>
-        </div>
-      )} 
           
 
       <style jsx>{`
@@ -1004,4 +981,4 @@ useEffect(() => {
   );
 }
 
-export default Projet1;
+export default Projet5;

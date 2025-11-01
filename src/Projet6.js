@@ -3,11 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { Github, ExternalLink, MessageCircle, Facebook, Music, Mail, ArrowLeft, Play, Pause, Volume2, VolumeX, Maximize2, X } from "lucide-react";
 // import de la vidéo depuis le dossier assets
-import demoVideo from "./assets/moinschere.mp4";
-import projet6Img from "./assets/projet6.webp";
+import demoVideo from "./assets/digitrobotiq.mp4";
+import projet6Img from "./assets/digitrobotiq.jpg";
 
 
-function Projet1() {
+function Projet6() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -15,7 +15,7 @@ function Projet1() {
   const containerRef = useRef(null);
   const backgroundRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showGithubPopup, setShowGithubPopup] = useState(false);
+
 
 
   // Remplacez la section "Animation Three.js pour le background" dans votre useEffect par ce code :
@@ -120,7 +120,7 @@ useEffect(() => {
     {
       name: 'GitHub',
       icon: <Github size={24} />,
-      onClick: () => setShowGithubPopup(true),
+      url: 'github.com/kms-le-dev/digit-robotique',
       color: '#333',
       hoverColor: '#000'
     },
@@ -186,10 +186,9 @@ useEffect(() => {
           <div className="projet-badge">
             <span>Projet Full Stack</span>
           </div>
-          <h1 className="projet-title">Application E-Commerce</h1>
+          <h1 className="projet-title"> Le site Digit Robotique </h1>
           <p className="projet-description">
-            Une application e-commerce moderne développée avec HTML, CSS, PHP, MYSQL. 
-            Interface utilisateur intuitive, paiements sécurisés et gestion avancée des produits.
+            est un site vitrine moderne présentant une entreprise de vente d’articles électroniques (smartphones, drones, ordinateurs, accessoires).
           </p>
           
           {/* Video Demo */}
@@ -231,7 +230,7 @@ useEffect(() => {
             <div className="detail-card">
               <div className="card-icon">🎯</div>
               <h3>Objectif</h3>
-              <p>Créer une plateforme e-commerce complète avec une expérience utilisateur exceptionnelle et des performances optimales.</p>
+              <p>Faire connaître l’entreprise, exposer ses produits et attirer des clients via le formulaire de contact.</p>
             </div>
             
             <div className="detail-card">
@@ -243,7 +242,8 @@ useEffect(() => {
             <div className="detail-card">
               <div className="card-icon">🚀</div>
               <h3>Performance</h3>
-              <p>Temps de chargement &lt; 2s, responsive design, optimisation SEO et architecture scalable.</p>
+              <p>Chargement rapide (hébergé sur Vercel), design fluide et sécurisé en HTTPS.
+                 Optimisation SEO et affichage mobile satisfaisants.</p>
             </div>
           </div>
           
@@ -286,16 +286,12 @@ useEffect(() => {
               <div className="tech-items">
                 <span className="tech-item react">Html</span>
                 <span className="tech-item">Css</span>
+                <span className="tech-item">Bootstrap</span>
                 <span className="tech-item">Js</span>
               </div>
             </div>
             
-            <div className="tech-category">
-              <h3>Backend</h3>
-              <div className="tech-items">
-                <span className="tech-item">Php</span>
-              </div>
-            </div>
+            
             
             <div className="tech-category">
               <h3>DevOps</h3>
@@ -344,7 +340,7 @@ useEffect(() => {
         </div>
 
         <div className="cta-section"> 
-          <button className="cta-button secondary" onClick={() => window.open("https://www.moinschere.ci", "_blank")}>
+          <button className="cta-button secondary" onClick={() => window.open("https://digitrobo.vercel.app", "_blank")}>
           <span>Tester la Demo</span> 
           <div className="cta-bg"></div> 
           </button> 
@@ -352,23 +348,7 @@ useEffect(() => {
 
       </div>
       </section>
-
-       {/* Popup GitHub */}
-      {showGithubPopup && (
-        <div className="popup-overlay" onClick={() => setShowGithubPopup(false)}>
-          <div className="popup-box" onClick={(e) => e.stopPropagation()}>
-            <button className="popup-close" onClick={() => setShowGithubPopup(false)}>
-              <X size={20} />
-            </button>
-            <h3>Accès GitHub restreint</h3>
-            <p>
-              Désolé, pour des raisons de sécurité le code reste privé.<br />
-              Veuillez cliquer sur <strong>Tester la Demo</strong> pour avoir un aperçu de l’application.
-            </p>
-          </div>
-        </div>
-      )} 
-          
+  
 
       <style jsx>{`
 
@@ -1004,4 +984,4 @@ useEffect(() => {
   );
 }
 
-export default Projet1;
+export default Projet6;
