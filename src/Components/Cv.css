@@ -1,0 +1,288 @@
+/* CV.css */
+
+.cv-container {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #000000, #1a1a1a);
+  padding: 60px 20px;
+  margin-top: -65px;
+}
+
+.cv-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Titre principal */
+.cv-main-title {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Section */
+.cv-section {
+  margin-bottom: 60px;
+}
+
+/* En-tête de section */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.section-icon-box {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 102, 204, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.section-icon {
+  width: 28px;
+  height: 28px;
+  color: #0066cc;
+}
+
+.cv-section-title {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #0066cc, #004d99);
+}
+
+/* Timeline Item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #333;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -46px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background-color: #0066cc;
+  border-radius: 50%;
+  border: 3px solid #1a1a1a;
+  box-shadow: 0 0 0 2px #0066cc;
+}
+
+/* Période */
+.timeline-period {
+  color: #0066cc;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* Contenu */
+.timeline-content {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  border-color: #0066cc;
+  box-shadow: 0 4px 20px rgba(0, 102, 204, 0.15);
+}
+
+/* Titre du poste/diplôme */
+.timeline-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.3px;
+}
+
+/* Sous-titre */
+.timeline-subtitle {
+  color: #b0b0b0;
+  font-size: 15px;
+  margin: 0 0 8px 0;
+  font-style: italic;
+}
+
+/* Localisation */
+.timeline-location {
+  color: #909090;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Liste des tâches */
+.timeline-tasks {
+  margin: 12px 0 0 0;
+  padding-left: 20px;
+  color: #b0b0b0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.timeline-tasks li {
+  margin-bottom: 8px;
+}
+
+.timeline-tasks li::marker {
+  color: #0066cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cv-container {
+    padding: 40px 16px;
+  }
+
+  .cv-main-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+     margin-top: 30px;
+  }
+
+  .cv-section-title {
+    font-size: 26px;
+  }
+
+  .section-header {
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .section-icon-box {
+    width: 45px;
+    height: 45px;
+  }
+
+  .section-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .timeline {
+    padding-left: 30px;
+  }
+
+  .timeline-item::before {
+    left: -36px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .timeline-title {
+    font-size: 18px;
+  }
+
+  .timeline-subtitle,
+  .timeline-tasks {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-main-title {
+    font-size: 28px;
+  }
+
+  .cv-section-title {
+    font-size: 22px;
+  }
+
+  .timeline {
+    padding-left: 24px;
+  }
+
+  .timeline-item::before {
+    left: -30px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-content {
+    padding: 16px;
+  }
+
+  .timeline-title {
+    font-size: 16px;
+  }
+
+  .timeline-period {
+    font-size: 13px;
+  }
+}
+
+/* Section Télécharger CV */
+.cv-download-section {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #0066cc, #004499);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+.cv-download-btn:hover {
+  background: linear-gradient(135deg, #0080ff, #0052cc);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+}
+
+.cv-download-btn:active {
+  transform: translateY(0);
+}

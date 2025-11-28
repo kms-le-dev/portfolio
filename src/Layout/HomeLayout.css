@@ -1,0 +1,389 @@
+/* HomeLayout.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-layout {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #000000, #1a1a1a);
+}
+
+/* ============================================
+   SIDEBAR - Fixe à gauche sur grand écran
+   ============================================ */
+.sidebar-section {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 350px;
+  height: 100vh;
+  background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+  border-right: 1px solid #2a2a2a;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.sidebar-content-wrapper {
+  padding: 20px;
+}
+
+/* Placeholder pour la sidebar (à remplacer par votre composant) */
+.sidebar-placeholder {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.profile-circle {
+  width: 120px;
+  height: 120px;
+  background: #333;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+}
+
+.sidebar-placeholder h3 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.sidebar-placeholder p {
+  color: #b0b0b0;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: #404040;
+  margin: 24px 0;
+}
+
+.sidebar-info p {
+  color: #b0b0b0;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+/* ============================================
+   CONTENU PRINCIPAL - À droite de la sidebar
+   ============================================ */
+.main-content {
+  margin-left: 350px;
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   NAVIGATION EN HAUT
+   ============================================ */
+.top-navigation {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2a2a2a;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-wrapper {
+  display: flex;
+  gap: 8px;
+  background: rgba(45, 45, 45, 0.5);
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.nav-button {
+  background: transparent;
+  color: #b0b0b0;
+  border: none;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  color: #ffffff;
+  background: rgba(0, 102, 204, 0.1);
+}
+
+.nav-button.active {
+  background: #0066cc;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+/* Menu hamburger - caché sur grand écran */
+.mobile-menu-toggle {
+  display: none;
+  background: rgba(45, 45, 45, 0.8);
+  border: 1px solid #333;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background: rgba(0, 102, 204, 0.2);
+  border-color: #0066cc;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* ============================================
+   ZONE DE CONTENU
+   ============================================ */
+.content-area {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* Placeholder pour le contenu (à remplacer par vos composants) */
+.content-placeholder {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 60px 40px;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: -10px;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+.content-placeholder h2 {
+  color: #ffffff;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.content-placeholder p {
+  color: #b0b0b0;
+  font-size: 16px;
+}
+
+/* ============================================
+   RESPONSIVE - TABLETTE
+   ============================================ */
+@media (max-width: 1024px) {
+  .sidebar-section {
+    width: 280px;
+  }
+
+  .main-content {
+    margin-left: 280px;
+  }
+
+  .top-navigation {
+    padding: 16px 24px;
+  }
+
+  .nav-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .content-area {
+    padding: 24px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  .home-layout {
+    flex-direction: column;
+  }
+  h1 { margin-top: 0.5rem; }
+
+  /* Sidebar au top centré */
+  .sidebar-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #2a2a2a;
+    padding: 20px 10px;
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+    z-index: 100;
+  }
+
+  .sidebar-content-wrapper {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Main content sans marge gauche */
+  .main-content {
+    margin-left: 0;
+    flex: 1;
+    min-height: auto;
+  }
+
+  /* Navigation horizontale compacte en dessous de la sidebar */
+  .top-navigation {
+    background: transparent;
+    border-bottom: 1px solid #2a2a2a;
+    padding: 12px 16px;
+    position: relative;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    gap: 6px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-button {
+    background: transparent;
+    color: #b0b0b0;
+    border: 1px solid #333;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .nav-button:hover {
+    color: #ffffff;
+    background: rgba(0, 102, 204, 0.1);
+    border-color: #0066cc;
+  }
+
+  .nav-button.active {
+    background: #0066cc;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+    border-color: #0066cc;
+  }
+
+  /* Masquer le bouton hamburger et le menu mobile */
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .content-area {
+    padding: 20px 16px;
+  }
+
+  .content-placeholder {
+    padding: 40px 24px;
+  }
+
+  .content-placeholder h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-section {
+    padding: 15px 8px;
+  }
+
+  .top-navigation {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .nav-wrapper {
+    gap: 5px;
+  }
+
+  .nav-button {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .content-area {
+    padding: 16px 12px;
+  }
+
+  .content-placeholder {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .content-placeholder h2 {
+    font-size: 20px;
+  }
+}
+
+/* Scrollbar personnalisée */
+.sidebar-section::-webkit-scrollbar,
+.content-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-section::-webkit-scrollbar-track,
+.content-area::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.sidebar-section::-webkit-scrollbar-thumb,
+.content-area::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+.sidebar-section::-webkit-scrollbar-thumb:hover,
+.content-area::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}

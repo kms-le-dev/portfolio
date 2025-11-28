@@ -1,0 +1,190 @@
+/* Styles pour les informations de contact */
+        .contact-info {
+          margin-top: 3rem;
+          padding-top: 2rem;
+          border-top: 2px solid rgba(0, 255, 136, 0.1);
+        }
+
+        .contact-info h3 {
+          text-align: center;
+          color: white;
+          font-size: 1.8rem;
+          margin-bottom: 2rem;
+        }
+
+        .contact-links {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          padding: 1rem;
+        }
+
+        .contact-link {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 1rem 2rem;
+          background: linear-gradient(45deg, #00ff88, #00d4aa);
+          color: white;
+          text-decoration: none;
+          border-radius: 10px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(0, 255, 136, 0.2);
+        }
+
+        .contact-link:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+          background: linear-gradient(45deg, #00d4aa, #00ff88);
+        }
+
+        .contact-link i {
+          font-size: 1.5rem;
+        }
+
+        .contact-link span {
+          font-size: 1.1rem;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        .portfolio-container {
+          font-family: 'Arial', sans-serif;
+          line-height: 1.6;
+          color: #333;
+          overflow-x: hidden;
+        }
+
+        .footer {
+          width: 100%;
+          padding: 20px;
+          background-color: #222;
+          color: #fff;
+          text-align: center;
+          font-size: 14px;
+          position: relative;
+          margin-top: 40px;
+        }
+
+        /* Contact Section */
+        .contact {
+          padding: 5rem 2rem;
+          background: black;
+        }
+
+        .contact-container {
+          max-width: 800px;
+          margin: 0 auto;
+          margin-top: -98px;
+        }
+
+        .contact h2 {
+          text-align: center;
+          font-size: 2.5rem;
+          margin-bottom: 3rem;
+          color: #e0e0ecff;
+        }
+
+        .contact-form {
+          background: #b8b8caff;
+          padding: 3rem;
+          border-radius: 20px;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .form-group {
+          margin-bottom: 2rem;
+        }
+
+        .form-group label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: bold;
+          color: #1a1a2e;
+        }
+
+        .form-group input,
+        .form-group textarea {
+          width: 100%;
+          padding: 1rem;
+          border: 2px solid #e9ecef;
+          border-radius: 10px;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          background: #e0e0ecff;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+          outline: none;
+          border-color: #00ff88;
+          box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+        }
+
+        .submit-btn {
+          width: 100%;
+          padding: 1rem;
+          background: linear-gradient(45deg, #00ff88, #00d4aa);
+          color: white;
+          border: none;
+          border-radius: 10px;
+          font-size: 1.1rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+          .contact h2 {
+            font-size: 1.8rem;
+            margin-top: 1rem;
+          }
+          .form-row {
+            grid-template-columns: 1fr;
+          }
+          .contact-form {
+            padding: 1.5rem;
+          }
+          .contact-links {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.2rem;
+            padding: 0.5rem;
+          }
+          .contact-link {
+            justify-content: center;
+            padding: 1rem 0.5rem;
+            font-size: 1rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .contact-info h3 {
+            font-size: 1.2rem;
+          }
+          .contact-link {
+            font-size: 0.95rem;
+            padding: 0.7rem 0.3rem;
+          }
+          .contact-link i {
+            font-size: 1.2rem;
+          }
+        }

@@ -1,0 +1,151 @@
+/* About.css */
+
+.about-container {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #000000, #1a1a1a);
+  padding: 60px 20px;
+  margin-top: -60px;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section À Propos */
+.about-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.about-text {
+  color: #e0e0e0;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0;
+}
+
+/* Section Compétences */
+.skills-section {
+  margin-top: 60px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Carte de compétence */
+.skill-card {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 102, 204, 0.2);
+  border-color: #0066cc;
+}
+
+/* Icône de la compétence */
+.skill-icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 102, 204, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.skill-icon {
+  width: 32px;
+  height: 32px;
+  color: #0066cc;
+}
+
+/* Titre de la compétence */
+.skill-title {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.3px;
+}
+
+/* Description de la compétence */
+.skill-description {
+  color: #b0b0b0;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 40px 20px;
+  }
+
+  .section-title {
+     font-size: 28px;
+     margin-top: 30px;
+  }
+
+  .about-text {
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill-card {
+    padding: 24px 20px;
+  }
+
+  .skill-title {
+    font-size: 20px;
+  }
+
+  .skill-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .skill-icon-box {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skill-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
