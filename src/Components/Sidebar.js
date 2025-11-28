@@ -103,17 +103,7 @@ export default function Sidebar() {
           </div>
         </div>
 
-        {/* LinkedIn button pour desktop (fixe en bas) */}
-        <div className="linkedin-section-desktop">
-          <a
-            href="https://www.linkedin.com/in/votre-profil"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="linkedin-link"
-          >
-            <Linkedin className="linkedin-icon" />
-          </a>
-        </div>
+        
       </div>
     </div>
   );
