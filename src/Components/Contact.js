@@ -105,7 +105,7 @@ function PortFolio() {
             <button type="submit" className="submit-btn">
               Envoyer le message
             </button>
-          </form>
+          
 
           <div className="contact-info">
             <h3>Informations de contact</h3>
@@ -128,6 +128,7 @@ function PortFolio() {
               </a>
             </div>
           </div>
+          </form>
         </div>
       </section>
 
