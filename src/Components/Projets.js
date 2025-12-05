@@ -11,9 +11,17 @@ import fcferke from '../assets/fcferke.PNG';
 import moinschere from '../assets/moinschere.PNG';
 import ledev from '../assets/ledev.PNG';
 import cafechoco from '../assets/cafechoco.PNG';
+import gestionstock from '../assets/gestionstock.PNG';
 
 export default function Projects() {
   const projects = [
+    {
+      id: 0,
+      image: gestionstock,
+      title: 'Application de Gestion',
+      description: 'Gestion Moins Chère est une application complète et intuitive conçue pour aider les entreprises, boutiques et commerces à gérer efficacement leurs activités au quotidien. Grâce à une interface moderne et simple d utilisation, elle regroupe tous les outils indispensables pour optimiser votre organisation, suivre vos ventes et maîtriser vos stocks en temps réel.',
+      link: 'http://gestiontest.ct.ws'
+    },
     {
       id: 1,
       image: moinschereci,
