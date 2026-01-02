@@ -12,9 +12,20 @@ import moinschere from '../assets/moinschere.PNG';
 import ledev from '../assets/ledev.PNG';
 import cafechoco from '../assets/cafechoco.PNG';
 import gestionstock from '../assets/gestionstock.PNG';
+import ecommerce from '../assets/ecommerce.PNG';
+
+
+
 
 export default function Projects() {
   const projects = [
+    {
+      id: 0,
+      image: ecommerce,
+      title: 'Application de ecommerce',
+      description: 'Application de e-commerce avec paiement intégré',
+      link: 'http://moinschere.great-site.net'
+    },
     {
       id: 0,
       image: gestionstock,
