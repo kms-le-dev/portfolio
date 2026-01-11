@@ -187,16 +187,16 @@ export default function CV() {
       </div>
 
       {/* Bouton Télécharger CV */}
-      <div className="cv-download-section">
-        <a 
+      {/* <div className="cv-download-section"> */}
+        {/* <a 
           href={cvPdf} 
           download="CV_KANIGUI_MOISE_SILUE.pdf"
           className="cv-download-btn"
-        >
+        > */}
           <Download size={20} />
           {/* <span>Télécharger CV</span> */}
-        </a>
-      </div>
+        {/* </a> */}
+      {/* </div> */}
     </div>
   );
 }
