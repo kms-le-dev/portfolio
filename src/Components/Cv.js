@@ -20,14 +20,21 @@ export default function CV() {
 
           <div className="timeline">
             <div className="timeline-item">
-              <div className="timeline-period">2025 - 2026</div> 
+              <div className="timeline-period">2023 - 2024</div> 
+              <div className="timeline-content">
+                <h3 className="timeline-title">Master 2 Génie Logiciel</h3> 
+                <p className="timeline-location">Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-period">2022 - 2023</div> 
               <div className="timeline-content">
                 <h3 className="timeline-title">Master 1 Génie Logiciel</h3> 
                 <p className="timeline-location">Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI</p>
               </div>
             </div>
             <div className="timeline-item">
-              <div className="timeline-period">2024 - 2025</div>
+              <div className="timeline-period">2021 - 2022</div>
               <div className="timeline-content">
                 <h3 className="timeline-title">Licence 3 Génie Logiciel</h3>
                 <p className="timeline-location">Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI</p>
@@ -149,17 +156,18 @@ export default function CV() {
 
           <div className="skills-container">
             {[
-              { name: 'HTML5 & CSS', percentage: 80 },
-              { name: 'PHP', percentage: 80 },
-              { name: 'JavaScript', percentage: 70 },
-              { name: 'React Js', percentage: 70 },
-              { name: 'Laravel', percentage: 65 },
-              { name: 'Django', percentage: 60 },
-              { name: 'MySQL & PostgreSQL', percentage: 85 },
-              { name: 'GIT & Github', percentage: 90 },
-              { name: 'Python', percentage: 50 },
-              { name: 'Figma', percentage: 50 },
-              { name: 'React Native', percentage: 50 }
+              { name: 'HTML5 & CSS', percentage: 95 },
+              { name: 'PHP', percentage: 90 },
+              { name: 'JavaScript', percentage: 80 },
+              { name: 'React Js', percentage: 80 },
+              { name: 'Laravel', percentage: 85 },
+              { name: 'Django', percentage: 80 },
+              { name: 'MySQL & PostgreSQL', percentage: 95 },
+              { name: 'GIT & Github', percentage: 95 },
+              { name: 'Python', percentage: 80 },
+              { name: 'Figma', percentage: 70 },
+              { name: 'React Native', percentage: 80 },
+              { name: 'Docker', percentage: 80 }
             ].map((skill, index) => (
               <div key={index} className="skill-item">
                 <div className="skill-header">
@@ -186,7 +194,7 @@ export default function CV() {
           className="cv-download-btn"
         >
           <Download size={20} />
-          <span>Télécharger CV</span>
+          {/* <span>Télécharger CV</span> */}
         </a>
       </div>
     </div>
