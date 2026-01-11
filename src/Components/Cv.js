@@ -193,7 +193,7 @@ export default function CV() {
           download="CV_KANIGUI_MOISE_SILUE.pdf"
           className="cv-download-btn"
         > */}
-          <Download size={20} />
+          {/* <Download size={20} /> */}
           {/* <span>Télécharger CV</span> */}
         {/* </a> */}
       {/* </div> */}
