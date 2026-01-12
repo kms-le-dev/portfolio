@@ -13,14 +13,24 @@ import ledev from '../assets/ledev.PNG';
 import cafechoco from '../assets/cafechoco.PNG';
 import gestionstock from '../assets/gestionstock.PNG';
 import ecommerce from '../assets/ecommerce.PNG';
-
+import sgiservices from '../assets/sgiservices.PNG';
+import optimizedImages from '../assets/optimized/manifest.json';
 
 
 
 export default function Projects() {
   const projects = [
     {
+      id: 11,
+      key: 'sgiservices',
+      image: sgiservices,
+      title: 'Application web (en cours...)',
+      description: 'Application web pour entreprise immobilière avec plusieurs branches : services, galerie, blog, divers, immobilier etc...',
+      link: 'https://sgiservices.netlify.app'
+    },
+    {
       id: 0,
+      key: 'ecommerce',
       image: ecommerce,
       title: 'Application de ecommerce',
       description: 'Application de e-commerce avec paiement intégré',
@@ -28,6 +38,7 @@ export default function Projects() {
     },
     {
       id: 0,
+      key: 'gestionstock',
       image: gestionstock,
       title: 'Application de Gestion',
       description: 'Gestion Moins Chère est une application complète et intuitive conçue pour aider les entreprises, boutiques et commerces à gérer efficacement leurs activités au quotidien. Grâce à une interface moderne et simple d utilisation, elle regroupe tous les outils indispensables pour optimiser votre organisation, suivre vos ventes et maîtriser vos stocks en temps réel.',
@@ -35,6 +46,7 @@ export default function Projects() {
     },
     {
       id: 1,
+      key: 'moinschereci',
       image: moinschereci,
       title: 'Application E-commerce',
       description: 'Solution e-commerce clé en main combinant une marketplace publique (publier et vendre facilement), un module de paiement sécurisé intégré et un back-office administrateur avancé pour superviser commandes, paiements, statistiques et modération.',
@@ -42,6 +54,7 @@ export default function Projects() {
     },
     {
       id: 2,
+      key: 'gsf',
       image: gsf,
       title: 'Application web Pour Établissement',
       description: 'Inscription dédiée aux étudiants, possibilité de publier des cours au format PDF, image ou vidéo, organisation précise par modules (Enseignement Supérieur, FDFP, filières spécialisées...), avec de nombreuses options pour enrichir et faciliter l’accès aux ressources pédagogiques.',
@@ -49,6 +62,7 @@ export default function Projects() {
     },
     {
       id: 3,
+      key: 'odholding',
       image: odholding,
       title: 'Site web Entreprise informatique',
       description: 'Solutions informatiques professionnelles dédiées à la digitalisation totale de vos projets, de la conception à la mise en production.',
@@ -56,6 +70,7 @@ export default function Projects() {
     },
     {
       id: 4,
+      key: 'formdev',
       image: formdev,
       title: 'Site web de formation',
       description: 'Un site web qui propose des formations complètes en développement web (frontend, backend, full-stack) et en design professionnel avec Figma, pensé pour accompagner chaque apprenant vers l’autonomie.',
@@ -63,6 +78,7 @@ export default function Projects() {
     },
     {
       id: 5,
+      key: 'digitrobo',
       image: digitrobo,
       title: 'Site web pour entreprise électronique',
       description: 'Une boutique complète d’accessoires technologiques : caméras, drones, smartphones, casques virtuels, PC gamer, consoles et plusieurs autres équipements modernes.',
@@ -70,6 +86,7 @@ export default function Projects() {
     },
     {
       id: 6,
+      key: 'lesdocuments',
       image: lesdocuments,
       title: 'Application e-commerce',
       description: 'Vente en ligne de documents scolaires pour les élèves du CP1 au CM2, avec paiement sécurisé via la plateforme Chariow et réception automatique des fichiers PDF.',
@@ -77,6 +94,7 @@ export default function Projects() {
     },
     {
       id: 7,
+      key: 'fcferke',
       image: fcferke,
       title: 'Site vitrine',
       description: 'Plateforme dédiée à la mise en valeur d’un club de football, mettant en avant ses activités, ses séances d’entraînement, ses joueurs et ses projets, afin d’accroître sa présence et son impact digital.',
@@ -84,6 +102,7 @@ export default function Projects() {
     },
     {
       id: 8,
+      key: 'moinschere',
       image: moinschere,
       title: 'Site internet',
       description: 'Présentation de l’entreprise e-commerce MoinsChere.ci, spécialisée dans la vente en ligne de divers produits, allant des appareils électroniques aux accessoires, en passant par l’électroménager et les articles du quotidien. La plateforme offre des prix compétitifs, un paiement sécurisé et une expérience d’achat facile pour tous les clients.',
@@ -91,6 +110,7 @@ export default function Projects() {
     },
     {
       id: 9,
+      key: 'ledev',
       image: ledev,
       title: 'site vitrine',
       description: 'Présentation détaillée de l’entreprise, de ses missions et de l’ensemble de ses prestations, conçues pour répondre efficacement aux attentes de ses clients.',
@@ -98,12 +118,40 @@ export default function Projects() {
     },
     {
       id: 10,
+      key: 'cafechoco',
       image: cafechoco,
       title: 'Site web pour restaurant',
       description: 'Vente de cafés, chocolats chauds et autres boissons réconfortantes, préparées avec soin pour une expérience gustative unique.',
       link: 'https://cafechoco.vercel.app'
     }
   ];
+
+  const renderProjectImage = (project) => {
+    try {
+      const m = optimizedImages && optimizedImages[project.key];
+      if (m) {
+        const files = require.context('../assets/optimized', false, /\.(webp|png|jpe?g)$/);
+        const buildSrcSet = (items) => items.map(it => `${files('./' + it.file)} ${it.width}w`).join(', ');
+        const webpSrcSet = m.webp ? buildSrcSet(m.webp) : null;
+        const pngSrcSet = m.png ? buildSrcSet(m.png) : null;
+        const fallback = files('./' + (m.default || (m.png ? m.png[m.png.length - 1].file : m.webp[m.webp.length -1].file)));
+
+        return (
+          <picture>
+            {webpSrcSet && <source type="image/webp" srcSet={webpSrcSet} sizes="(max-width: 800px) 100vw, 800px" />}
+            {pngSrcSet && <source type="image/png" srcSet={pngSrcSet} sizes="(max-width: 800px) 100vw, 800px" />}
+            <img src={fallback} alt={project.title} loading="lazy" className="project-image" />
+          </picture>
+        );
+      }
+    } catch (err) {
+      console.warn('Optimized images not available for', project.key, err);
+    }
+
+    return (
+      <img src={project.image} alt={project.title} loading="lazy" className="project-image" />
+    );
+  };
 
   return (
     <div className="projects-container">
@@ -120,11 +168,7 @@ export default function Projects() {
                 className="project-image-link"
               >
                 <div className="project-image-wrapper">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="project-image"
-                  />
+                  {renderProjectImage(project)}
                   <div className="project-overlay">
                     <Eye className="project-eye-icon" />
                   </div>
