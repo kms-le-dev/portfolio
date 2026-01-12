@@ -38,7 +38,7 @@ export default function Projects() {
       image: moinschereci,
       title: 'Application E-commerce',
       description: 'Solution e-commerce clé en main combinant une marketplace publique (publier et vendre facilement), un module de paiement sécurisé intégré et un back-office administrateur avancé pour superviser commandes, paiements, statistiques et modération.',
-      link: 'https://moinschere.ci'
+      link: 'https://www.moinschere.ci'
     },
     {
       id: 2,
