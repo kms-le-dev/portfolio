@@ -15,21 +15,37 @@ import gestionstock from '../assets/gestionstock.PNG';
 import ecommerce from '../assets/ecommerce.PNG';
 import sgiservices from '../assets/sgiservices.PNG';
 import optimizedImages from '../assets/optimized/manifest.json';
+import socialeglise from '../assets/socialeglise.PNG';
+import gestioneglise from '../assets/gestioneglise.PNG';
 
 
 
 export default function Projects() {
   const projects = [
     {
-      id: 11,
+      id: 15,
+      key: 'socialeglise',
+      image: socialeglise,
+      title: 'Mini réseau social pour les églises (en vente)',
+      description: 'Application web pour église, un mini réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter.',
+    },
+    {
+      id: 14,
+      key: 'gestioneglise',
+      image: gestioneglise,
+      title: 'Application web de gestion pour les églises (en vente)',
+      description: 'Application web de gestion d eglise. Cette application vous permet d avoir les données des fidèles de l église et bien d autres fonctionnalités.',
+    },
+    {
+      id: 13,
       key: 'sgiservices',
       image: sgiservices,
       title: 'Application web (en cours...)',
       description: 'Application web pour entreprise immobilière avec plusieurs branches : services, galerie, blog, divers, immobilier etc...',
-      link: 'https://sgiservices.netlify.app'
+      link: 'https://sgiservices.vercel.app'
     },
     {
-      id: 0,
+      id: 12,
       key: 'ecommerce',
       image: ecommerce,
       title: 'Application de ecommerce',
@@ -37,7 +53,7 @@ export default function Projects() {
       link: 'http://moinschere.great-site.net'
     },
     {
-      id: 0,
+      id: 11,
       key: 'gestionstock',
       image: gestionstock,
       title: 'Application de Gestion',
@@ -45,7 +61,7 @@ export default function Projects() {
       link: 'http://gestiontest.ct.ws'
     },
     {
-      id: 1,
+      id: 10,
       key: 'moinschereci',
       image: moinschereci,
       title: 'Application E-commerce',
@@ -53,7 +69,7 @@ export default function Projects() {
       link: 'https://www.moinschere.ci'
     },
     {
-      id: 2,
+      id: 9,
       key: 'gsf',
       image: gsf,
       title: 'Application web Pour Établissement',
@@ -61,7 +77,7 @@ export default function Projects() {
       link: 'https://groupesupformation.com'
     },
     {
-      id: 3,
+      id: 8,
       key: 'odholding',
       image: odholding,
       title: 'Site web Entreprise informatique',
@@ -69,7 +85,7 @@ export default function Projects() {
       link: 'https://od-holding.vercel.app'
     },
     {
-      id: 4,
+      id: 7,
       key: 'formdev',
       image: formdev,
       title: 'Site web de formation',
@@ -77,7 +93,7 @@ export default function Projects() {
       link: 'https://formation-dev.vercel.app'
     },
     {
-      id: 5,
+      id: 6,
       key: 'digitrobo',
       image: digitrobo,
       title: 'Site web pour entreprise électronique',
@@ -85,7 +101,7 @@ export default function Projects() {
       link: 'https://digitrobo.vercel.app'
     },
     {
-      id: 6,
+      id: 5,
       key: 'lesdocuments',
       image: lesdocuments,
       title: 'Application e-commerce',
@@ -93,7 +109,7 @@ export default function Projects() {
       link: 'https://lesdocuments-ci.vercel.app'
     },
     {
-      id: 7,
+      id: 4,
       key: 'fcferke',
       image: fcferke,
       title: 'Site vitrine',
@@ -101,7 +117,7 @@ export default function Projects() {
       link: 'https://fcferke.vercel.app'
     },
     {
-      id: 8,
+      id: 3,
       key: 'moinschere',
       image: moinschere,
       title: 'Site internet',
@@ -109,7 +125,7 @@ export default function Projects() {
       link: 'https://moinschere-ci.vercel.app'
     },
     {
-      id: 9,
+      id: 2,
       key: 'ledev',
       image: ledev,
       title: 'site vitrine',
@@ -117,7 +133,7 @@ export default function Projects() {
       link: 'https://le-dev-sigma.vercel.app'
     },
     {
-      id: 10,
+      id: 1,
       key: 'cafechoco',
       image: cafechoco,
       title: 'Site web pour restaurant',
@@ -153,6 +169,14 @@ export default function Projects() {
     );
   };
 
+  const handleProjectClick = (project) => {
+    if (project.id === 14 || project.id === 15) {
+      alert('Projet en vente. Il n\'est pas encore en ligne si vous êtes intéressé écrivez moi dans contact.');
+    } else if (project.link) {
+      window.open(project.link, '_blank');
+    }
+  };
+
   return (
     <div className="projects-container">
       <div className="projects-content">
@@ -161,11 +185,10 @@ export default function Projects() {
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <div 
+                onClick={() => handleProjectClick(project)}
                 className="project-image-link"
+                style={{ cursor: 'pointer' }}
               >
                 <div className="project-image-wrapper">
                   {renderProjectImage(project)}
@@ -173,7 +196,7 @@ export default function Projects() {
                     <Eye className="project-eye-icon" />
                   </div>
                 </div>
-              </a>
+              </div>
               
               <div className="project-info">
                 <h2 className="project-title">{project.title}</h2>
