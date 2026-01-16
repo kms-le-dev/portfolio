@@ -214,6 +214,49 @@
     ],
     "default": "formationdev-640.png"
   },
+  "gestioneglise": {
+    "webp": [
+      {
+        "file": "gestioneglise-320.webp",
+        "width": 320
+      },
+      {
+        "file": "gestioneglise-640.webp",
+        "width": 640
+      },
+      {
+        "file": "gestioneglise-1024.webp",
+        "width": 1024
+      },
+      {
+        "file": "gestioneglise-1600.webp",
+        "width": 1600
+      },
+      {
+        "file": "gestioneglise-orig.webp",
+        "width": 1600
+      }
+    ],
+    "png": [
+      {
+        "file": "gestioneglise-320.png",
+        "width": 320
+      },
+      {
+        "file": "gestioneglise-640.png",
+        "width": 640
+      },
+      {
+        "file": "gestioneglise-1024.png",
+        "width": 1024
+      },
+      {
+        "file": "gestioneglise-1600.png",
+        "width": 1600
+      }
+    ],
+    "default": "gestioneglise-640.png"
+  },
   "gestionstock": {
     "webp": [
       {
@@ -643,5 +686,48 @@
       }
     ],
     "default": "sgiservices-640.png"
+  },
+  "socialeglise": {
+    "webp": [
+      {
+        "file": "socialeglise-320.webp",
+        "width": 320
+      },
+      {
+        "file": "socialeglise-640.webp",
+        "width": 640
+      },
+      {
+        "file": "socialeglise-1024.webp",
+        "width": 1024
+      },
+      {
+        "file": "socialeglise-1600.webp",
+        "width": 1600
+      },
+      {
+        "file": "socialeglise-orig.webp",
+        "width": 1600
+      }
+    ],
+    "png": [
+      {
+        "file": "socialeglise-320.png",
+        "width": 320
+      },
+      {
+        "file": "socialeglise-640.png",
+        "width": 640
+      },
+      {
+        "file": "socialeglise-1024.png",
+        "width": 1024
+      },
+      {
+        "file": "socialeglise-1600.png",
+        "width": 1600
+      }
+    ],
+    "default": "socialeglise-640.png"
   }
 }
