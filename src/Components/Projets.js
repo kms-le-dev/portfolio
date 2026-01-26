@@ -1,21 +1,21 @@
 import React from 'react';
 import { Eye } from 'lucide-react';
 import './Projets.css';
-import moinschereci from '../assets/moinschereci.PNG';
-import gsf from '../assets/gsf.PNG';
-import odholding from '../assets/odholding.PNG';
-import formdev from '../assets/formationdev.PNG';
-import digitrobo from '../assets/digitrobo.PNG';
-import lesdocuments from '../assets/lesdocuments.PNG';
-import fcferke from '../assets/fcferke.PNG';
-import moinschere from '../assets/moinschere.PNG';
-import ledev from '../assets/ledev.PNG';
-import cafechoco from '../assets/cafechoco.PNG';
-import gestionstock from '../assets/gestionstock.PNG';
-import ecommerce from '../assets/ecommerce.PNG';
-import sgiservices from '../assets/sgiservices.PNG';
-import socialeglise from '../assets/socialeglise.PNG';
-import gestioneglise from '../assets/gestioneglise.PNG';
+import moinschereci from '../assets/moinschereci.webp';
+import gsf from '../assets/gsf.webp';
+import odholding from '../assets/odholding.webp';
+import formdev from '../assets/formationdev.webp';
+import digitrobo from '../assets/digitrobo.webp';
+import lesdocuments from '../assets/lesdocuments.webp';
+import fcferke from '../assets/fcferke.webp';
+import moinschere from '../assets/moinschere.webp';
+import ledev from '../assets/ledev.webp';
+import cafechoco from '../assets/cafechoco.webp';
+import gestionstock from '../assets/gestionstock.webp';
+import ecommerce from '../assets/ecommerce.webp';
+import sgiservices from '../assets/sgiservices.webp';
+import socialeglise from '../assets/socialeglise.webp';
+import gestioneglise from '../assets/gestioneglise.webp';
 
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import './certificats.css';
 
 // Import des images depuis le dossier assets
-import reactImg from '../assets/react js.jpg';
+import reactImg from '../assets/react js.webp';
 import reactNativeImg from '../assets/react native.webp';
 import pythonDjangoImg from '../assets/python django.webp';
 import laravelImg from '../assets/laravel.webp';

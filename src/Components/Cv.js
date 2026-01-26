@@ -1,7 +1,7 @@
 import React from 'react';
-import { GraduationCap, Briefcase, Download } from 'lucide-react';
+import { GraduationCap, Briefcase } from 'lucide-react';
 import './Cv.css';
-import cvPdf from '../assets/CV_KANIGUI_MOISE_SILUE.pdf';
+
 
 export default function CV() {
   return (
@@ -186,17 +186,6 @@ export default function CV() {
         </section>
       </div>
 
-      {/* Bouton Télécharger CV */}
-      {/* <div className="cv-download-section"> */}
-        {/* <a 
-          href={cvPdf} 
-          download="CV_KANIGUI_MOISE_SILUE.pdf"
-          className="cv-download-btn"
-        > */}
-          {/* <Download size={20} /> */}
-          {/* <span>Télécharger CV</span> */}
-        {/* </a> */}
-      {/* </div> */}
     </div>
   );
 }

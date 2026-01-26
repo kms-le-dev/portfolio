@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Flag, ChevronDown, ChevronUp } from 'lucide-react';
 import './Sidebar.css';
-import Profil from '../assets/profil.jpg';
+import Profil from '../assets/profil.webp';
 
 export default function Sidebar() {
   const [showContacts, setShowContacts] = useState(false);
