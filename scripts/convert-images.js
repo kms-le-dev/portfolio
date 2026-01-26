@@ -6,7 +6,6 @@
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
-const glob = require('glob');
 
 const srcDir = path.join(__dirname, '..', 'src', 'assets');
 const outDir = path.join(srcDir, 'optimized');
@@ -58,7 +57,8 @@ async function processFile(file) {
 async function main(){
   await ensureOut();
 
-  const files = glob.sync('*.{png,jpg,jpeg}', { cwd: srcDir, nocase: true });
+  const allFiles = fs.readdirSync(srcDir);
+  const files = allFiles.filter(f => /\.(png|jpg|jpeg)$/i.test(f));
 
   const manifest = {};
 
