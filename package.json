@@ -25,10 +25,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run images:convert && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "images:convert": "node scripts/convert-images.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
