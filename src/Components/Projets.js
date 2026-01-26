@@ -14,7 +14,6 @@ import cafechoco from '../assets/cafechoco.PNG';
 import gestionstock from '../assets/gestionstock.PNG';
 import ecommerce from '../assets/ecommerce.PNG';
 import sgiservices from '../assets/sgiservices.PNG';
-import optimizedImages from '../assets/optimized/manifest.json';
 import socialeglise from '../assets/socialeglise.PNG';
 import gestioneglise from '../assets/gestioneglise.PNG';
 
@@ -143,27 +142,7 @@ export default function Projects() {
   ];
 
   const renderProjectImage = (project) => {
-    try {
-      const m = optimizedImages && optimizedImages[project.key];
-      if (m) {
-        const files = require.context('../assets/optimized', false, /\.(webp|png|jpe?g)$/);
-        const buildSrcSet = (items) => items.map(it => `${files('./' + it.file)} ${it.width}w`).join(', ');
-        const webpSrcSet = m.webp ? buildSrcSet(m.webp) : null;
-        const pngSrcSet = m.png ? buildSrcSet(m.png) : null;
-        const fallback = files('./' + (m.default || (m.png ? m.png[m.png.length - 1].file : m.webp[m.webp.length -1].file)));
-
-        return (
-          <picture>
-            {webpSrcSet && <source type="image/webp" srcSet={webpSrcSet} sizes="(max-width: 800px) 100vw, 800px" />}
-            {pngSrcSet && <source type="image/png" srcSet={pngSrcSet} sizes="(max-width: 800px) 100vw, 800px" />}
-            <img src={fallback} alt={project.title} loading="lazy" className="project-image" />
-          </picture>
-        );
-      }
-    } catch (err) {
-      console.warn('Optimized images not available for', project.key, err);
-    }
-
+    // Utiliser les images originales (plus simples et plus fiables)
     return (
       <img src={project.image} alt={project.title} loading="lazy" className="project-image" />
     );
