@@ -49,7 +49,7 @@ export default function Projects() {
       key: 'ecommerce',
       image: ecommerce,
       title: 'Application de ecommerce',
-      description: 'Application de e-commerce avec paiement intégré',
+      description: 'Application web de e-commerce pour la boutique en ligne moinschere. espace admin, panier etc...',
       link: 'http://moinschere.great-site.net'
     },
     {
