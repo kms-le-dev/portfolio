@@ -19,22 +19,22 @@ export default function CV() {
           </div>
 
           <div className="timeline">
-            <div className="timeline-item">
+            {/* <div className="timeline-item">
               <div className="timeline-period">2023 - 2024</div> 
               <div className="timeline-content">
                 <h3 className="timeline-title">Master 2 Génie Logiciel</h3> 
                 <p className="timeline-location">Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI</p>
               </div>
-            </div>
+            </div> */}
             <div className="timeline-item">
-              <div className="timeline-period">2022 - 2023</div> 
+              <div className="timeline-period">2025 - 2026</div> 
               <div className="timeline-content">
                 <h3 className="timeline-title">Master 1 Génie Logiciel</h3> 
                 <p className="timeline-location">Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI</p>
               </div>
             </div>
             <div className="timeline-item">
-              <div className="timeline-period">2021 - 2022</div>
+              <div className="timeline-period">2024 - 2025</div>
               <div className="timeline-content">
                 <h3 className="timeline-title">Licence 3 Génie Logiciel</h3>
                 <p className="timeline-location">Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI</p>

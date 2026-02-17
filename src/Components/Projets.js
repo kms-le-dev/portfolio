@@ -16,17 +16,25 @@ import ecommerce from '../assets/ecommerce.webp';
 import sgiservices from '../assets/sgiservices.webp';
 import socialeglise from '../assets/socialeglise.webp';
 import gestioneglise from '../assets/gestioneglise.webp';
+import moneglisemobile from '../assets/moneglisemobile.webp';
 
 
 
 export default function Projects() {
   const projects = [
     {
+      id: 16,
+      key: 'moneglisemobile',
+      image: moneglisemobile,
+      title: 'Application mobile réseau social pour les églises (en vente) version mobile',
+      description: 'Application mobile pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter.',
+    },
+    {
       id: 15,
       key: 'socialeglise',
       image: socialeglise,
-      title: 'Mini réseau social pour les églises (en vente)',
-      description: 'Application web pour église, un mini réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter.',
+      title: 'Application web réseau social pour les églises (en vente)',
+      description: 'Application web pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter.',
     },
     {
       id: 14,
@@ -149,7 +157,7 @@ export default function Projects() {
   };
 
   const handleProjectClick = (project) => {
-    if (project.id === 14 || project.id === 15) {
+    if (project.id === 14 || project.id === 15 || project.id ===16) {
       alert('Projet en vente. Il n\'est pas encore en ligne si vous êtes intéressé écrivez moi dans contact.');
     } else if (project.link) {
       window.open(project.link, '_blank');
