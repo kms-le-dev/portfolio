@@ -120,7 +120,7 @@ export default function CV() {
             </div>
 
             <div className="timeline-item">
-              <div className="timeline-period">2022 à Nos jours</div>
+              <div className="timeline-period">2020 à Nos jours</div>
               <div className="timeline-content">
                 <h3 className="timeline-title">Développeur Fullstack Freelance à temps partiel</h3>
               </div>
