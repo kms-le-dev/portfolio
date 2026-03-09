@@ -58,7 +58,7 @@ export default function Sidebar() {
             </div>
             <div className="contact-text">
               <p className="contact-label">PHONE</p>
-              <p className="contact-value">+225 07 57 10 98 35</p>
+              <p className="contact-value">+225 05 96 44 60 37</p>
             </div>
           </div>
 

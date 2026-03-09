@@ -27,7 +27,7 @@ export default function Projects() {
       key: 'moneglisemobile',
       image: moneglisemobile,
       title: 'Application mobile réseau social pour les églises (en vente) version mobile',
-      description: 'Application mobile pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter.',
+      description: 'Application mobile pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter. Dévéloppé avec React Native - expo pour le front, Laravel pour le Backend et MysQl pour la base de donnée.',
       link: 'https://wa.me/p/26088646627413946/22557109835'
     },
     {
@@ -35,7 +35,7 @@ export default function Projects() {
       key: 'socialeglise',
       image: socialeglise,
       title: 'Application web réseau social pour les églises (en vente)',
-      description: 'Application web pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter.',
+      description: 'Application web pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter. Dévéloppé avec React Js pour le front, Laravel pour le Backend et MysQl pour la base de donnée.',
       link: 'https://wa.me/p/26088646627413946/22557109835'
     },
     {
@@ -43,7 +43,7 @@ export default function Projects() {
       key: 'gestioneglise',
       image: gestioneglise,
       title: 'Application web de gestion pour les églises (en vente)',
-      description: 'Application web de gestion d eglise. Cette application vous permet d avoir les données des fidèles de l église et bien d autres fonctionnalités.',
+      description: 'Application web de gestion d eglise. Cette application vous permet d avoir les données des fidèles de l église et bien d autres fonctionnalités. Dévéloppé avec React Js pour le front, Laravel pour le Backend et MysQl pour la base de donnée.',
       link: 'https://wa.me/p/26088646627413946/22557109835'
     },
     {
@@ -51,7 +51,7 @@ export default function Projects() {
       key: 'sip-ci',
       image: sipci,
       title: 'Application web (en cours...)',
-      description: 'Application web pour entreprise immobilière avec plusieurs branches : services, galerie, blog, divers, immobilier etc...',
+      description: 'Application web pour entreprise immobilière avec plusieurs branches : services, galerie, blog, divers, immobilier etc... Dévéloppé avec React Js pour le front, Laravel pour le Backend et MysQl pour la base de donnée.',
       link: 'https://sip-ci.vercel.app'
     },
     {
@@ -59,7 +59,7 @@ export default function Projects() {
       key: 'ecommerce',
       image: ecommerce,
       title: 'Application de ecommerce',
-      description: 'Application web de e-commerce pour la boutique en ligne moinschere. espace admin, panier etc...',
+      description: 'Application web de e-commerce pour la boutique en ligne moinschere. espace admin, panier etc... Dévéloppé avec PHP et MysQl pour la base de donnée.',
       link: 'http://moinschere.great-site.net'
     },
     {
@@ -67,7 +67,7 @@ export default function Projects() {
       key: 'gestionstock',
       image: gestionstock,
       title: 'Application de Gestion',
-      description: 'Gestion Moins Chère est une application complète et intuitive conçue pour aider les entreprises, boutiques et commerces à gérer efficacement leurs activités au quotidien. Grâce à une interface moderne et simple d utilisation, elle regroupe tous les outils indispensables pour optimiser votre organisation, suivre vos ventes et maîtriser vos stocks en temps réel.',
+      description: 'Gestion Moins Chère est une application complète et intuitive conçue pour aider les entreprises, boutiques et commerces à gérer efficacement leurs activités au quotidien. Grâce à une interface moderne et simple d utilisation, elle regroupe tous les outils indispensables pour optimiser votre organisation, suivre vos ventes et maîtriser vos stocks en temps réel. Dévéloppé avec PHP et MysQl pour la base de donnée.',
       link: 'http://gestiontest.ct.ws'
     },
     {
@@ -75,7 +75,7 @@ export default function Projects() {
       key: 'moinschereci',
       image: moinschereci,
       title: 'Application E-commerce',
-      description: 'Solution e-commerce clé en main combinant une marketplace publique (publier et vendre facilement), un module de paiement sécurisé intégré et un back-office administrateur avancé pour superviser commandes, paiements, statistiques et modération.',
+      description: 'Solution e-commerce clé en main combinant une marketplace publique (publier et vendre facilement), un module de paiement sécurisé intégré et un back-office administrateur avancé pour superviser commandes, paiements, statistiques et modération. Dévéloppé avec PHP et MysQl pour la base de donnée.',
       link: 'https://www.moinschere.ci'
     },
     {
@@ -83,7 +83,7 @@ export default function Projects() {
       key: 'gsf',
       image: gsf,
       title: 'Application web Pour Établissement',
-      description: 'Inscription dédiée aux étudiants, possibilité de publier des cours au format PDF, image ou vidéo, organisation précise par modules (Enseignement Supérieur, FDFP, filières spécialisées...), avec de nombreuses options pour enrichir et faciliter l’accès aux ressources pédagogiques.',
+      description: 'Inscription dédiée aux étudiants, possibilité de publier des cours au format PDF, image ou vidéo, organisation précise par modules (Enseignement Supérieur, FDFP, filières spécialisées...), avec de nombreuses options pour enrichir et faciliter l’accès aux ressources pédagogiques. Dévéloppé avec PHP et MysQl pour la base de donnée.',
       link: 'https://groupesupformation.com'
     },
     {
@@ -91,7 +91,7 @@ export default function Projects() {
       key: 'odholding',
       image: odholding,
       title: 'Site web Entreprise informatique',
-      description: 'Solutions informatiques professionnelles dédiées à la digitalisation totale de vos projets, de la conception à la mise en production.',
+      description: 'Solutions informatiques professionnelles dédiées à la digitalisation totale de vos projets, de la conception à la mise en production. Dévéloppé avec React Js et Tilwin Css pour le frontend. Le site est statique.',
       link: 'https://od-holding.vercel.app'
     },
     {
@@ -99,7 +99,7 @@ export default function Projects() {
       key: 'formdev',
       image: formdev,
       title: 'Site web de formation',
-      description: 'Un site web qui propose des formations complètes en développement web (frontend, backend, full-stack) et en design professionnel avec Figma, pensé pour accompagner chaque apprenant vers l’autonomie.',
+      description: 'Un site web qui propose des formations complètes en développement web (frontend, backend, full-stack) et en design professionnel avec Figma, pensé pour accompagner chaque apprenant vers l’autonomie. Dévéloppé avec Html, Bootstrap et Css pour le frontend. Le site est statique.',
       link: 'https://formation-dev.vercel.app'
     },
     {
@@ -107,7 +107,7 @@ export default function Projects() {
       key: 'digitrobo',
       image: digitrobo,
       title: 'Site web pour entreprise électronique',
-      description: 'Une boutique complète d’accessoires technologiques : caméras, drones, smartphones, casques virtuels, PC gamer, consoles et plusieurs autres équipements modernes.',
+      description: 'Une boutique complète d’accessoires technologiques : caméras, drones, smartphones, casques virtuels, PC gamer, consoles et plusieurs autres équipements modernes. Dévéloppé avec Html, Bootstrap et Css pour le frontend. Le site est statique.',
       link: 'https://digitrobo.vercel.app'
     },
     {
@@ -115,7 +115,7 @@ export default function Projects() {
       key: 'lesdocuments',
       image: lesdocuments,
       title: 'Application e-commerce',
-      description: 'Vente en ligne de documents scolaires pour les élèves du CP1 au CM2, avec paiement sécurisé via la plateforme Chariow et réception automatique des fichiers PDF.',
+      description: 'Vente en ligne de documents scolaires pour les élèves du CP1 au CM2, avec paiement sécurisé via la plateforme Chariow et réception automatique des fichiers PDF.  Dévéloppé avec Html et Css pour le frontend. Le site est statique.',
       link: 'https://lesdocuments-ci.vercel.app'
     },
     {
@@ -131,7 +131,7 @@ export default function Projects() {
       key: 'moinschere',
       image: moinschere,
       title: 'Site internet',
-      description: 'Présentation de l’entreprise e-commerce MoinsChere.ci, spécialisée dans la vente en ligne de divers produits, allant des appareils électroniques aux accessoires, en passant par l’électroménager et les articles du quotidien. La plateforme offre des prix compétitifs, un paiement sécurisé et une expérience d’achat facile pour tous les clients.',
+      description: 'Présentation de l’entreprise e-commerce MoinsChere.ci, spécialisée dans la vente en ligne de divers produits, allant des appareils électroniques aux accessoires, en passant par l’électroménager et les articles du quotidien. La plateforme offre des prix compétitifs, un paiement sécurisé et une expérience d’achat facile pour tous les clients. Dévéloppé avec Html, Bootstrap et Css pour le frontend. Le site est statique.',
       link: 'https://moinschere-ci.vercel.app'
     },
     {
@@ -139,7 +139,7 @@ export default function Projects() {
       key: 'ledev',
       image: ledev,
       title: 'site vitrine',
-      description: 'Présentation détaillée de l’entreprise, de ses missions et de l’ensemble de ses prestations, conçues pour répondre efficacement aux attentes de ses clients.',
+      description: 'Présentation détaillée de l’entreprise, de ses missions et de l’ensemble de ses prestations, conçues pour répondre efficacement aux attentes de ses clients. Dévéloppé avec Html, Bootstrap et Css pour le frontend. Le site est statique.',
       link: 'https://le-dev-sigma.vercel.app'
     },
     {
@@ -147,7 +147,7 @@ export default function Projects() {
       key: 'cafechoco',
       image: cafechoco,
       title: 'Site web pour restaurant',
-      description: 'Vente de cafés, chocolats chauds et autres boissons réconfortantes, préparées avec soin pour une expérience gustative unique.',
+      description: 'Vente de cafés, chocolats chauds et autres boissons réconfortantes, préparées avec soin pour une expérience gustative unique. Dévéloppé avec Html, Bootstrap et Css pour le frontend. Le site est statique.',
       link: 'https://cafechoco.vercel.app'
     }
   ];

@@ -1,9 +1,19 @@
 import React from 'react';
-import { GraduationCap, Briefcase } from 'lucide-react';
+import { GraduationCap, Briefcase, Download } from 'lucide-react';
 import './Cv.css';
+import cvPDF from '../assets/CV KANIGUI MOISE SILUÉ.pdf';
 
 
 export default function CV() {
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = cvPDF;
+    link.download = 'CV KANIGUI MOISE SILUÉ.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="cv-container">
       <div className="cv-content">
@@ -20,24 +30,24 @@ export default function CV() {
 
           <div className="timeline">
             {/* <div className="timeline-item">
-              <div className="timeline-period">2023 - 2024</div> 
+              <div className="timeline-period">2026 - 2027</div> 
               <div className="timeline-content">
                 <h3 className="timeline-title">Master 2 Génie Logiciel</h3> 
-                <p className="timeline-location">Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI</p>
+                <p className="timeline-location">IBSFA (Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI)</p>
               </div>
             </div> */}
             <div className="timeline-item">
               <div className="timeline-period">2025 - 2026</div> 
               <div className="timeline-content">
                 <h3 className="timeline-title">Master 1 Génie Logiciel</h3> 
-                <p className="timeline-location">Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI</p>
+                <p className="timeline-location">IBSFA (Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI)</p>
               </div>
             </div>
             <div className="timeline-item">
               <div className="timeline-period">2024 - 2025</div>
               <div className="timeline-content">
                 <h3 className="timeline-title">Licence 3 Génie Logiciel</h3>
-                <p className="timeline-location">Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI</p>
+                <p className="timeline-location">IBSFA (Groupe Sup' formation ABIDJAN/PLATEAU-DOKUI)</p>
               </div>
             </div>
 
@@ -109,20 +119,22 @@ export default function CV() {
             </div>
 
             <div className="timeline-item">
-              <div className="timeline-period">2020 – 2024</div>
+              <div className="timeline-period">2024 à Nos jours</div>
               <div className="timeline-content">
-                <h3 className="timeline-title">Développeur Web à AFROTECHPLUS</h3>
-                <ul className="timeline-tasks">
-                  <li>Création de site internet vitrine</li>
-                  <li>Création de site e-commerce</li>
-                </ul>
+                <h3 className="timeline-title">Développeur Web / Mobile Fullstack Freelance</h3>
               </div>
             </div>
 
             <div className="timeline-item">
-              <div className="timeline-period">2020 à Nos jours</div>
+              <div className="timeline-period">2020 – 2024</div>
               <div className="timeline-content">
-                <h3 className="timeline-title">Développeur Fullstack Freelance à temps partiel</h3>
+                <h3 className="timeline-title">Développeur Fullstack à AFROTECHPLUS</h3>
+                <ul className="timeline-tasks">
+                  <li>Création de site internet vitrine</li>
+                  <li>Création de site e-commerce</li>
+                  <li>Création d'application de gestion</li>
+                  <li>Etc...</li>
+                </ul>
               </div>
             </div>
 
@@ -156,18 +168,26 @@ export default function CV() {
 
           <div className="skills-container">
             {[
-              { name: 'HTML5 & CSS', percentage: 95 },
-              { name: 'PHP', percentage: 90 },
-              { name: 'JavaScript', percentage: 80 },
+              { name: 'HTML5 & CSS', percentage: 90 },
+              { name: 'ChatGpt', percentage: 90 },
+              { name: 'Copilot', percentage: 90 },
+              { name: 'Claude AI', percentage: 90 },
+              { name: 'MySQL & PostgreSQL', percentage: 80 },
+              { name: 'GIT & Github', percentage: 80 },
+              { name: 'PHP', percentage: 80 },
               { name: 'React Js', percentage: 80 },
-              { name: 'Laravel', percentage: 85 },
-              { name: 'Django', percentage: 80 },
-              { name: 'MySQL & PostgreSQL', percentage: 95 },
-              { name: 'GIT & Github', percentage: 95 },
-              { name: 'Python', percentage: 80 },
+              { name: 'React Native - EXPO', percentage: 80 },
+              { name: 'Laravel', percentage: 75 },
+              { name: 'React Native', percentage: 75 },
+              { name: 'Boostrap', percentage: 75},
+              { name: 'Tilwind CSS', percentage: 70 },
+              { name: 'JavaScript', percentage: 70 },
               { name: 'Figma', percentage: 70 },
-              { name: 'React Native', percentage: 80 },
-              { name: 'Docker', percentage: 80 }
+              { name: 'Django', percentage: 50 },
+              { name: 'Python', percentage: 50 },
+              { name: 'Flutter', percentage: 35 },
+              { name: 'Docker', percentage: 30 },
+              { name: 'Pipline CI/CD', percentage: 30 }
             ].map((skill, index) => (
               <div key={index} className="skill-item">
                 <div className="skill-header">
@@ -186,6 +206,12 @@ export default function CV() {
         </section>
       </div>
 
+      <div className="download-button-container">
+        <button className="download-button" onClick={handleDownloadCV}>
+          <Download size={20} />
+          Télécharger CV
+        </button>
+      </div>
     </div>
   );
 }
