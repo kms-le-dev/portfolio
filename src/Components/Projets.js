@@ -17,11 +17,20 @@ import sipci from '../assets/sip-ci.webp';
 import socialeglise from '../assets/socialeglise.webp';
 import gestioneglise from '../assets/gestioneglise.webp';
 import moneglisemobile from '../assets/moneglisemobile.webp';
+import restau from '../assets/restau.webp';
 
 
 
 export default function Projects() {
   const projects = [
+    {
+      id: 17,
+      key: 'resto.com',
+      image: restau,
+      title: 'Application web pour restaurant, Lounge, maquis etc...',
+      description: 'Application web avec gestion de caisse intégré, suivie de la caisse à distance et en temps réel. Application responsive. Développé avec Php et Mysql.',
+      link: 'https://restau.ct.ws'
+    },
     {
       id: 16,
       key: 'moneglisemobile',
@@ -68,7 +77,7 @@ export default function Projects() {
       image: gestionstock,
       title: 'Application de Gestion',
       description: 'Gestion Moins Chère est une application complète et intuitive conçue pour aider les entreprises, boutiques et commerces à gérer efficacement leurs activités au quotidien. Grâce à une interface moderne et simple d utilisation, elle regroupe tous les outils indispensables pour optimiser votre organisation, suivre vos ventes et maîtriser vos stocks en temps réel. Dévéloppé avec PHP et MysQl pour la base de donnée.',
-      link: 'http://gestiontest.ct.ws'
+      link: 'http://gestiontest.page.gd'
     },
     {
       id: 10,
