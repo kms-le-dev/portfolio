@@ -3,7 +3,7 @@ import { Eye } from 'lucide-react';
 import './Projets.css';
 import moinschereci from '../assets/moinschereci.webp';
 import gsf from '../assets/gsf.webp';
-import odholding from '../assets/odholding.webp';
+import odholding from '../assets/odholding.PNG';
 import formdev from '../assets/formationdev.webp';
 import digitrobo from '../assets/digitrobo.webp';
 import lesdocuments from '../assets/lesdocuments.webp';
