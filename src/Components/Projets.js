@@ -19,6 +19,7 @@ import gestioneglise from '../assets/gestioneglise.webp';
 import moneglisemobile from '../assets/moneglisemobile.png';
 import restau from '../assets/restau.png';
 import sosivoire from '../assets/sos ivoire.PNG';
+import sosivoiremobile from '../assets/sos ivoire mobile.png';
 import sipcimobile from '../assets/sipci-mobile.png'
 import ticketmoto from '../assets/ticketmoto.PNG'
 import gsfmobile from '../assets/gsf mobile.png';
@@ -29,8 +30,8 @@ export default function Projects() {
   const projects = [
     {
       id: 22,
-      key: 'sos ivoire',
-      image: sosivoire,
+      key: 'sos ivoire mobile',
+      image: sosivoiremobile,
       title: 'Saas mobile (en cours de developement)',
       description: 'Saas de sos pour chaque ville, synchronisé à la version web. Posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
     },
