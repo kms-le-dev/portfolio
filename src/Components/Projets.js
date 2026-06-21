@@ -70,7 +70,7 @@ export default function Projects() {
       image: restau,
       title: 'Application web pour restaurant, Lounge, maquis etc...',
       description: 'Application web avec gestion de caisse intégré, suivie de la caisse à distance et en temps réel.',
-      link: 'https://restau.gt.tc'
+      link: 'https://rest-o.site.je/'
     },
     {
       id: 16,
