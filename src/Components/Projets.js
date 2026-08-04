@@ -1,16 +1,10 @@
 import React from 'react';
 import { Eye } from 'lucide-react';
 import './Projets.css';
-import moinschereci from '../assets/moinschereci.webp';
 import gsf from '../assets/gsf.PNG';
 import odholding from '../assets/odholding.PNG';
 import formdev from '../assets/formationdev.webp';
 import digitrobo from '../assets/digitrobo.webp';
-import lesdocuments from '../assets/lesdocuments.webp';
-import fcferke from '../assets/fcferke.webp';
-import moinschere from '../assets/moinschere.webp';
-import ledev from '../assets/ledev.webp';
-import cafechoco from '../assets/cafechoco.webp';
 import gestionstock from '../assets/gestionstock.PNG';
 import ecommerce from '../assets/ecommerce.webp';
 import sipci from '../assets/sip-ci.PNG';
@@ -23,7 +17,7 @@ import sosivoiremobile from '../assets/sos ivoire mobile.png';
 import sipcimobile from '../assets/sipci-mobile.png'
 import ticketmoto from '../assets/ticketmoto.PNG'
 import gsfmobile from '../assets/gsf mobile.png';
-import sensuelle from '../assets/sensuelle.PNG';
+
 
 
 
