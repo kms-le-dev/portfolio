@@ -131,8 +131,6 @@ function PortFolio() {
           </form>
         </div>
       </section>
-
-      <div className="footer">2025 Kanigui Moise Silué. @ Tous droits réservés.</div>
     </div>
   );
 }

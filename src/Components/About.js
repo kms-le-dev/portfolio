@@ -29,7 +29,7 @@ export default function About() {
               </div>
               <h3 className="skill-title">Web Design</h3>
               <p className="skill-description">
-                Je conçois des designs modernes avec Figma, permettant une bonne expérience utilisateur.
+                Je conçois des designs modernes avec Figma, permettant une bonne expérience utilisateur, maquette, prototipage, affiche, logo etc... pour une bonne qualité visuelle.
               </p>
             </div>
 
@@ -40,7 +40,8 @@ export default function About() {
               </div>
               <h3 className="skill-title">Développement Web</h3>
               <p className="skill-description">
-                Spécialisé en développement fullstack, j'utilise HTML, CSS, JS, React, PHP, Laravel, Django et Docker pour créer des sites et applications
+                Spécialisé en développement fullstack, j'utilise HTML, CSS, JS, React, PHP, Laravel, 
+                Django et Docker pour créer des sites et applications
                 web rapides, sécurisés, évolutifs et adaptés aux besoins du client.
               </p>
             </div>
@@ -52,8 +53,23 @@ export default function About() {
               </div>
               <h3 className="skill-title">Développement Mobile</h3>
               <p className="skill-description">
-                Avec React Native, je développe des applications mobile performantes
-                et multiplateformes (iOS et Android) adaptées aux besoins du client.
+                Avec React Native et flutter, je développe des applications mobile performantes
+                et multiplateformes (iOS et Android) adaptées aux besoins du client. Que soit 
+                des Applications mobile statique ou dynamique.
+              </p>
+            </div>
+
+            {/* Intelligence Artificielle */}
+            <div className="skill-card">
+              <div className="skill-icon-box">
+                <Smartphone className="skill-icon" />
+              </div>
+              <h3 className="skill-title">Intélligence Artificielle</h3>
+              <p className="skill-description">
+                J’utilise les outils d’intelligence artificielle pour
+                optimiser mon processus de développement,
+                accélérer la résolution de problèmes et améliorer la
+                qualité des solutions que je produis.
               </p>
             </div>
           </div>

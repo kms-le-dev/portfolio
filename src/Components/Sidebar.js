@@ -22,7 +22,7 @@ export default function Sidebar() {
           {/* Info profil (nom + titre) */}
           <div className="profile-info">
             <h2 className="profile-name">Silué Kanigui Moise</h2>
-            <p className="profile-title">Ingenieur Logiciel</p>
+            <p className="profile-title">Génie Logiciel</p>
           </div>
         </div>
 

@@ -22,6 +22,16 @@
   letter-spacing: 1px;
 }
 
+/* Titre secondaire h2 */
+.projects-main-title2 {
+  color: #458be7;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
 /* Grille de projets */
 .projects-grid {
   display: grid;
