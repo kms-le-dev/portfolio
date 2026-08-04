@@ -6,7 +6,6 @@ import odholding from '../assets/odholding.PNG';
 import formdev from '../assets/formationdev.webp';
 import digitrobo from '../assets/digitrobo.webp';
 import gestionstock from '../assets/gestionstock.PNG';
-import ecommerce from '../assets/ecommerce.webp';
 import sipci from '../assets/sip-ci.PNG';
 import socialeglise from '../assets/socialeglise.webp';
 import gestioneglise from '../assets/gestioneglise.webp';
