@@ -17,12 +17,22 @@ import sosivoiremobile from '../assets/sos ivoire mobile.png';
 import sipcimobile from '../assets/sipci-mobile.png';
 import ticketmoto from '../assets/ticketmoto.PNG';
 import gsfmobile from '../assets/gsf mobile.png';
+import gestiongsf from '../assets/gestiongsf.PNG';
+import def from '../assets/def.PNG';
 
 
 
 
 export default function Projects() {
   const projects = [
+    {
+      id: 10,
+      key: 'gestiongsf',
+      image: gestiongsf,
+      title: 'Application de gestion d\'établissement',
+      description: 'Application web de gestion d\établissement. gestion des inscription, scolarité, emploi du temps , bulletins, professeurs etc...',
+      link: 'https://gestiongsf.com'
+    },
     {
       id: 9,
       key: 'sip-ci',
@@ -114,35 +124,42 @@ export default function Projects() {
 
    const projects2 = [
     {
-      id: 16,
+      id: 18,
+      key: 'DEF',
+      image: def,
+      title: 'DIEUESTFIDELE',
+      description: 'Site vitrine pour entreprise d\'installation de GPS et Caméras de surveilance. site vitrine + backend robustre.(pas encore en ligne).',
+    },
+    {
+      id: 17,
       key: 'sos ivoire mobile',
       image: sosivoiremobile,
       title: 'Saas mobile (en cours de developement)',
       description: 'Saas de sos pour chaque ville, synchronisé à la version web. Posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
     },
     {
-      id: 15,
+      id: 16,
       key: 'sos ivoire',
       image: sosivoire,
       title: 'Saas web',
       description: 'Saas de sos pour chaque ville, posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
     },
     {
-      id:14,
+      id:15,
       key: 'sipci mobile',
       image: sipcimobile,
       title: 'Application mobile de sipci.org',
       description: 'Application mobile de sipci.org, c\'est la version mobile, elle est synchronisé à la version web. (pas encore en ligne sur appStore et playStore).',
     },
     {
-      id: 13,
+      id: 14,
       key: 'Application mobile pour Établissement',
       image: gsfmobile,
       title: 'Application mobile pour Établissement',
       description: 'Application mobile de Groupe Sup\'Formation. Synchronisé à la version web. (pas encore en ligne sur appStore et playStore).',
     },
     {
-      id: 12,
+      id: 13,
       key: 'moneglisemobile',
       image: moneglisemobile,
       title: 'Application mobile réseau social pour les églises (en vente) version mobile',
@@ -150,7 +167,7 @@ export default function Projects() {
       link: 'https://wa.me/p/26088646627413946/22557109835'
     },
     {
-      id: 11,
+      id: 12,
       key: 'socialeglise',
       image: socialeglise,
       title: 'Application web réseau social pour les églises (en vente)',
@@ -158,7 +175,7 @@ export default function Projects() {
       link: 'https://wa.me/p/26088646627413946/22557109835'
     },
     {
-      id: 10,
+      id: 11,
       key: 'gestioneglise',
       image: gestioneglise,
       title: 'Application web de gestion pour les églises (en vente)',
@@ -184,8 +201,8 @@ export default function Projects() {
     <>
     <div className="projects-container">
       <div className="projects-content">
-        <h1 className="projects-main-title">Tous mes Projets (16)</h1>
-        <h2 className="projects-main-title2">Projets en ligne (9)</h2>
+        <h1 className="projects-main-title">Tous mes Projets (18)</h1>
+        <h2 className="projects-main-title2">Projets en ligne (10)</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
@@ -214,7 +231,7 @@ export default function Projects() {
 
     <div className="projects-container">
       <div className="projects-content">
-        <h2 className="projects-main-title2">Mes Projets Non Déployé (7)</h2>
+        <h2 className="projects-main-title2">Mes Projets Non Déployé (8)</h2>
         <div className="projects-grid">
           {projects2.map((project2) => (
             <div key={project2.id} className="project-card">
