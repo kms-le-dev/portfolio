@@ -95,6 +95,19 @@ export default function CV() {
             <h2 className="cv-section-title">Expériences</h2>
           </div>
 
+            <div className="timeline-item">
+              <div className="timeline-period">10 Octobre 2025 au 18 Juillet 2026</div>
+              <div className="timeline-content">
+                <h3 className="timeline-title">Enseignant : BTS et Licence</h3>
+                <p className="timeline-subtitle">Matières :</p>
+                <ul className="timeline-tasks">
+                  <li>Mathématique Générales.</li>
+                  <li>Dévéloppement Web (HTML, CSS, JavaScript, PHP).</li>
+                  <li>Dévéloppement Mobile (React Native- Expo).</li>
+                </ul>
+              </div>
+            </div>
+
           <div className="timeline">
             <div className="timeline-item">
               <div className="timeline-period">24 Janvier 2024 à nos jours</div>
@@ -172,6 +185,7 @@ export default function CV() {
               { name: 'ChatGpt', percentage: 90 },
               { name: 'Copilot', percentage: 90 },
               { name: 'Claude AI', percentage: 90 },
+              { name: 'Stitch - Design with AI', percentage: 80 },
               { name: 'MySQL & PostgreSQL', percentage: 80 },
               { name: 'GIT & Github', percentage: 80 },
               { name: 'PHP', percentage: 80 },
@@ -180,6 +194,7 @@ export default function CV() {
               { name: 'Laravel', percentage: 75 },
               { name: 'React Native', percentage: 75 },
               { name: 'Boostrap', percentage: 75},
+              { name: 'Herozion', percentage: 75},
               { name: 'Tilwind CSS', percentage: 70 },
               { name: 'JavaScript', percentage: 70 },
               { name: 'Figma', percentage: 70 },

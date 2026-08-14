@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, XIcon } from 'lucide-react';
 import './HomeLayout.css';
 import Sidebar from '../Components/Sidebar';
 import About from '../Components/About';
@@ -92,7 +92,7 @@ export default function HomeLayout() {
             className="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <XIcon size={24} /> : <Menu size={24} />}
           </button>
         </nav>
 

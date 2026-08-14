@@ -2,6 +2,8 @@ import React from 'react';
 import './certificats.css';
 
 // Import des images depuis le dossier assets
+import attestationImg from '../assets/attestation.PNG';
+import attestationPdf from '../assets/Attestation execution.pdf';
 import reactImg from '../assets/react js.webp';
 import reactNativeImg from '../assets/react native.webp';
 import pythonDjangoImg from '../assets/python django.webp';
@@ -9,6 +11,7 @@ import laravelImg from '../assets/laravel.webp';
 import figmaImg from '../assets/figma.webp';
 
 const images = [
+    { src: attestationImg, description: 'Attestation de bonne exécution', link: attestationPdf },
     { src: reactImg, description: 'Certification React Js', link: 'https://ude.my/UC-bb63cd99-4ed8-4bb6-b25f-827d3d44f4ed' },
     { src: reactNativeImg, description: 'Certification React Native & expo', link: 'https://ude.my/UC-44e2effa-6a2f-49e8-ac22-10379bdc476b' },
     { src: pythonDjangoImg, description: 'Certification Python & Django', link: 'https://ude.my/UC-7cb7ddb1-b97a-4e2c-b1ec-e0ae33348633' },
