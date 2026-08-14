@@ -30,7 +30,7 @@ export default function Projects() {
       key: 'gestiongsf',
       image: gestiongsf,
       title: 'Application de gestion d\'établissement',
-      description: 'Application web de gestion d\établissement. gestion des inscription, scolarité, emploi du temps , bulletins, professeurs etc...',
+      description: 'Application web de gestion d\'établissement. gestion des inscription, scolarité, emploi du temps , bulletins, professeurs etc...',
       link: 'https://gestiongsf.com'
     },
     {
