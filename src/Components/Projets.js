@@ -18,6 +18,7 @@ import sipcimobile from '../assets/sipci-mobile.png';
 import ticketmoto from '../assets/ticketmoto.PNG';
 import gsfmobile from '../assets/gsf mobile.png';
 import gestiongsf from '../assets/gestiongsf.PNG';
+import docgratuit from '../assets/docgratuit.PNG';
 import def from '../assets/def.PNG';
 
 
@@ -124,6 +125,13 @@ export default function Projects() {
 
    const projects2 = [
     {
+      id: 19,
+      key: 'Docgratuit',
+      image: docgratuit,
+      title: 'DocGratuit.com',
+      description: 'Site web de téléchargement de documents gratuit (exercices, devoirs, compositions, examens, cours etc...) avec possibilité de publier aussi des documents ',
+    },
+    {
       id: 18,
       key: 'DEF',
       image: def,
@@ -201,7 +209,7 @@ export default function Projects() {
     <>
     <div className="projects-container">
       <div className="projects-content">
-        <h1 className="projects-main-title">Tous mes Projets (18)</h1>
+        <h1 className="projects-main-title">Tous mes Projets (19)</h1>
         <h2 className="projects-main-title2">Projets en ligne (10)</h2>
         <div className="projects-grid">
           {projects.map((project) => (
