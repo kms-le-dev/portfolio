@@ -10,6 +10,17 @@
   display: flex;
   min-height: 100vh;
   background: linear-gradient(145deg, #000000, #1a1a1a);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-layout::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 80% 10%, rgba(0, 102, 204, 0.12), transparent 30%), radial-gradient(circle at 35% 90%, rgba(0, 220, 190, 0.06), transparent 28%);
+  z-index: 0;
 }
 
 /* ============================================
@@ -81,6 +92,20 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--scroll-progress, 0%);
+  height: 3px;
+  background: linear-gradient(90deg, #0066cc, #00d9b5);
+  box-shadow: 0 0 16px rgba(0, 217, 181, 0.65);
+  transition: width 120ms ease-out;
+  z-index: 200;
 }
 
 /* ============================================
@@ -160,6 +185,28 @@
   flex: 1;
   padding: 40px;
   overflow-y: auto;
+  scroll-behavior: smooth;
+  perspective: 1000px;
+}
+
+.page-view {
+  animation: page-enter 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms), transform 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Placeholder pour le contenu (à remplacer par vos composants) */
@@ -293,6 +340,26 @@ h1 {
     border-radius: 6px;
     transition: all 0.3s ease;
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-button::after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 5px;
+    height: 2px;
+    background: #00d9b5;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 250ms ease;
+  }
+
+  .nav-button:hover::after,
+  .nav-button.active::after {
+    transform: scaleX(1);
   }
 
   .nav-button:hover {
@@ -319,6 +386,7 @@ h1 {
 
   .content-area {
     padding: 20px 16px;
+    overflow-y: visible;
   }
 
   .content-placeholder {
@@ -386,4 +454,12 @@ h1 {
 .sidebar-section::-webkit-scrollbar-thumb:hover,
 .content-area::-webkit-scrollbar-thumb:hover {
   background: #444;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content-area { scroll-behavior: auto; }
+  .page-view,
+  .reveal-on-scroll,
+  .reveal-on-scroll.is-visible { animation: none; transition: none; transform: none; opacity: 1; }
+  .scroll-progress { transition: none; }
 }

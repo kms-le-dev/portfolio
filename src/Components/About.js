@@ -64,7 +64,7 @@ export default function About() {
               <div className="skill-icon-box">
                 <BrainCircuit className="skill-icon" />
               </div>
-              <h3 className="skill-title">Intélligence Artificielle</h3>
+              <h3 className="skill-title">Intelligence Artificielle</h3>
               <p className="skill-description">
                 J’utilise les outils d’intelligence artificielle pour
                 optimiser mon processus de développement,

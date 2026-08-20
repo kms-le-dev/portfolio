@@ -5,6 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #050607;
+  overflow-x: hidden;
+}
+
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  color: #050607;
+  background: #00d9b5;
 }
 
 code {
