@@ -1,5 +1,5 @@
 import React from 'react';
-import { Palette, Code, Smartphone } from 'lucide-react';
+import { Palette, Code, Smartphone, BrainCircuit } from 'lucide-react';
 import './About.css';
 
 export default function About() {
@@ -62,7 +62,7 @@ export default function About() {
             {/* Intelligence Artificielle */}
             <div className="skill-card">
               <div className="skill-icon-box">
-                <Smartphone className="skill-icon" />
+                <BrainCircuit className="skill-icon" />
               </div>
               <h3 className="skill-title">Intélligence Artificielle</h3>
               <p className="skill-description">

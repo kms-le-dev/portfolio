@@ -239,7 +239,7 @@ export default function Projects() {
 
     <div className="projects-container">
       <div className="projects-content">
-        <h2 className="projects-main-title2">Mes Projets Non Déployé (8)</h2>
+        <h2 className="projects-main-title2">Mes Projets Non Déployé (9)</h2>
         <div className="projects-grid">
           {projects2.map((project2) => (
             <div key={project2.id} className="project-card">
