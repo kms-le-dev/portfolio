@@ -1,10 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Flag, ChevronDown, ChevronUp } from 'lucide-react';
 import './Sidebar.css';
 import Profil from '../assets/profil.webp';
 
+const profileTitles = [
+  'Génie Logiciel',
+  'Développeur Fullstack',
+  'Designer Web & UI/UX',
+  'Développeur Mobile',
+  'Passionné par l\'IA'
+];
+
 export default function Sidebar() {
   const [showContacts, setShowContacts] = useState(false);
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [characterIndex, setCharacterIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      setCharacterIndex(profileTitles[0].length);
+      return undefined;
+    }
+
+    const currentTitle = profileTitles[titleIndex];
+    const isTitleComplete = characterIndex === currentTitle.length;
+    const isTitleEmpty = characterIndex === 0;
+    const delay = isTitleComplete && !isDeleting ? 1800 : isTitleEmpty && isDeleting ? 400 : isDeleting ? 42 : 78;
+
+    const timeout = window.setTimeout(() => {
+      if (!isDeleting && isTitleComplete) {
+        setIsDeleting(true);
+      } else if (isDeleting && isTitleEmpty) {
+        setIsDeleting(false);
+        setTitleIndex((currentIndex) => (currentIndex + 1) % profileTitles.length);
+      } else {
+        setCharacterIndex((currentIndex) => currentIndex + (isDeleting ? -1 : 1));
+      }
+    }, delay);
+
+    return () => window.clearTimeout(timeout);
+  }, [characterIndex, isDeleting, titleIndex]);
+
+  const animatedTitle = profileTitles[titleIndex].slice(0, characterIndex);
 
   return (
     <div className="sidebar-container">
@@ -22,7 +61,9 @@ export default function Sidebar() {
           {/* Info profil (nom + titre) */}
           <div className="profile-info">
             <h2 className="profile-name">Silué Kanigui Moise</h2>
-            <p className="profile-title">Génie Logiciel</p>
+            <p className="profile-title" aria-live="polite">
+              <span>{animatedTitle}</span><span className="typing-cursor" aria-hidden="true" />
+            </p>
           </div>
         </div>
 

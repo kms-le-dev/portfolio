@@ -47,6 +47,7 @@ function PortFolio() {
       {/* Contact */}
       <section id="contact" className="contact">
         <div className="contact-container">
+          <br></br>
           <h2>Contactez-moi</h2>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-row">

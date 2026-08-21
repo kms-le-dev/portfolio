@@ -1,10 +1,81 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { GraduationCap, Briefcase, Download } from 'lucide-react';
 import './Cv.css';
 import cvPDF from '../assets/CV KANIGUI MOISE SILUÉ.pdf';
 
+const technologies = [
+  { name: 'HTML5 & CSS', percentage: 90 },
+  { name: 'ChatGpt', percentage: 90 },
+  { name: 'Copilot', percentage: 90 },
+  { name: 'Claude AI', percentage: 90 },
+  { name: 'Stitch - Design with AI', percentage: 80 },
+  { name: 'MySQL & PostgreSQL', percentage: 80 },
+  { name: 'GIT & Github', percentage: 80 },
+  { name: 'PHP', percentage: 80 },
+  { name: 'React Js', percentage: 80 },
+  { name: 'React Native - EXPO', percentage: 80 },
+  { name: 'Laravel', percentage: 75 },
+  { name: 'React Native', percentage: 75 },
+  { name: 'Boostrap', percentage: 75 },
+  { name: 'Herozion', percentage: 75 },
+  { name: 'Tilwind CSS', percentage: 70 },
+  { name: 'JavaScript', percentage: 70 },
+  { name: 'Figma', percentage: 70 },
+  { name: 'Django', percentage: 50 },
+  { name: 'Python', percentage: 50 },
+  { name: 'Flutter', percentage: 35 },
+  { name: 'Docker', percentage: 30 },
+  { name: 'Pipline CI/CD', percentage: 30 }
+];
 
 export default function CV() {
+  const technologiesRef = useRef(null);
+  const animationFrameRef = useRef(null);
+  const [skillProgress, setSkillProgress] = useState([]);
+
+  useEffect(() => {
+    const technologySection = technologiesRef.current;
+    if (!technologySection) return undefined;
+
+    const startAnimation = () => {
+      const startTime = performance.now();
+      const duration = 1800;
+
+      const animateProgress = (currentTime) => {
+        const elapsed = Math.min((currentTime - startTime) / duration, 1);
+        const easedProgress = 1 - Math.pow(1 - elapsed, 4);
+        setSkillProgress(technologies.map((skill) => Math.round(skill.percentage * easedProgress)));
+
+        if (elapsed < 1) {
+          animationFrameRef.current = requestAnimationFrame(animateProgress);
+        }
+      };
+
+      animationFrameRef.current = requestAnimationFrame(animateProgress);
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      startAnimation();
+      return () => cancelAnimationFrame(animationFrameRef.current);
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          startAnimation();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(technologySection);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(animationFrameRef.current);
+    };
+  }, []);
+
   const handleDownloadCV = () => {
     const link = document.createElement('a');
     link.href = cvPDF;
@@ -20,7 +91,7 @@ export default function CV() {
         <h1 className="cv-main-title">Curriculum Vitae</h1>
 
         {/* Section Diplômes et Formations */}
-        <section className="cv-section">
+        <section className="cv-section technologies-section" ref={technologiesRef}>
           <div className="section-header">
             <div className="section-icon-box">
               <GraduationCap className="section-icon" />
@@ -180,39 +251,16 @@ export default function CV() {
           </div>
 
           <div className="skills-container">
-            {[
-              { name: 'HTML5 & CSS', percentage: 90 },
-              { name: 'ChatGpt', percentage: 90 },
-              { name: 'Copilot', percentage: 90 },
-              { name: 'Claude AI', percentage: 90 },
-              { name: 'Stitch - Design with AI', percentage: 80 },
-              { name: 'MySQL & PostgreSQL', percentage: 80 },
-              { name: 'GIT & Github', percentage: 80 },
-              { name: 'PHP', percentage: 80 },
-              { name: 'React Js', percentage: 80 },
-              { name: 'React Native - EXPO', percentage: 80 },
-              { name: 'Laravel', percentage: 75 },
-              { name: 'React Native', percentage: 75 },
-              { name: 'Boostrap', percentage: 75},
-              { name: 'Herozion', percentage: 75},
-              { name: 'Tilwind CSS', percentage: 70 },
-              { name: 'JavaScript', percentage: 70 },
-              { name: 'Figma', percentage: 70 },
-              { name: 'Django', percentage: 50 },
-              { name: 'Python', percentage: 50 },
-              { name: 'Flutter', percentage: 35 },
-              { name: 'Docker', percentage: 30 },
-              { name: 'Pipline CI/CD', percentage: 30 }
-            ].map((skill, index) => (
+            {technologies.map((skill, index) => (
               <div key={index} className="skill-item">
                 <div className="skill-header">
                   <span className="skill-name">{skill.name}</span>
-                  <span className="skill-percentage">{skill.percentage}%</span>
+                  <span className="skill-percentage">{skillProgress[index] || 0}%</span>
                 </div>
                 <div className="progress-bar-container">
                   <div 
                     className="progress-bar" 
-                    style={{ width: `${skill.percentage}%` }}
+                    style={{ width: `${skillProgress[index] || 0}%`, '--skill-delay': `${index * 45}ms` }}
                   ></div>
                 </div>
               </div>

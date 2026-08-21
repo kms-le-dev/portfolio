@@ -65,7 +65,7 @@ export default function HomeLayout() {
     if (!contentArea) return undefined;
 
     const elements = contentArea.querySelectorAll(
-      '.page-view, .page-view section, .page-view article, .page-view form, .page-view .skill-card, .page-view .project-card, .page-view .timeline-item, .page-view .certificats-card, .page-view .contact-link'
+      '.page-view > *, .page-view section, .page-view article, .page-view form, .page-view .skill-card, .page-view .project-card, .page-view .timeline-item, .page-view .certificats-card, .page-view .contact-link'
     );
 
     elements.forEach((element, index) => {
@@ -87,7 +87,11 @@ export default function HomeLayout() {
           }
         });
       },
-      { root: contentArea, threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+      {
+        root: null,
+        threshold: 0.12,
+        rootMargin: '0px 0px -8% 0px'
+      }
     );
 
     elements.forEach((element) => observer.observe(element));
@@ -95,22 +99,24 @@ export default function HomeLayout() {
   }, [activeSection]);
 
   useEffect(() => {
-    const contentArea = contentAreaRef.current;
-    if (!contentArea) return undefined;
-
     const updateProgress = () => {
-      const scrollableHeight = contentArea.scrollHeight - contentArea.clientHeight;
-      const progress = scrollableHeight > 0 ? (contentArea.scrollTop / scrollableHeight) * 100 : 0;
+      const scrollPosition = window.scrollY;
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollableHeight > 0 ? (scrollPosition / scrollableHeight) * 100 : 0;
       setScrollProgress(progress);
     };
 
     updateProgress();
-    contentArea.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('scroll', updateProgress, { passive: true });
     window.addEventListener('resize', updateProgress);
     return () => {
-      contentArea.removeEventListener('scroll', updateProgress);
+      window.removeEventListener('scroll', updateProgress);
       window.removeEventListener('resize', updateProgress);
     };
+  }, [activeSection]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activeSection]);
 
   return (
