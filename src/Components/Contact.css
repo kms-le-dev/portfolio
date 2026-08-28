@@ -112,7 +112,7 @@
           display: block;
           margin-bottom: 0.5rem;
           font-weight: bold;
-          color: #1a1a2e;
+          color: #f6f6f8;
         }
 
         .form-group input,
@@ -122,6 +122,7 @@
           border: 2px solid #0d0d0e;
           border-radius: 10px;
           font-size: 1rem;
+          color: white;
           transition: all 0.3s ease;
           background: rgb(7, 7, 7);
         }
@@ -129,7 +130,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
           outline: none;
-          border-color: #00ff88;
+          border-color: #0066cc;
           box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
         }
 
@@ -137,7 +138,7 @@
           width: 100%;
           padding: 1rem;
           background: #0066cc;
-          color: rgb(10, 10, 10);
+          color: rgb(238, 230, 230);
           border: none;
           border-radius: 10px;
           font-size: 1.1rem;
@@ -150,7 +151,6 @@
 
         .submit-btn:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
         }
 
         /* Responsive */

@@ -27,6 +27,14 @@ import def from '../assets/def.PNG';
 export default function Projects() {
   const projects = [
     {
+      id: 11,
+      key: 'Docgratuit',
+      image: docgratuit,
+      title: 'DocGratuit.com',
+      description: 'Site web de téléchargement et publication de documents gratuit (exercices, devoirs, compositions, examens, cours etc...)',
+      link: 'https://docgratuit.vercel.app'
+    },
+    {
       id: 10,
       key: 'gestiongsf',
       image: gestiongsf,
@@ -124,13 +132,7 @@ export default function Projects() {
 
 
    const projects2 = [
-    {
-      id: 19,
-      key: 'Docgratuit',
-      image: docgratuit,
-      title: 'DocGratuit.com',
-      description: 'Site web de téléchargement de documents gratuit (exercices, devoirs, compositions, examens, cours etc...) avec possibilité de publier aussi des documents ',
-    },
+    
     {
       id: 18,
       key: 'DEF',
@@ -210,7 +212,7 @@ export default function Projects() {
     <div className="projects-container">
       <div className="projects-content">
         <h1 className="projects-main-title">Tous mes Projets (19)</h1>
-        <h2 className="projects-main-title2">Projets en ligne (10)</h2>
+        <h2 className="projects-main-title2">Projets en ligne (11)</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
@@ -239,7 +241,7 @@ export default function Projects() {
 
     <div className="projects-container">
       <div className="projects-content">
-        <h2 className="projects-main-title2">Mes Projets Non Déployé (9)</h2>
+        <h2 className="projects-main-title2">Mes Projets Non Déployé (8)</h2>
         <div className="projects-grid">
           {projects2.map((project2) => (
             <div key={project2.id} className="project-card">
