@@ -7,6 +7,7 @@ import odholding from '../assets/odholding.PNG';
 import formdev from '../assets/formationdev.webp';
 import digitrobo from '../assets/digitrobo.webp';
 import gestionstock from '../assets/gestionstock.PNG';
+import gestionphone from '../assets/gestioncaleli.PNG';
 import sipci from '../assets/sip-ci.PNG';
 import socialeglise from '../assets/socialeglise.webp';
 import gestioneglise from '../assets/gestioneglise.webp';
@@ -20,12 +21,29 @@ import gsfmobile from '../assets/gsf mobile.png';
 import gestiongsf from '../assets/gestiongsf.PNG';
 import docgratuit from '../assets/docgratuit.PNG';
 import def from '../assets/def.PNG';
+import dymsensuelle from '../assets/dymsensuelle.PNG';
 
 
 
 
 export default function Projects() {
   const projects = [
+    {
+      id: 13,
+      key: 'Dym sensuelle',
+      image: dymsensuelle,
+      title: 'D\'YM Sensuelle',
+      description: 'Site e-commerce de vente d\'articles feminine et sensuelle, baya, dessous femmes, homme etc... installable sur Téléphone, Tablette, Ordinateur.',
+      link: 'https://dymsensuelle.ct.ws/'
+    },
+    {
+      id: 12,
+      key: 'gestion telephone',
+      image: gestionphone,
+      title: 'Gestion Phone',
+      description: 'Application web de gestion de stock pour entreprise de vente et reparation de téléphone. Installable sur téléphone, tablette et ordinateur.',
+      link: 'https://gestionphone.gt.tc'
+    },
     {
       id: 11,
       key: 'Docgratuit',
@@ -134,42 +152,42 @@ export default function Projects() {
    const projects2 = [
     
     {
-      id: 18,
+      id: 8,
       key: 'DEF',
       image: def,
       title: 'DIEUESTFIDELE',
       description: 'Site vitrine pour entreprise d\'installation de GPS et Caméras de surveilance. site vitrine + backend robustre.(pas encore en ligne).',
     },
     {
-      id: 17,
+      id: 7,
       key: 'sos ivoire mobile',
       image: sosivoiremobile,
       title: 'Saas mobile (en cours de developement)',
       description: 'Saas de sos pour chaque ville, synchronisé à la version web. Posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
     },
     {
-      id: 16,
+      id: 6,
       key: 'sos ivoire',
       image: sosivoire,
       title: 'Saas web',
       description: 'Saas de sos pour chaque ville, posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
     },
     {
-      id:15,
+      id:5,
       key: 'sipci mobile',
       image: sipcimobile,
       title: 'Application mobile de sipci.org',
       description: 'Application mobile de sipci.org, c\'est la version mobile, elle est synchronisé à la version web. (pas encore en ligne sur appStore et playStore).',
     },
     {
-      id: 14,
+      id: 4,
       key: 'Application mobile pour Établissement',
       image: gsfmobile,
       title: 'Application mobile pour Établissement',
       description: 'Application mobile de Groupe Sup\'Formation. Synchronisé à la version web. (pas encore en ligne sur appStore et playStore).',
     },
     {
-      id: 13,
+      id: 3,
       key: 'moneglisemobile',
       image: moneglisemobile,
       title: 'Application mobile réseau social pour les églises (en vente) version mobile',
@@ -177,7 +195,7 @@ export default function Projects() {
       link: 'https://wa.me/p/26088646627413946/22557109835'
     },
     {
-      id: 12,
+      id: 2,
       key: 'socialeglise',
       image: socialeglise,
       title: 'Application web réseau social pour les églises (en vente)',
@@ -185,7 +203,7 @@ export default function Projects() {
       link: 'https://wa.me/p/26088646627413946/22557109835'
     },
     {
-      id: 11,
+      id: 1,
       key: 'gestioneglise',
       image: gestioneglise,
       title: 'Application web de gestion pour les églises (en vente)',
@@ -211,8 +229,8 @@ export default function Projects() {
     <>
     <div className="projects-container">
       <div className="projects-content">
-        <h1 className="projects-main-title">Tous mes Projets (19)</h1>
-        <h2 className="projects-main-title2">Projets en ligne (11)</h2>
+        <h1 className="projects-main-title">Tous mes Projets (21)</h1>
+        <h2 className="projects-main-title2">Projets en ligne (13)</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">

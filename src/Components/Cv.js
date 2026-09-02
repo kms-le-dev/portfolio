@@ -23,7 +23,7 @@ const technologies = [
   { name: 'Figma', percentage: 70 },
   { name: 'Django', percentage: 50 },
   { name: 'Python', percentage: 50 },
-  { name: 'Flutter', percentage: 35 },
+  { name: 'Flutter', percentage: 50 },
   { name: 'Docker', percentage: 30 },
   { name: 'Pipline CI/CD', percentage: 30 }
 ];
