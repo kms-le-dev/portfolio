@@ -33,7 +33,7 @@ export default function Projects() {
       key: 'DEF Securité',
       image: def,
       title: 'DEF SECURITÉ PLUS',
-      description: 'Site vitrine pour entreprise d\'installation de GPS et Caméras de surveilance. site vitrine + backend robustre.(pas encore en ligne).',
+      description: 'Site vitrine pour entreprise d\'installation de GPS et Caméras de surveilance. site vitrine + backend robustre.',
       link: 'https://defsecuriteplus.com'
     },
     {
