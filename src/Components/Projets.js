@@ -29,6 +29,14 @@ import dymsensuelle from '../assets/dymsensuelle.PNG';
 export default function Projects() {
   const projects = [
     {
+      id: 14,
+      key: 'DEF Securité',
+      image: def,
+      title: 'DEF SECURITÉ PLUS',
+      description: 'Site vitrine pour entreprise d\'installation de GPS et Caméras de surveilance. site vitrine + backend robustre.(pas encore en ligne).',
+      link: 'https://defsecuriteplus.com'
+    },
+    {
       id: 13,
       key: 'Dym sensuelle',
       image: dymsensuelle,
@@ -151,13 +159,7 @@ export default function Projects() {
 
    const projects2 = [
     
-    {
-      id: 8,
-      key: 'DEF',
-      image: def,
-      title: 'DIEUESTFIDELE',
-      description: 'Site vitrine pour entreprise d\'installation de GPS et Caméras de surveilance. site vitrine + backend robustre.(pas encore en ligne).',
-    },
+    
     {
       id: 7,
       key: 'sos ivoire mobile',
@@ -230,7 +232,7 @@ export default function Projects() {
     <div className="projects-container">
       <div className="projects-content">
         <h1 className="projects-main-title">Tous mes Projets (21)</h1>
-        <h2 className="projects-main-title2">Projets en ligne (13)</h2>
+        <h2 className="projects-main-title2">Projets en ligne (14)</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
@@ -259,7 +261,7 @@ export default function Projects() {
 
     <div className="projects-container">
       <div className="projects-content">
-        <h2 className="projects-main-title2">Mes Projets Non Déployé (8)</h2>
+        <h2 className="projects-main-title2">Mes Projets Non Déployé (7)</h2>
         <div className="projects-grid">
           {projects2.map((project2) => (
             <div key={project2.id} className="project-card">
