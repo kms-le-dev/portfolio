@@ -90,7 +90,7 @@ export default function Projects() {
       image: moinschereci,
       title: 'Site E-commerce',
       description: 'Solution e-commerce clé en main combinant une marketplace publique (publier et vendre facilement), un module de paiement sécurisé intégré et un back-office administrateur avancé pour superviser commandes, paiements, statistiques et modération.',
-      link: 'https://www.moinschere.great-site.net'
+      link: 'https://moinschere.great-site.net'
     },
     {
       id: 6,
