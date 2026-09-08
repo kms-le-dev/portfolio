@@ -1,28 +1,28 @@
 import React from 'react';
 import { Eye } from 'lucide-react';
 import './Projets.css';
-import moinschereci from '../assets/moinschereci.webp';
-import gsf from '../assets/gsf.PNG';
-import odholding from '../assets/odholding.PNG';
-import formdev from '../assets/formationdev.webp';
-import digitrobo from '../assets/digitrobo.webp';
-import gestionstock from '../assets/gestionstock.PNG';
-import gestionphone from '../assets/gestioncaleli.PNG';
-import sipci from '../assets/sip-ci.PNG';
-import socialeglise from '../assets/socialeglise.webp';
-import gestioneglise from '../assets/gestioneglise.webp';
-import moneglisemobile from '../assets/moneglisemobile.png';
-import restau from '../assets/restau.png';
-import sosivoire from '../assets/sos ivoire.PNG';
-import sosivoiremobile from '../assets/sos ivoire mobile.png';
-import sipcimobile from '../assets/sipci-mobile.png';
-import ticketmoto from '../assets/ticketmoto.PNG';
-import gsfmobile from '../assets/gsf mobile.png';
-import gestiongsf from '../assets/gestiongsf.PNG';
-import docgratuit from '../assets/docgratuit.PNG';
-import def from '../assets/def.PNG';
-import ori from '../assets/oriacademie.PNG';
-import dymsensuelle from '../assets/dymsensuelle.PNG';
+import moinschereci from '../assets/optimized/moinschereci-webp.webp';
+import gsf from '../assets/optimized/gsf-png.webp';
+import odholding from '../assets/optimized/odholding-png.webp';
+import formdev from '../assets/optimized/formationdev-webp.webp';
+import digitrobo from '../assets/optimized/digitrobo-webp.webp';
+import gestionstock from '../assets/optimized/gestionstock-png.webp';
+import gestionphone from '../assets/optimized/gestioncaleli-png.webp';
+import sipci from '../assets/optimized/sip-ci-png.webp';
+import socialeglise from '../assets/optimized/socialeglise-webp.webp';
+import gestioneglise from '../assets/optimized/gestioneglise-webp.webp';
+import moneglisemobile from '../assets/optimized/moneglisemobile-png.webp';
+import restau from '../assets/optimized/restau-png.webp';
+import sosivoire from '../assets/optimized/sos ivoire-png.webp';
+import sosivoiremobile from '../assets/optimized/sos ivoire mobile-png.webp';
+import sipcimobile from '../assets/optimized/sipci-mobile-png.webp';
+import ticketmoto from '../assets/optimized/ticketmoto-png.webp';
+import gsfmobile from '../assets/optimized/gsf mobile-png.webp';
+import gestiongsf from '../assets/optimized/gestiongsf-png.webp';
+import docgratuit from '../assets/optimized/docgratuit-png.webp';
+import def from '../assets/optimized/def-png.webp';
+import ori from '../assets/optimized/oriacademie-png.webp';
+import dymsensuelle from '../assets/optimized/dymsensuelle-png.webp';
 
 
 
@@ -152,7 +152,6 @@ export default function Projects() {
   ];
 
   const renderProjectImage = (project) => {
-    // Utiliser les images originales (plus simples et plus fiables)
     return (
       <img src={project.image} alt={project.title} loading="lazy" className="project-image" />
     );

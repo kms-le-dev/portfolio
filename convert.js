@@ -2,15 +2,27 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const folder = './src/assets'; // dossier avec tes images
+const folder = path.join(__dirname, 'src', 'assets');
+const outputFolder = path.join(folder, 'optimized');
 
-fs.readdirSync(folder).forEach(file => {
-  if (/\.(png|jpg|jpeg)$/i.test(file)) {
-    sharp(path.join(folder, file))
-      .toFormat('webp')
-      .webp({ quality: 80 })
-      .toFile(path.join(folder, file.replace(/\.(png|jpg|jpeg)/i, '.webp')))
-      .then(() => console.log(`${file} converti en WebP`));
-  }
+fs.mkdirSync(outputFolder, { recursive: true });
+
+async function convertImages() {
+  const files = fs.readdirSync(folder).filter(file => /\.(png|jpe?g|webp)$/i.test(file));
+
+  await Promise.all(files.map(async file => {
+    const parsedFile = path.parse(file);
+    const outputName = `${parsedFile.name}-${parsedFile.ext.slice(1).toLowerCase()}.webp`;
+    await sharp(path.join(folder, file))
+      .resize({ width: 800, withoutEnlargement: true })
+      .webp({ quality: 75, effort: 4 })
+      .toFile(path.join(outputFolder, outputName));
+    console.log(`${file} -> optimized/${outputName}`);
+  }));
+}
+
+convertImages().catch(error => {
+  console.error(error);
+  process.exitCode = 1;
 });
  

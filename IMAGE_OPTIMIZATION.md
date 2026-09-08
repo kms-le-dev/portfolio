@@ -1,6 +1,6 @@
 Optimisation des images
 
-Un script a été ajouté pour compresser et convertir les images du dossier `src/assets` en variantes WebP et PNG redimensionnées, ainsi qu'un manifeste JSON utilisé par le composant `Projets` pour servir des `srcset`.
+Le script compresse et convertit les images du dossier `src/assets` en variantes WebP redimensionnées à 800 px maximum. Le composant `Projets` utilise directement ces variantes légères.
 
 Pour exécuter la conversion localement :
 
@@ -9,4 +9,4 @@ npm install
 npm run images:convert
 ```
 
-Le manifeste est écrit dans `src/assets/optimized/manifest.json` et le script génère les variantes WebP et PNG dans `src/assets/optimized/`.
+Les variantes sont générées dans `src/assets/optimized/`. Relancer cette commande après l'ajout ou le remplacement d'une image.

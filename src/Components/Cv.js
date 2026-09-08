@@ -7,12 +7,13 @@ const technologies = [
   { name: 'HTML5 & CSS', percentage: 90 },
   { name: 'ChatGpt', percentage: 90 },
   { name: 'Copilot', percentage: 90 },
-  { name: 'Flutter', percentage: 50 },
+  { name: 'Flutter', percentage: 60 },
   { name: 'Claude AI', percentage: 90 },
   { name: 'Stitch - Design with AI', percentage: 80 },
   { name: 'MySQL & PostgreSQL', percentage: 70 },
-  { name: 'Firebase', percentage: 60 },
-  { name: 'GIT & Github', percentage: 80 },
+  { name: 'Firebase', percentage: 70 },
+  { name: 'GIT & Github', percentage: 75 },
+  { name: 'Github Actions', percentage: 70 },
   { name: 'PHP', percentage: 75},
   { name: 'React Js', percentage: 80 },
   { name: 'React Native - EXPO', percentage: 75 },
@@ -22,11 +23,11 @@ const technologies = [
   { name: 'Herozion', percentage: 75 },
   { name: 'Tilwind CSS', percentage: 70 },
   { name: 'JavaScript', percentage: 70 },
-  { name: 'Figma', percentage: 70 },
   { name: 'Django', percentage: 50 },
-  { name: 'Docker', percentage: 30 },
+  { name: 'Docker', percentage: 50 },
   { name: 'Python', percentage: 50 },
-  { name: 'Pipline CI/CD', percentage: 30 }
+  { name: 'Pipline CI/CD', percentage: 50 },
+  { name: 'Figma', percentage: 70 },
 ];
 
 export default function CV() {
