@@ -21,6 +21,7 @@ import gsfmobile from '../assets/gsf mobile.png';
 import gestiongsf from '../assets/gestiongsf.PNG';
 import docgratuit from '../assets/docgratuit.PNG';
 import def from '../assets/def.PNG';
+import ori from '../assets/oriacademie.PNG';
 import dymsensuelle from '../assets/dymsensuelle.PNG';
 
 
@@ -28,6 +29,14 @@ import dymsensuelle from '../assets/dymsensuelle.PNG';
 
 export default function Projects() {
   const projects = [
+    {
+      id: 15,
+      key: 'ORI ACADEMIE',
+      image: ori,
+      title: 'ORI ACADEMIE',
+      description: 'Site vitrine pour structure de cours à domicile. Possibilité pour les parents de faire une demande de repetiteur et les repoetiteurs peuvent aussi postuler.',
+      link: 'https://oriacademie.vercel.app'
+    },
     {
       id: 14,
       key: 'DEF Securité',
@@ -164,14 +173,14 @@ export default function Projects() {
       id: 7,
       key: 'sos ivoire mobile',
       image: sosivoiremobile,
-      title: 'Saas mobile (en cours de developement)',
+      title: 'Projet d\'envergure national (version mobile)',
       description: 'Saas de sos pour chaque ville, synchronisé à la version web. Posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
     },
     {
       id: 6,
       key: 'sos ivoire',
       image: sosivoire,
-      title: 'Saas web',
+      title: 'Projet d\'envergure national',
       description: 'Saas de sos pour chaque ville, posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
     },
     {
@@ -231,8 +240,8 @@ export default function Projects() {
     <>
     <div className="projects-container">
       <div className="projects-content">
-        <h1 className="projects-main-title">Tous mes Projets (21)</h1>
-        <h2 className="projects-main-title2">Projets en ligne (14)</h2>
+        <h1 className="projects-main-title">Tous mes Projets (22)</h1>
+        <h2 className="projects-main-title2">Projets en ligne (15)</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
