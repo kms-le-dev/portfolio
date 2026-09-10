@@ -131,7 +131,7 @@ export default function Projects() {
       image: gestionstock,
       title: 'Application Web de Gestion',
       description: 'Gestion Moins Chère est une application complète et intuitive conçue pour aider les entreprises, boutiques et commerces à gérer efficacement leurs activités au quotidien. Grâce à une interface moderne et simple d utilisation, elle regroupe tous les outils indispensables pour optimiser votre organisation, suivre vos ventes et maîtriser vos stocks en temps réel.',
-      link: 'http://gestiontest.page.gd'
+      link: 'https://gestiontest.page.gd'
     },
     {
       id: 2,
