@@ -23,12 +23,21 @@ import docgratuit from '../assets/optimized/docgratuit-png.webp';
 import def from '../assets/optimized/def-png.webp';
 import ori from '../assets/optimized/oriacademie-png.webp';
 import dymsensuelle from '../assets/optimized/dymsensuelle-png.webp';
+import btp from '../assets/optimized/btp-png.webp'
 
 
 
 
 export default function Projects() {
   const projects = [
+    {
+      id: 16,
+      key: 'BTP',
+      image: btp,
+      title: 'BTP & IMMOBILIER',
+      description: 'Site vitrine pour entreprise de BTP. presentation des activités de l\'entreprise, prestations etc...',
+      link: 'https://btp.vercel.app'
+    },
     {
       id: 15,
       key: 'ORI ACADEMIE',
