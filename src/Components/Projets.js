@@ -248,8 +248,8 @@ export default function Projects() {
     <>
     <div className="projects-container">
       <div className="projects-content">
-        <h1 className="projects-main-title">Tous mes Projets (22)</h1>
-        <h2 className="projects-main-title2">Projets en ligne (15)</h2>
+        <h1 className="projects-main-title">Tous mes Projets (23)</h1>
+        <h2 className="projects-main-title2">Projets en ligne (16)</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
