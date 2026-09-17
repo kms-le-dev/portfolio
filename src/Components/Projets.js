@@ -36,7 +36,7 @@ export default function Projects() {
       image: btp,
       title: 'BTP & IMMOBILIER',
       description: 'Site vitrine pour entreprise de BTP. presentation des activités de l\'entreprise, prestations etc...',
-      link: 'https://btp.vercel.app'
+      link: 'https://btptest.vercel.app'
     },
     {
       id: 15,
