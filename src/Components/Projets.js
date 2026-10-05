@@ -44,7 +44,7 @@ export default function Projects() {
       image: ori,
       title: 'ORI ACADEMIE',
       description: 'Site vitrine pour structure de cours à domicile. Possibilité pour les parents de faire une demande de repetiteur et les repoetiteurs peuvent aussi postuler.',
-      link: 'https://oriacademie.vercel.app'
+      link: 'https://oriacademie.com'
     },
     {
       id: 14,
@@ -83,7 +83,7 @@ export default function Projects() {
       key: 'gestiongsf',
       image: gestiongsf,
       title: 'Application de gestion d\'établissement',
-      description: 'Application web de gestion d\'établissement. gestion des inscription, scolarité, emploi du temps , bulletins, professeurs etc...',
+      description: 'Application web de gestion d\'établissement. gestion des inscription, scolarité, emploi du temps , bulletins, professeurs etc... NB: l\'interface de l\'application est protégé.',
       link: 'https://gestiongsf.com'
     },
     {

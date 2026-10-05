@@ -1,83 +1,46 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import { GraduationCap, Briefcase, Download } from 'lucide-react';
 import './Cv.css';
 import cvPDF from '../assets/CV KANIGUI MOISE SILUÉ.pdf';
+import cssLogo from '../assets/optimized/technologies/css.webp';
+import djangoLogo from '../assets/optimized/technologies/Django.webp';
+import expoLogo from '../assets/optimized/technologies/expo react native.webp';
+import figmaLogo from '../assets/optimized/technologies/Figma.webp';
+import firebaseLogo from '../assets/optimized/technologies/firebase.webp';
+import gitHubLogo from '../assets/optimized/technologies/git github.webp';
+import herozionLogo from '../assets/optimized/technologies/herozion.webp';
+import htmlLogo from '../assets/optimized/technologies/html.webp';
+import javascriptLogo from '../assets/optimized/technologies/JavaScript.webp';
+import laravelLogo from '../assets/optimized/technologies/laravel.webp';
+import mysqlLogo from '../assets/optimized/technologies/mysql.webp';
+import phpLogo from '../assets/optimized/technologies/php.webp';
+import postgresqlLogo from '../assets/optimized/technologies/postgresql.webp';
+import pythonLogo from '../assets/optimized/technologies/python.webp';
+import reactLogo from '../assets/optimized/technologies/react js.webp';
+import sqlLogo from '../assets/optimized/technologies/sql.webp';
+import tailwindLogo from '../assets/optimized/technologies/Tilwind CSS.webp';
 
 const technologies = [
-  { name: 'HTML5 & CSS', percentage: 90 },
-  { name: 'ChatGpt', percentage: 90 },
-  { name: 'Copilot', percentage: 90 },
-  { name: 'Flutter', percentage: 60 },
-  { name: 'Claude AI', percentage: 90 },
-  { name: 'Stitch - Design with AI', percentage: 80 },
-  { name: 'MySQL & PostgreSQL', percentage: 70 },
-  { name: 'Firebase', percentage: 70 },
-  { name: 'GIT & Github', percentage: 75 },
-  { name: 'Github Actions', percentage: 70 },
-  { name: 'PHP', percentage: 75},
-  { name: 'React Js', percentage: 80 },
-  { name: 'React Native - EXPO', percentage: 75 },
-  { name: 'Laravel', percentage: 70 },
-  { name: 'React Native', percentage: 75 },
-  { name: 'Boostrap', percentage: 75 },
-  { name: 'Herozion', percentage: 75 },
-  { name: 'Tilwind CSS', percentage: 70 },
-  { name: 'JavaScript', percentage: 70 },
-  { name: 'Django', percentage: 50 },
-  { name: 'Docker', percentage: 50 },
-  { name: 'Python', percentage: 50 },
-  { name: 'Pipline CI/CD', percentage: 50 },
-  { name: 'Figma', percentage: 70 },
+  { name: 'HTML5', image: htmlLogo },
+  { name: 'CSS3', image: cssLogo },
+  { name: 'JavaScript', image: javascriptLogo },
+  { name: 'React.js', image: reactLogo },
+  { name: 'React Native / Expo', image: expoLogo },
+  { name: 'PHP', image: phpLogo },
+  { name: 'Laravel', image: laravelLogo },
+  { name: 'Python', image: pythonLogo },
+  { name: 'Django', image: djangoLogo },
+  { name: 'MySQL', image: mysqlLogo },
+  { name: 'PostgreSQL', image: postgresqlLogo },
+  { name: 'SQL', image: sqlLogo },
+  { name: 'Firebase', image: firebaseLogo },
+  { name: 'Git & GitHub', image: gitHubLogo },
+  { name: 'Tailwind CSS', image: tailwindLogo },
+  { name: 'Figma', image: figmaLogo },
+  { name: 'Herozion', image: herozionLogo },
 ];
 
 export default function CV() {
-  const technologiesRef = useRef(null);
-  const animationFrameRef = useRef(null);
-  const [skillProgress, setSkillProgress] = useState([]);
-
-  useEffect(() => {
-    const technologySection = technologiesRef.current;
-    if (!technologySection) return undefined;
-
-    const startAnimation = () => {
-      const startTime = performance.now();
-      const duration = 1800;
-
-      const animateProgress = (currentTime) => {
-        const elapsed = Math.min((currentTime - startTime) / duration, 1);
-        const easedProgress = 1 - Math.pow(1 - elapsed, 4);
-        setSkillProgress(technologies.map((skill) => Math.round(skill.percentage * easedProgress)));
-
-        if (elapsed < 1) {
-          animationFrameRef.current = requestAnimationFrame(animateProgress);
-        }
-      };
-
-      animationFrameRef.current = requestAnimationFrame(animateProgress);
-    };
-
-    if (!('IntersectionObserver' in window)) {
-      startAnimation();
-      return () => cancelAnimationFrame(animationFrameRef.current);
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          startAnimation();
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(technologySection);
-    return () => {
-      observer.disconnect();
-      cancelAnimationFrame(animationFrameRef.current);
-    };
-  }, []);
-
   const handleDownloadCV = () => {
     const link = document.createElement('a');
     link.href = cvPDF;
@@ -93,7 +56,7 @@ export default function CV() {
         <h1 className="cv-main-title">Curriculum Vitae</h1>
 
         {/* Section Diplômes et Formations */}
-        <section className="cv-section technologies-section" ref={technologiesRef}>
+        <section className="cv-section technologies-section">
           <div className="section-header">
             <div className="section-icon-box">
               <GraduationCap className="section-icon" />
@@ -252,19 +215,17 @@ export default function CV() {
             <h2 className="cv-section-title">Technologies</h2>
           </div>
 
-          <div className="skills-container">
-            {technologies.map((skill, index) => (
-              <div key={index} className="skill-item">
-                <div className="skill-header">
-                  <span className="skill-name">{skill.name}</span>
-                  <span className="skill-percentage">{skillProgress[index] || 0}%</span>
+          <div className="technology-grid">
+            {technologies.map((technology, index) => (
+              <div
+                key={technology.name}
+                className="technology-card"
+                style={{ '--technology-delay': `${index * 55}ms` }}
+              >
+                <div className="technology-logo-wrap">
+                  <img className="technology-logo" src={technology.image} alt="" loading="lazy" />
                 </div>
-                <div className="progress-bar-container">
-                  <div 
-                    className="progress-bar" 
-                    style={{ width: `${skillProgress[index] || 0}%`, '--skill-delay': `${index * 45}ms` }}
-                  ></div>
-                </div>
+                <h3 className="technology-name">{technology.name}</h3>
               </div>
             ))}
           </div>

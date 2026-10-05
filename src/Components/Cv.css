@@ -252,86 +252,94 @@
   }
 }
 
-/* Section Technologie - Barres de progression */
-.skills-container {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  padding: 30px;
-  background: linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(10, 10, 10, 0.7));
-  border: 1px solid rgba(0, 217, 181, 0.16);
-  border-radius: 18px;
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+/* Technologies */
+.technology-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
 }
 
-.skill-item {
+.technology-card {
   display: flex;
+  min-height: 148px;
   flex-direction: column;
-  gap: 8px;
-  animation: skill-row-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: calc(var(--skill-delay, 0ms) + 100ms);
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 20px 14px;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(34, 38, 42, 0.96), rgba(18, 21, 24, 0.96));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  animation: technology-card-in 600ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+  animation-delay: var(--technology-delay, 0ms);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
-.skill-name {
-  color: #ffffff;
+.technology-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 217, 181, 0.55);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.34), 0 0 22px rgba(0, 217, 181, 0.1);
+}
+
+.technology-logo-wrap {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  transition: transform 220ms ease;
+}
+
+.technology-card:hover .technology-logo-wrap {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.technology-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.technology-name {
+  margin: 0;
+  color: #f4f6f7;
   font-size: 14px;
-  font-weight: 500;
-}
-
-.skill-percentage {
-  min-width: 44px;
-  color: #00d9b5;
-  font-size: 13px;
   font-weight: 600;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
+  line-height: 1.35;
+  text-align: center;
 }
 
-.progress-bar-container {
-  width: 100%;
-  height: 11px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.45);
+@keyframes technology-card-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.progress-bar {
-  height: 100%;
-  min-width: 0;
-  background: linear-gradient(90deg, #0066cc 0%, #00a9d6 55%, #00d9b5 100%);
-  border-radius: inherit;
-  position: relative;
-  overflow: hidden;
-  transition: width 80ms linear;
-  box-shadow: 0 0 14px rgba(0, 217, 181, 0.55);
+@media (max-width: 900px) {
+  .technology-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
-.progress-bar::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  width: 35%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-  transform: translateX(-140%);
-  animation: progress-shine 2.2s ease-in-out infinite;
+@media (max-width: 600px) {
+  .technology-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .technology-card {
+    min-height: 136px;
+    padding: 16px 10px;
+  }
 }
 
-@keyframes skill-row-in {
-  from { opacity: 0; transform: translateX(-24px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes progress-shine {
-  0%, 35% { transform: translateX(-140%); }
-  75%, 100% { transform: translateX(360%); }
+@media (prefers-reduced-motion: reduce) {
+  .technology-card {
+    animation: none;
+    transition: none;
+  }
 }
 
 /* Section Télécharger CV */
