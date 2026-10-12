@@ -10,6 +10,8 @@
 
 # production
 /build
+/src/assets/*.MOV
+/src/assets/*.mp4
 
 # misc
 .DS_Store

@@ -190,28 +190,8 @@
   perspective: 1000px;
 }
 
-.page-view {
-  animation: page-enter 650ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
 .page-view > * {
   scroll-margin-top: 110px;
-}
-
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(28px) scale(0.985);
-  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms), transform 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
-}
-
-.reveal-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-@keyframes page-enter {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Placeholder pour le contenu (à remplacer par vos composants) */
@@ -465,8 +445,5 @@ h1 {
 
 @media (prefers-reduced-motion: reduce) {
   .content-area { scroll-behavior: auto; }
-  .page-view,
-  .reveal-on-scroll,
-  .reveal-on-scroll.is-visible { animation: none; transition: none; transform: none; opacity: 1; }
   .scroll-progress { transition: none; }
 }

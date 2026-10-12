@@ -1,5 +1,6 @@
-import React from 'react';
-import { Eye } from 'lucide-react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { Eye, X } from 'lucide-react';
 import './Projets.css';
 import moinschereci from '../assets/optimized/moinschereci-webp.webp';
 import gsf from '../assets/optimized/gsf-png.webp';
@@ -23,18 +24,77 @@ import docgratuit from '../assets/optimized/docgratuit-png.webp';
 import def from '../assets/optimized/def-png.webp';
 import ori from '../assets/optimized/oriacademie-png.webp';
 import dymsensuelle from '../assets/optimized/dymsensuelle-png.webp';
-import btp from '../assets/optimized/btp-png.webp'
+import btp from '../assets/optimized/btp-png.webp';
+import aser from '../assets/optimized/aser-png.webp';
+import ferke from '../assets/optimized/ferke-png.webp';
+import gsegliseVideo from '../assets/optimized/videos/gseglise.mp4';
+import aebeciMobileVideo from '../assets/optimized/videos/aebeci-mobile.mp4';
+import aebeciWebVideo from '../assets/optimized/videos/aebeci-web.mp4';
+import gsfMobileVideo from '../assets/optimized/videos/gsf-mobile.mp4';
+import sipciMobileVideo from '../assets/optimized/videos/sipci-mobile.mp4';
+import saasSosVideo from '../assets/optimized/videos/saas-sos.mp4';
+import gsfGestionVideo from '../assets/optimized/videos/gsf-gestion.mp4';
+import ferkeVideo from '../assets/optimized/videos/ferke.mp4';
 
 
 
 
 export default function Projects() {
+  const [activeVideo, setActiveVideo] = useState(null);
+  const [videoError, setVideoError] = useState('');
+  const videoRef = useRef(null);
+
+  const playMutedVideo = useCallback((video) => {
+    video.muted = true;
+    video.volume = 0;
+    video.play().catch((error) => {
+      if (error.name !== 'AbortError') {
+        setVideoError('La lecture de cette vidéo a échoué. Veuillez réessayer.');
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!activeVideo || !videoRef.current) return undefined;
+
+    const video = videoRef.current;
+    playMutedVideo(video);
+    return () => video.pause();
+  }, [activeVideo, playMutedVideo]);
+
+  useEffect(() => {
+    if (!activeVideo) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') setActiveVideo(null);
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [activeVideo]);
+
   const projects = [
     {
+      id: 18,
+      key: 'FERKE.COM',
+      image: ferke,
+      video: ferkeVideo,
+      title: 'FERKE.COM',
+      description: 'Application web de sos pour la ville de ferké, possibilité de trouver avec localisation images et contact les : gendarmeries, commissariats, hopitaux, pompiers etc... C\'est une PWA.',
+    },
+    {
+      id: 17,
+      key: 'ASER',
+      image: aser,
+      title: 'ASER COSMETIQUE',
+      description: 'Site vitrine pour entreprise de vente de produit cosmetique ( savon eclaircissant, gel douche, lait corporelle, javel...).  ',
+      link: 'https://aser-omega.vercel.app/'
+    },
+    {
       id: 16,
-      key: 'BTP',
+      key: 'AIG BTP',
       image: btp,
-      title: 'BTP & IMMOBILIER',
+      title: 'AIG BTP',
       description: 'Site vitrine pour entreprise de BTP. presentation des activités de l\'entreprise, prestations etc...',
       link: 'https://btptest.vercel.app'
     },
@@ -82,9 +142,9 @@ export default function Projects() {
       id: 10,
       key: 'gestiongsf',
       image: gestiongsf,
+      video: gsfGestionVideo,
       title: 'Application de gestion d\'établissement',
       description: 'Application web de gestion d\'établissement. gestion des inscription, scolarité, emploi du temps , bulletins, professeurs etc... NB: l\'interface de l\'application est protégé.',
-      link: 'https://gestiongsf.com'
     },
     {
       id: 9,
@@ -162,11 +222,17 @@ export default function Projects() {
 
   const renderProjectImage = (project) => {
     return (
-      <img src={project.image} alt={project.title} loading="lazy" className="project-image" />
+      <img src={project.image} alt={project.title} loading="lazy" decoding="async" className="project-image" />
     );
   };
 
   const handleProjectClick = (project) => {
+    if (project.video) {
+      setVideoError('');
+      setActiveVideo({ src: project.video, title: project.title, poster: project.image });
+      return;
+    }
+
     if (project.link) {
       window.open(project.link, '_blank');
     }
@@ -188,6 +254,7 @@ export default function Projects() {
       id: 6,
       key: 'sos ivoire',
       image: sosivoire,
+      video: saasSosVideo,
       title: 'Projet d\'envergure national',
       description: 'Saas de sos pour chaque ville, posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
     },
@@ -195,6 +262,7 @@ export default function Projects() {
       id:5,
       key: 'sipci mobile',
       image: sipcimobile,
+      video: sipciMobileVideo,
       title: 'Application mobile de sipci.org',
       description: 'Application mobile de sipci.org, c\'est la version mobile, elle est synchronisé à la version web. (pas encore en ligne sur appStore et playStore).',
     },
@@ -202,6 +270,7 @@ export default function Projects() {
       id: 4,
       key: 'Application mobile pour Établissement',
       image: gsfmobile,
+      video: gsfMobileVideo,
       title: 'Application mobile pour Établissement',
       description: 'Application mobile de Groupe Sup\'Formation. Synchronisé à la version web. (pas encore en ligne sur appStore et playStore).',
     },
@@ -209,6 +278,7 @@ export default function Projects() {
       id: 3,
       key: 'moneglisemobile',
       image: moneglisemobile,
+      video: aebeciMobileVideo,
       title: 'Application mobile réseau social pour les églises (en vente) version mobile',
       description: 'Application mobile pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter. (pas encore en ligne sur appStore et playStore).',
       link: 'https://wa.me/p/26088646627413946/22557109835'
@@ -217,6 +287,7 @@ export default function Projects() {
       id: 2,
       key: 'socialeglise',
       image: socialeglise,
+      video: aebeciWebVideo,
       title: 'Application web réseau social pour les églises (en vente)',
       description: 'Application web pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter. (pas encore mis en ligne).',
       link: 'https://wa.me/p/26088646627413946/22557109835'
@@ -225,6 +296,7 @@ export default function Projects() {
       id: 1,
       key: 'gestioneglise',
       image: gestioneglise,
+      video: gsegliseVideo,
       title: 'Application web de gestion pour les églises (en vente)',
       description: 'Application web de gestion d eglise. Cette application vous permet d avoir les données des fidèles de l église et bien d autres fonctionnalités.  (pas encore en ligne).',
       link: 'https://wa.me/p/26088646627413946/22557109835'
@@ -234,37 +306,32 @@ export default function Projects() {
 
   const renderProject2Image = (project2) => {
     return (
-      <img src={project2.image} alt={project2.title} loading="lazy" className="project-image" />
+      <img src={project2.image} alt={project2.title} loading="lazy" decoding="async" className="project-image" />
     );
-  };
-
-  const handleProject2Click = (project2) => {
-    if (project2.link) {
-      window.open(project2.link, '_blank');
-    }
   };
 
   return (
     <>
     <div className="projects-container">
       <div className="projects-content">
-        <h1 className="projects-main-title">Tous mes Projets (23)</h1>
-        <h2 className="projects-main-title2">Projets en ligne (16)</h2>
+        <h1 className="projects-main-title">Tous mes Projets (25)</h1>
+
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
-              <div 
+              <button
+                type="button"
                 onClick={() => handleProjectClick(project)}
                 className="project-image-link"
-                style={{ cursor: 'pointer' }}
+                aria-label={project.video ? `Lire la vidéo du projet ${project.title}` : `Ouvrir le projet ${project.title}`}
               >
-                <div className="project-image-wrapper">
+                <span className="project-image-wrapper">
                   {renderProjectImage(project)}
-                  <div className="project-overlay">
+                  <span className="project-overlay">
                     <Eye className="project-eye-icon" />
-                  </div>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </button>
               
               <div className="project-info">
                 <h2 className="project-title">{project.title}</h2>
@@ -278,22 +345,22 @@ export default function Projects() {
 
     <div className="projects-container">
       <div className="projects-content">
-        <h2 className="projects-main-title2">Mes Projets Non Déployé (7)</h2>
         <div className="projects-grid">
           {projects2.map((project2) => (
             <div key={project2.id} className="project-card">
-              <div 
-                onClick={() => handleProject2Click(project2)}
+              <button
+                type="button"
+                onClick={() => handleProjectClick(project2)}
                 className="project-image-link"
-                style={{ cursor: 'pointer' }}
+                aria-label={project2.video ? `Lire la vidéo du projet ${project2.title}` : `Ouvrir le projet ${project2.title}`}
               >
-                <div className="project-image-wrapper">
+                <span className="project-image-wrapper">
                   {renderProject2Image(project2)}
-                  <div className="project-overlay">
+                  <span className="project-overlay">
                     <Eye className="project-eye-icon" />
-                  </div>
-                </div>
-              </div>
+                  </span>
+                </span>
+              </button>
               
               <div className="project-info">
                 <h2 className="project-title">{project2.title}</h2>
@@ -305,6 +372,55 @@ export default function Projects() {
       </div>
     </div>
 
+    {activeVideo && (
+      createPortal(
+        <div className="video-modal-backdrop" onClick={() => setActiveVideo(null)}>
+          <div
+            className="video-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Vidéo du projet ${activeVideo.title}`}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="video-modal-close"
+              onClick={() => setActiveVideo(null)}
+              aria-label="Fermer la vidéo"
+            >
+              <X aria-hidden="true" />
+            </button>
+            <video
+              ref={videoRef}
+              className="project-video"
+              src={activeVideo.src}
+              poster={activeVideo.poster}
+              autoPlay
+              muted
+              playsInline
+              controls
+              preload="auto"
+              onCanPlay={(event) => {
+                const video = event.currentTarget;
+
+                if (video.paused) {
+                  playMutedVideo(video);
+                }
+              }}
+              onVolumeChange={(event) => {
+                if (!event.currentTarget.muted || event.currentTarget.volume !== 0) {
+                  event.currentTarget.muted = true;
+                  event.currentTarget.volume = 0;
+                }
+              }}
+              onError={() => setVideoError('Impossible de charger cette vidéo. Veuillez réessayer.')}
+            />
+            {videoError && <p className="video-error" role="alert">{videoError}</p>}
+          </div>
+        </div>,
+        document.body
+      )
+    )}
 
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Menu, XIcon } from 'lucide-react';
 import './HomeLayout.css';
 import Sidebar from '../Components/Sidebar';
@@ -12,7 +12,6 @@ export default function HomeLayout() {
   const [activeSection, setActiveSection] = useState('About');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const contentAreaRef = useRef(null);
 
   const navItems = [
     { id: 'About', label: 'À propos' },
@@ -59,44 +58,6 @@ export default function HomeLayout() {
         return null;
     }
   };
-
-  useEffect(() => {
-    const contentArea = contentAreaRef.current;
-    if (!contentArea) return undefined;
-
-    const elements = contentArea.querySelectorAll(
-      '.page-view > *, .page-view section, .page-view article, .page-view form, .page-view .skill-card, .page-view .project-card, .page-view .timeline-item, .page-view .certificats-card, .page-view .contact-link'
-    );
-
-    elements.forEach((element, index) => {
-      element.classList.add('reveal-on-scroll');
-      element.style.setProperty('--reveal-delay', `${Math.min(index * 55, 330)}ms`);
-    });
-
-    if (!('IntersectionObserver' in window)) {
-      elements.forEach((element) => element.classList.add('is-visible'));
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        root: null,
-        threshold: 0.12,
-        rootMargin: '0px 0px -8% 0px'
-      }
-    );
-
-    elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
-  }, [activeSection]);
 
   useEffect(() => {
     const updateProgress = () => {
@@ -177,7 +138,7 @@ export default function HomeLayout() {
         )}
 
         {/* Contenu dynamique */}
-        <div className="content-area" ref={contentAreaRef}>
+        <div className="content-area">
           {renderContent()}
         </div>
       </main>
