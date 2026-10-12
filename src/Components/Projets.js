@@ -80,7 +80,8 @@ export default function Projects() {
       image: ferke,
       video: ferkeVideo,
       title: 'FERKE.COM',
-      description: 'Application web de sos pour la ville de ferké, possibilité de trouver avec localisation images et contact les : gendarmeries, commissariats, hopitaux, pompiers etc... C\'est une PWA.',
+      description: 'Application web de sos pour la ville de ferké, possibilité de trouver avec localisation images et contact les : hopitaux, pompiers etc... C\'est une PWA.',
+      technologies: ['React.js', 'CSS', 'Laravel', 'MysQl', 'API REST']
     },
     {
       id: 17,
@@ -88,15 +89,17 @@ export default function Projects() {
       image: aser,
       title: 'ASER COSMETIQUE',
       description: 'Site vitrine pour entreprise de vente de produit cosmetique ( savon eclaircissant, gel douche, lait corporelle, javel...).  ',
-      link: 'https://aser-omega.vercel.app/'
+      link: 'https://aser-omega.vercel.app/',
+      technologies: ['React.js', 'CSS']
     },
     {
       id: 16,
       key: 'AIG BTP',
       image: btp,
       title: 'AIG BTP',
-      description: 'Site vitrine pour entreprise de BTP. presentation des activités de l\'entreprise, prestations etc...',
-      link: 'https://btptest.vercel.app'
+      description: 'Site vitrine pour entreprise de BTP. Met en avant les activitées de l\'entreprise, presentation des activités de l\'entreprise, prestations etc...',
+      link: 'https://btptest.vercel.app',
+      technologies: ['React.js', 'CSS']
     },
     {
       id: 15,
@@ -104,7 +107,8 @@ export default function Projects() {
       image: ori,
       title: 'ORI ACADEMIE',
       description: 'Site vitrine pour structure de cours à domicile. Possibilité pour les parents de faire une demande de repetiteur et les repoetiteurs peuvent aussi postuler.',
-      link: 'https://oriacademie.com'
+      link: 'https://oriacademie.com',
+      technologies: ['React.js', 'CSS', 'Firebase']
     },
     {
       id: 14,
@@ -112,7 +116,8 @@ export default function Projects() {
       image: def,
       title: 'DEF SECURITÉ PLUS',
       description: 'Site vitrine pour entreprise d\'installation de GPS et Caméras de surveilance. site vitrine + backend robustre.',
-      link: 'https://defsecuriteplus.com'
+      link: 'https://defsecuriteplus.com',
+      technologies: ['React.js', 'CSS', 'Laravel', 'MysQl', 'API REST']
     },
     {
       id: 13,
@@ -120,7 +125,8 @@ export default function Projects() {
       image: dymsensuelle,
       title: 'D\'YM Sensuelle',
       description: 'Site e-commerce de vente d\'articles feminine et sensuelle, baya, dessous femmes, homme etc... installable sur Téléphone, Tablette, Ordinateur.',
-      link: 'https://dymsensuelle.ct.ws/'
+      link: 'https://dymsensuelle.ct.ws/',
+      technologies: ['PHP', 'CSS', 'MysQl']
     },
     {
       id: 12,
@@ -128,7 +134,8 @@ export default function Projects() {
       image: gestionphone,
       title: 'Gestion Phone',
       description: 'Application web de gestion de stock pour entreprise de vente et reparation de téléphone. Installable sur téléphone, tablette et ordinateur.',
-      link: 'https://gestionphone.gt.tc'
+      link: 'https://gestionphone.gt.tc',
+      technologies: ['PHP', 'CSS', 'MysQl']
     },
     {
       id: 11,
@@ -136,7 +143,8 @@ export default function Projects() {
       image: docgratuit,
       title: 'DocGratuit.com',
       description: 'Site web de téléchargement et publication de documents gratuit (exercices, devoirs, compositions, examens, cours etc...)',
-      link: 'https://docgratuit.vercel.app'
+      link: 'https://docgratuit.vercel.app',
+      technologies: ['React.js', 'CSS', 'Laravel', 'MysQl', 'API REST']
     },
     {
       id: 10,
@@ -144,7 +152,8 @@ export default function Projects() {
       image: gestiongsf,
       video: gsfGestionVideo,
       title: 'Application de gestion d\'établissement',
-      description: 'Application web de gestion d\'établissement. gestion des inscription, scolarité, emploi du temps , bulletins, professeurs etc... NB: l\'interface de l\'application est protégé.',
+      description: 'Application web de gestion d\'établissement. gestion des inscription, scolarité, emploi du temps etc... NB: l\'interface de l\'application est protégé.',
+      technologies: ['React.js', 'CSS', 'Laravel', 'MysQl', 'API REST']
     },
     {
       id: 9,
@@ -152,23 +161,26 @@ export default function Projects() {
       image: sipci,
       title: 'Site web Pour Entreprise immobilière',
       description: 'Site web pour entreprise immobilière avec plusieurs branches : services, galerie, blog, divers, immobilier etc...',
-      link: 'https://sipci.org'
+      link: 'https://sipci.org',
+      technologies: ['React.js', 'CSS', 'Laravel', 'MysQl', 'API REST']
     },
     {
       id: 8,
       key: 'gsf',
       image: gsf,
       title: 'Application web Pour Établissement',
-      description: 'Inscription dédiée aux étudiants, possibilité de publier des cours au format PDF, image ou vidéo, organisation précise par modules (Enseignement Supérieur, FDFP, filières spécialisées...), avec de nombreuses options pour enrichir et faciliter l’accès aux ressources pédagogiques.',
-      link: 'https://groupesupformation.com'
+      description: 'Inscription dédiée aux étudiants, possibilité de publier des cours au format PDF, avec de nombreuses options pour enrichir et faciliter l’accès aux ressources pédagogiques.',
+      link: 'https://groupesupformation.com',
+      technologies: ['PHP', 'CSS', 'MysQl']
     },
     {
       id: 7,
       key: 'moinschereci',
       image: moinschereci,
       title: 'Site E-commerce',
-      description: 'Solution e-commerce clé en main combinant une marketplace publique (publier et vendre facilement), un module de paiement sécurisé intégré et un back-office administrateur avancé pour superviser commandes, paiements, statistiques et modération.',
-      link: 'https://moinschere.gt.tc'
+      description: 'Solution e-commerce clé en main combinant une marketplace publique (publier et vendre facilement), un module de paiement sécurisé intégré et un back-office administrateur avancé pour superviser commandes etc...',
+      link: 'https://moinschere.gt.tc',
+      technologies: ['PHP', 'CSS', 'MysQl']
     },
     {
       id: 6,
@@ -176,7 +188,8 @@ export default function Projects() {
       image: ticketmoto,
       title: 'Application web pour gestion de stationnement de moto',
       description: 'Application web de gestion de stationnement de moto, chaque ticket est relié à la photo de la personne qui a le ticket. lorsque le ticket est remis et que la personne prend sa moto, le ticket redevient automatiquement disponible.',
-      link: 'https://ticketmoto.gt.tc'
+      link: 'https://ticketmoto.gt.tc',
+      technologies: ['PHP', 'CSS', 'MysQl']
     },
     {
       id: 5,
@@ -184,7 +197,8 @@ export default function Projects() {
       image: restau,
       title: 'Site web + Application web de gestion de caisse pour restaurant, Lounge, maquis etc...',
       description: 'Application web avec gestion de caisse intégré, suivie de la caisse à distance et en temps réel.',
-      link: 'https://restau.free.nf/'
+      link: 'https://restau.free.nf/',
+      technologies: ['PHP', 'CSS', 'MysQl']
     },
     {
       id: 4,
@@ -192,15 +206,17 @@ export default function Projects() {
       image: formdev,
       title: 'Site web de formation',
       description: 'Un site web qui propose des formations complètes en développement web (frontend, backend, full-stack) et en design professionnel avec Figma, pensé pour accompagner chaque apprenant vers l’autonomie.',
-      link: 'https://formation-dev.vercel.app'
+      link: 'https://formation-dev.vercel.app',
+      technologies: ['HTML', 'CSS', 'Bootstrap']
     },
     {
       id: 3,
       key: 'gestionstock',
       image: gestionstock,
       title: 'Application Web de Gestion',
-      description: 'Gestion Moins Chère est une application complète et intuitive conçue pour aider les entreprises, boutiques et commerces à gérer efficacement leurs activités au quotidien. Grâce à une interface moderne et simple d utilisation, elle regroupe tous les outils indispensables pour optimiser votre organisation, suivre vos ventes et maîtriser vos stocks en temps réel.',
-      link: 'https://gestiontest.page.gd'
+      description: 'Gestion Moins Chère est une application complète et intuitive conçue pour aider les entreprises, boutiques et commerces à gérer efficacement leurs activités au quotidien. Grâce à une interface moderne et simple d utilisation etc...',
+      link: 'https://gestiontest.page.gd',
+      technologies: ['PHP', 'CSS', 'MysQl']
     },
     {
       id: 2,
@@ -208,7 +224,8 @@ export default function Projects() {
       image: odholding,
       title: 'Site web Entreprise informatique',
       description: 'Solutions informatiques professionnelles dédiées à la digitalisation totale de vos projets, de la conception à la mise en production.',
-      link: 'https://od-holding.vercel.app'
+      link: 'https://od-holding.vercel.app',
+      technologies: ['React js', 'CSS']
     },
     {
       id: 1,
@@ -216,13 +233,26 @@ export default function Projects() {
       image: digitrobo,
       title: 'Site web pour entreprise électronique',
       description: 'Une boutique complète d’accessoires technologiques : caméras, drones, smartphones, casques virtuels, PC gamer, consoles et plusieurs autres équipements modernes.',
-      link: 'https://digitrobo.vercel.app'
+      link: 'https://digitrobo.vercel.app',
+      technologies: ['HTML', 'CSS', 'Bootstrap']
     }
   ];
 
   const renderProjectImage = (project) => {
     return (
       <img src={project.image} alt={project.title} loading="lazy" decoding="async" className="project-image" />
+    );
+  };
+
+  const renderProjectTechnologies = (project) => {
+    if (!project.technologies?.length) return null;
+
+    return (
+      <ul className="project-technologies" aria-label="Technologies utilisées">
+        {project.technologies.map((technology) => (
+          <li key={technology}>{technology}</li>
+        ))}
+      </ul>
     );
   };
 
@@ -249,6 +279,7 @@ export default function Projects() {
       image: sosivoiremobile,
       title: 'Projet d\'envergure national (version mobile)',
       description: 'Saas de sos pour chaque ville, synchronisé à la version web. Posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
+      technologies: ['React native - Expo', 'Laravel', 'Api Rest', 'Mysql']
     },
     {
       id: 6,
@@ -257,6 +288,7 @@ export default function Projects() {
       video: saasSosVideo,
       title: 'Projet d\'envergure national',
       description: 'Saas de sos pour chaque ville, posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
+      technologies: ['React Js', 'Css', 'Laravel', 'Api Rest', 'Mysql']
     },
     {
       id:5,
@@ -265,6 +297,7 @@ export default function Projects() {
       video: sipciMobileVideo,
       title: 'Application mobile de sipci.org',
       description: 'Application mobile de sipci.org, c\'est la version mobile, elle est synchronisé à la version web. (pas encore en ligne sur appStore et playStore).',
+      technologies: ['React native - Expo', 'Laravel', 'Api Rest', 'Mysql']
     },
     {
       id: 4,
@@ -273,6 +306,7 @@ export default function Projects() {
       video: gsfMobileVideo,
       title: 'Application mobile pour Établissement',
       description: 'Application mobile de Groupe Sup\'Formation. Synchronisé à la version web. (pas encore en ligne sur appStore et playStore).',
+      technologies: ['React native - Expo', 'Laravel', 'Api Rest', 'Mysql']
     },
     {
       id: 3,
@@ -281,7 +315,7 @@ export default function Projects() {
       video: aebeciMobileVideo,
       title: 'Application mobile réseau social pour les églises (en vente) version mobile',
       description: 'Application mobile pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter. (pas encore en ligne sur appStore et playStore).',
-      link: 'https://wa.me/p/26088646627413946/22557109835'
+      technologies: ['React native - Expo', 'Laravel', 'Api Rest', 'Mysql']
     },
     {
       id: 2,
@@ -290,7 +324,7 @@ export default function Projects() {
       video: aebeciWebVideo,
       title: 'Application web réseau social pour les églises (en vente)',
       description: 'Application web pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter. (pas encore mis en ligne).',
-      link: 'https://wa.me/p/26088646627413946/22557109835'
+      technologies: ['React native - Expo', 'Laravel', 'Api Rest', 'Mysql']
     },
     {
       id: 1,
@@ -299,7 +333,7 @@ export default function Projects() {
       video: gsegliseVideo,
       title: 'Application web de gestion pour les églises (en vente)',
       description: 'Application web de gestion d eglise. Cette application vous permet d avoir les données des fidèles de l église et bien d autres fonctionnalités.  (pas encore en ligne).',
-      link: 'https://wa.me/p/26088646627413946/22557109835'
+      technologies: ['React Js', 'Css', 'Laravel', 'Api Rest', 'Mysql']
     },
 
   ];
@@ -336,6 +370,7 @@ export default function Projects() {
               <div className="project-info">
                 <h2 className="project-title">{project.title}</h2>
                 <p className="project-description">{project.description}</p>
+                {renderProjectTechnologies(project)}
               </div>
             </div>
           ))}
@@ -365,6 +400,7 @@ export default function Projects() {
               <div className="project-info">
                 <h2 className="project-title">{project2.title}</h2>
                 <p className="project-description">{project2.description}</p>
+                {renderProjectTechnologies(project2)}
               </div>
             </div>
           ))}
