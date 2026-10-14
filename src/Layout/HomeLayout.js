@@ -186,6 +186,7 @@ function HomeLayout() {
   const [activeSection, setActiveSection] = useState('home');
   const scrollProgressRef = useRef(null);
   const menuToggleRef = useRef(null);
+  const mainNavigationRef = useRef(null);
 
   useEffect(() => {
     let animationFrame = null;
@@ -293,6 +294,18 @@ function HomeLayout() {
   useEffect(() => {
     if (!isMenuOpen) return undefined;
 
+    const closeOnOutsidePointer = (event) => {
+      const target = event.target;
+      if (
+        mainNavigationRef.current?.contains(target)
+        || menuToggleRef.current?.contains(target)
+      ) {
+        return;
+      }
+
+      setIsMenuOpen(false);
+    };
+
     const closeOnEscape = (event) => {
       if (event.key === 'Escape') {
         setIsMenuOpen(false);
@@ -300,8 +313,12 @@ function HomeLayout() {
       }
     };
 
+    document.addEventListener('pointerdown', closeOnOutsidePointer);
     window.addEventListener('keydown', closeOnEscape);
-    return () => window.removeEventListener('keydown', closeOnEscape);
+    return () => {
+      document.removeEventListener('pointerdown', closeOnOutsidePointer);
+      window.removeEventListener('keydown', closeOnEscape);
+    };
   }, [isMenuOpen]);
 
   const handleDownloadCV = () => {
@@ -319,7 +336,8 @@ function HomeLayout() {
 
       <header className="topbar-wrap">
         <div className="topbar container-shell">
-          <nav id="main-navigation" className={`main-nav ${isMenuOpen ? 'is-open' : ''}`} aria-label="Navigation principale">
+          <div className="header-role">Ingénieur Génie Logiciel</div>
+          <nav ref={mainNavigationRef} id="main-navigation" className={`main-nav ${isMenuOpen ? 'is-open' : ''}`} aria-label="Navigation principale">
             {navItems.map((item) => (
               <a
                 key={item.id}

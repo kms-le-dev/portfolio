@@ -267,6 +267,22 @@
 }
 
 @media (max-width: 680px) {
+  .project-filters {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(100%, 320px);
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .project-filter {
+    min-width: 0;
+    padding-inline: 6px;
+    font-size: 0.8rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }

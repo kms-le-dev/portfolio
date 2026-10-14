@@ -50,10 +50,10 @@
   min-height: 42px;
   margin-bottom: clamp(30px, 5vw, 54px);
   padding: 0 15px;
-  border: 1px solid var(--stroke-strong);
+  border: 1px solid #ffb274;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--muted-strong);
+  background: #ffd2ad;
+  color: #542700;
   text-decoration: none;
   transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
 }
@@ -61,8 +61,8 @@
 .all-projects-home-link:hover,
 .all-projects-home-link:focus-visible {
   border-color: var(--accent-2);
-  background: var(--accent-soft);
-  color: #fff;
+  background: #ffc18f;
+  color: #332319;
   text-decoration: none;
 }
 
