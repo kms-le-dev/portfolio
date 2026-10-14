@@ -1,0 +1,209 @@
+.all-projects-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-projects-page {
+  display: flow-root;
+  flex: 1;
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding: 40px 16px 48px;
+}
+
+.all-projects-page__header {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-bottom: 42px;
+  padding: clamp(28px, 6vw, 64px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse at 85% 15%, rgba(255, 106, 0, 0.24), transparent 42%),
+    linear-gradient(135deg, rgba(22, 23, 32, 0.96), rgba(10, 10, 15, 0.94));
+  box-shadow: var(--shadow-card);
+}
+
+.all-projects-page__header::after {
+  position: absolute;
+  z-index: -1;
+  right: -48px;
+  bottom: -100px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(255, 138, 61, 0.22);
+  border-radius: 50%;
+  box-shadow: 0 0 0 28px rgba(255, 138, 61, 0.04), 0 0 0 58px rgba(255, 138, 61, 0.025);
+  content: '';
+  pointer-events: none;
+}
+
+.all-projects-home-link {
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  margin-bottom: clamp(30px, 5vw, 54px);
+  padding: 0 15px;
+  border: 1px solid var(--stroke-strong);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted-strong);
+  text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+.all-projects-home-link:hover,
+.all-projects-home-link:focus-visible {
+  border-color: var(--accent-2);
+  background: var(--accent-soft);
+  color: #fff;
+  text-decoration: none;
+}
+
+.all-projects-home-link:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
+.all-projects-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
+  grid-template-areas:
+    "kicker preview"
+    "title preview"
+    "description preview"
+    "highlights preview";
+  align-items: center;
+  column-gap: clamp(28px, 5vw, 64px);
+}
+
+.all-projects-hero .kicker {
+  grid-area: kicker;
+}
+
+.all-projects-hero h1 {
+  grid-area: title;
+}
+
+.all-projects-preview {
+  grid-area: preview;
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+}
+
+.all-projects-hero h1 {
+  max-width: 14ch;
+  margin-bottom: 18px;
+  color: var(--text);
+  font-family: var(--title-family);
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.all-projects-description {
+  grid-area: description;
+  max-width: 610px;
+  color: var(--muted-strong);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  line-height: 1.7;
+}
+
+.all-projects-highlights {
+  grid-area: highlights;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.all-projects-highlights span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 138, 61, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 106, 0, 0.09);
+  color: var(--muted-strong);
+  font-size: 0.88rem;
+}
+
+.all-projects-highlights svg {
+  color: var(--accent-2);
+}
+
+.all-projects-page .projects-container {
+  padding-top: 0;
+}
+
+.all-projects-page .projects-main-title {
+  margin-bottom: 24px;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+
+.all-projects-shell .site-footer {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding: 28px 16px 30px;
+}
+
+@media (max-width: 680px) {
+  .all-projects-page {
+    padding: 22px 14px 36px;
+  }
+
+  .all-projects-page__header {
+    margin-bottom: 32px;
+    border-radius: var(--radius-md);
+  }
+
+  .all-projects-hero h1 {
+    font-size: clamp(2.25rem, 10vw, 3.4rem);
+  }
+
+  .all-projects-hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "kicker"
+      "title"
+      "preview"
+      "description"
+      "highlights";
+    gap: 16px;
+  }
+
+  .all-projects-hero h1 {
+    margin-bottom: 0;
+  }
+
+  .all-projects-preview {
+    width: min(100%, 520px);
+    justify-self: center;
+  }
+
+  .all-projects-highlights {
+    gap: 8px;
+  }
+
+  .all-projects-highlights span {
+    font-size: 0.8rem;
+  }
+
+  .all-projects-shell .site-footer {
+    padding-inline: 14px;
+  }
+}

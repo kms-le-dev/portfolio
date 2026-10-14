@@ -1,418 +1,165 @@
-/* CV.css */
-
-.cv-container {
-  min-height: 100vh;
-  background: linear-gradient(145deg, #000000, #1a1a1a);
-  padding: 60px 20px;
-  margin-top: -65px;
+﻿.cv-container {
+  background: transparent;
+  padding: 10px 0 0;
 }
 
 .cv-content {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
+  width: min(var(--max-width), calc(100% - 32px));
 }
 
-/* Titre principal */
 .cv-main-title {
-  color: #ffffff;
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 50px;
-  text-align: center;
-  letter-spacing: 1px;
+  font-family: var(--title-family);
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: -0.05em;
+  color: var(--text);
+  margin-bottom: 24px;
 }
 
-/* Section */
 .cv-section {
-  margin-bottom: 60px;
+  margin-top: 26px;
 }
 
-/* En-tête de section */
 .section-header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 40px;
-}
-
-.section-icon-box {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 102, 204, 0.15);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.section-icon {
-  width: 28px;
-  height: 28px;
-  color: #0066cc;
-}
-
-.cv-section-title {
-  color: #ffffff;
-  font-size: 32px;
-  font-weight: 600;
-  margin: 0;
-  letter-spacing: 0.5px;
-}
-
-/* Timeline */
-.timeline {
-  position: relative;
-  padding-left: 40px;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, #0066cc, #004d99);
-}
-
-/* Timeline Item */
-.timeline-item {
-  position: relative;
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #333;
-}
-
-.timeline-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -46px;
-  top: 6px;
-  width: 12px;
-  height: 12px;
-  background-color: #0066cc;
-  border-radius: 50%;
-  border: 3px solid #1a1a1a;
-  box-shadow: 0 0 0 2px #0066cc;
-}
-
-/* Période */
-.timeline-period {
-  color: #0066cc;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
-}
-
-/* Contenu */
-.timeline-content {
-  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-  border: 1px solid #333;
-  border-radius: 12px;
-  padding: 24px;
-  transition: all 0.3s ease;
-}
-
-.timeline-content:hover {
-  border-color: #0066cc;
-  box-shadow: 0 4px 20px rgba(0, 102, 204, 0.15);
-}
-
-/* Titre du poste/diplôme */
-.timeline-title {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0 0 8px 0;
-  letter-spacing: 0.3px;
-}
-
-/* Sous-titre */
-.timeline-subtitle {
-  color: #b0b0b0;
-  font-size: 15px;
-  margin: 0 0 8px 0;
-  font-style: italic;
-}
-
-/* Localisation */
-.timeline-location {
-  color: #909090;
-  font-size: 14px;
-  margin: 0;
-}
-
-/* Liste des tâches */
-.timeline-tasks {
-  margin: 12px 0 0 0;
-  padding-left: 20px;
-  color: #b0b0b0;
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-.timeline-tasks li {
-  margin-bottom: 8px;
-}
-
-.timeline-tasks li::marker {
-  color: #0066cc;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .cv-container {
-    padding: 40px 16px;
-  }
-
-  .cv-main-title {
-    font-size: 32px;
-    margin-bottom: 40px;
-     margin-top: 30px;
-  }
-
-  .cv-section-title {
-    font-size: 26px;
-  }
-
-  .section-header {
-    gap: 12px;
-    margin-bottom: 30px;
-  }
-
-  .section-icon-box {
-    width: 45px;
-    height: 45px;
-  }
-
-  .section-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .timeline {
-    padding-left: 30px;
-  }
-
-  .timeline-item::before {
-    left: -36px;
-  }
-
-  .timeline-content {
-    padding: 20px;
-  }
-
-  .timeline-title {
-    font-size: 18px;
-  }
-
-  .timeline-subtitle,
-  .timeline-tasks {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .cv-main-title {
-    font-size: 28px;
-  }
-
-  .cv-section-title {
-    font-size: 22px;
-  }
-
-  .timeline {
-    padding-left: 24px;
-  }
-
-  .timeline-item::before {
-    left: -30px;
-    width: 10px;
-    height: 10px;
-  }
-
-  .timeline-content {
-    padding: 16px;
-  }
-
-  .timeline-title {
-    font-size: 16px;
-  }
-
-  .timeline-period {
-    font-size: 13px;
-  }
-}
-
-/* Technologies */
-.technology-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.technology-card {
-  display: flex;
-  min-height: 148px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding: 20px 14px;
-  overflow: hidden;
-  background: linear-gradient(145deg, rgba(34, 38, 42, 0.96), rgba(18, 21, 24, 0.96));
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-  animation: technology-card-in 600ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
-  animation-delay: var(--technology-delay, 0ms);
-  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
-}
-
-.technology-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(0, 217, 181, 0.55);
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.34), 0 0 22px rgba(0, 217, 181, 0.1);
-}
-
-.technology-logo-wrap {
-  display: grid;
-  width: 68px;
-  height: 68px;
-  place-items: center;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.95);
-  transition: transform 220ms ease;
-}
-
-.technology-card:hover .technology-logo-wrap {
-  transform: scale(1.08) rotate(-3deg);
-}
-
-.technology-logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
-.technology-name {
-  margin: 0;
-  color: #f4f6f7;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.35;
-  text-align: center;
-}
-
-@keyframes technology-card-in {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 900px) {
-  .technology-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 600px) {
-  .technology-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .technology-card {
-    min-height: 136px;
-    padding: 16px 10px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .technology-card {
-    animation: none;
-    transition: none;
-  }
-}
-
-/* Section Télécharger CV */
-.cv-download-section {
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
-  margin-top: 40px;
-}
-
-.cv-download-btn {
-  display: inline-flex;
-  align-items: center;
   gap: 12px;
-  padding: 14px 32px;
-  background: linear-gradient(135deg, #0066cc, #004499);
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
-}
-
-.cv-download-btn:hover {
-  background: linear-gradient(135deg, #0080ff, #0052cc);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
-}
-
-.cv-download-btn:active {
-  transform: translateY(0);
-}
-
-/* Conteneur du bouton de téléchargement */
-.download-button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
   margin-bottom: 20px;
 }
 
-/* Bouton de téléchargement */
-.download-button {
-  display: flex;
-  align-items: center;
+.section-icon-box {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: rgba(255, 106, 0, 0.12);
+  color: var(--accent-2);
+}
+
+.section-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.cv-section-title {
+  font-family: var(--title-family);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  color: #fff;
+}
+
+.cv-container .timeline {
+  position: relative;
+  padding-left: 16px;
+}
+
+.cv-container .timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding-left: 16px;
+}
+
+.cv-container .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.cv-container .timeline-period {
+  color: var(--accent-2);
+  font-family: var(--mono-family);
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.cv-container .timeline-content {
+  background: rgba(10, 11, 17, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 18px 18px;
+}
+
+.timeline-title {
+  font-family: var(--title-family);
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.timeline-subtitle,
+.timeline-location,
+.timeline-tasks {
+  color: #d0d3db;
+}
+
+.timeline-tasks {
+  padding-left: 18px;
+  line-height: 1.8;
+}
+
+.cv-container .technology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  gap: 14px;
+}
+
+.cv-container .technology-card {
+  background: rgba(10, 11, 17, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 18px 14px;
+  display: grid;
+  place-items: center;
   gap: 10px;
-  padding: 14px 32px;
-  background: linear-gradient(135deg, #0066cc, #0052a3);
-  color: white;
+}
+
+.cv-container .technology-logo-wrap {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+}
+
+.cv-container .technology-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cv-container .technology-name {
+  color: #f4f5f7;
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.download-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0 0;
+}
+
+.download-button {
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff;
+  min-height: 52px;
+  padding: 0 22px;
+  font-weight: 700;
+  box-shadow: var(--shadow-soft);
 }
 
-.download-button:hover {
-  background: linear-gradient(135deg, #0080ff, #0052cc);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
-}
-
-.download-button:active {
-  transform: translateY(0);
-}
-
-.download-button svg {
-  width: 20px;
-  height: 20px;
+@media (max-width: 980px) {
+  .cv-container .technology-grid {
+    grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  }
 }

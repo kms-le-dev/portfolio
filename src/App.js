@@ -3,6 +3,7 @@ import './App.css';
 import { useEffect } from 'react';
 import HomeLayout from './Layout/HomeLayout';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AllProjectsPage from './Components/AllProjectsPage';
 
 function App() {
   useEffect(() => {
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomeLayout />}/>
+        <Route path="/projets" element={<AllProjectsPage />}/>
       </Routes>
     </Router>
   );

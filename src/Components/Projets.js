@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Eye, X } from 'lucide-react';
+import { ArrowRight, Eye, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Projets.css';
 import moinschereci from '../assets/optimized/moinschereci-webp.webp';
 import gsf from '../assets/optimized/gsf-png.webp';
@@ -39,9 +40,10 @@ import ferkeVideo from '../assets/optimized/videos/ferke.mp4';
 
 
 
-export default function Projects() {
+export default function Projects({ showAll = false }) {
   const [activeVideo, setActiveVideo] = useState(null);
   const [videoError, setVideoError] = useState('');
+  const [activeFilter, setActiveFilter] = useState('all');
   const videoRef = useRef(null);
 
   const playMutedVideo = useCallback((video) => {
@@ -80,15 +82,15 @@ export default function Projects() {
       image: ferke,
       video: ferkeVideo,
       title: 'FERKE.COM',
-      description: 'Application web de sos pour la ville de ferké, possibilité de trouver avec localisation images et contact les : hopitaux, pompiers etc... C\'est une PWA.',
-      technologies: ['React.js', 'CSS', 'Laravel', 'MysQl', 'API REST']
+      description: 'PWA de services d’urgence pour Ferké : retrouver les structures utiles, leurs coordonnées et leur localisation.',
+      technologies: ['React.js', 'CSS', 'Laravel', 'MySQL', 'API REST']
     },
     {
       id: 17,
       key: 'ASER',
       image: aser,
-      title: 'ASER COSMETIQUE',
-      description: 'Site vitrine pour entreprise de vente de produit cosmetique ( savon eclaircissant, gel douche, lait corporelle, javel...).  ',
+      title: 'ASER COSMÉTIQUE',
+      description: 'Site vitrine présentant les produits et l’activité d’une entreprise de cosmétiques.',
       link: 'https://aser-omega.vercel.app/',
       technologies: ['React.js', 'CSS']
     },
@@ -97,7 +99,7 @@ export default function Projects() {
       key: 'AIG BTP',
       image: btp,
       title: 'AIG BTP',
-      description: 'Site vitrine pour entreprise de BTP. Met en avant les activitées de l\'entreprise, presentation des activités de l\'entreprise, prestations etc...',
+      description: 'Site vitrine pour une entreprise de BTP, avec présentation de ses activités et de ses prestations.',
       link: 'https://btptest.vercel.app',
       technologies: ['React.js', 'CSS']
     },
@@ -105,8 +107,8 @@ export default function Projects() {
       id: 15,
       key: 'ORI ACADEMIE',
       image: ori,
-      title: 'ORI ACADEMIE',
-      description: 'Site vitrine pour structure de cours à domicile. Possibilité pour les parents de faire une demande de repetiteur et les repoetiteurs peuvent aussi postuler.',
+      title: 'ORI ACADÉMIE',
+      description: 'Plateforme de cours à domicile permettant aux parents de demander un répétiteur et aux répétiteurs de proposer leur candidature.',
       link: 'https://oriacademie.com',
       technologies: ['React.js', 'CSS', 'Firebase']
     },
@@ -115,36 +117,36 @@ export default function Projects() {
       key: 'DEF Securité',
       image: def,
       title: 'DEF SECURITÉ PLUS',
-      description: 'Site vitrine pour entreprise d\'installation de GPS et Caméras de surveilance. site vitrine + backend robustre.',
+      description: 'Site vitrine et espace de gestion pour une entreprise spécialisée dans l’installation de GPS et de caméras de surveillance.',
       link: 'https://defsecuriteplus.com',
-      technologies: ['React.js', 'CSS', 'Laravel', 'MysQl', 'API REST']
+      technologies: ['React.js', 'CSS', 'Laravel', 'MySQL', 'API REST']
     },
     {
       id: 13,
       key: 'Dym sensuelle',
       image: dymsensuelle,
       title: 'D\'YM Sensuelle',
-      description: 'Site e-commerce de vente d\'articles feminine et sensuelle, baya, dessous femmes, homme etc... installable sur Téléphone, Tablette, Ordinateur.',
+      description: 'Boutique en ligne d’articles de lingerie et d’accessoires, conçue pour être installable sur mobile, tablette et ordinateur.',
       link: 'https://dymsensuelle.ct.ws/',
-      technologies: ['PHP', 'CSS', 'MysQl']
+      technologies: ['PHP', 'CSS', 'MySQL']
     },
     {
       id: 12,
       key: 'gestion telephone',
       image: gestionphone,
       title: 'Gestion Phone',
-      description: 'Application web de gestion de stock pour entreprise de vente et reparation de téléphone. Installable sur téléphone, tablette et ordinateur.',
+      description: 'Application de gestion de stock destinée à une activité de vente et de réparation de téléphones, utilisable sur plusieurs formats d’écran.',
       link: 'https://gestionphone.gt.tc',
-      technologies: ['PHP', 'CSS', 'MysQl']
+      technologies: ['PHP', 'CSS', 'MySQL']
     },
     {
       id: 11,
       key: 'Docgratuit',
       image: docgratuit,
       title: 'DocGratuit.com',
-      description: 'Site web de téléchargement et publication de documents gratuit (exercices, devoirs, compositions, examens, cours etc...)',
+      description: 'Plateforme de publication et de téléchargement de ressources pédagogiques : cours, exercices, devoirs et examens.',
       link: 'https://docgratuit.vercel.app',
-      technologies: ['React.js', 'CSS', 'Laravel', 'MysQl', 'API REST']
+      technologies: ['React.js', 'CSS', 'Laravel', 'MySQL', 'API REST']
     },
     {
       id: 10,
@@ -152,60 +154,60 @@ export default function Projects() {
       image: gestiongsf,
       video: gsfGestionVideo,
       title: 'Application de gestion d\'établissement',
-      description: 'Application web de gestion d\'établissement. gestion des inscription, scolarité, emploi du temps etc... NB: l\'interface de l\'application est protégé.',
-      technologies: ['React.js', 'CSS', 'Laravel', 'MysQl', 'API REST']
+      description: 'Application de gestion d’établissement couvrant notamment les inscriptions, la scolarité et les emplois du temps. L’interface est protégée.',
+      technologies: ['React.js', 'CSS', 'Laravel', 'MySQL', 'API REST']
     },
     {
       id: 9,
       key: 'sip-ci',
       image: sipci,
-      title: 'Site web Pour Entreprise immobilière',
-      description: 'Site web pour entreprise immobilière avec plusieurs branches : services, galerie, blog, divers, immobilier etc...',
+      title: 'Site web pour entreprise immobilière',
+      description: 'Site web regroupant les services, la galerie, le blog et les annonces d’une entreprise immobilière.',
       link: 'https://sipci.org',
-      technologies: ['React.js', 'CSS', 'Laravel', 'MysQl', 'API REST']
+      technologies: ['React.js', 'CSS', 'Laravel', 'MySQL', 'API REST']
     },
     {
       id: 8,
       key: 'gsf',
       image: gsf,
-      title: 'Application web Pour Établissement',
-      description: 'Inscription dédiée aux étudiants, possibilité de publier des cours au format PDF, avec de nombreuses options pour enrichir et faciliter l’accès aux ressources pédagogiques.',
+      title: 'Application web pour établissement',
+      description: 'Espace destiné aux étudiants pour gérer les inscriptions et accéder aux supports de cours au format PDF.',
       link: 'https://groupesupformation.com',
-      technologies: ['PHP', 'CSS', 'MysQl']
+      technologies: ['PHP', 'CSS', 'MySQL']
     },
     {
       id: 7,
       key: 'moinschereci',
       image: moinschereci,
-      title: 'Site E-commerce',
-      description: 'Solution e-commerce clé en main combinant une marketplace publique (publier et vendre facilement), un module de paiement sécurisé intégré et un back-office administrateur avancé pour superviser commandes etc...',
+      title: 'Site e-commerce',
+      description: 'Marketplace avec publication d’articles, parcours d’achat et espace d’administration pour le suivi des commandes.',
       link: 'https://moinschere.gt.tc',
-      technologies: ['PHP', 'CSS', 'MysQl']
+      technologies: ['PHP', 'CSS', 'MySQL']
     },
     {
       id: 6,
       key: 'ticketmoto.com',
       image: ticketmoto,
-      title: 'Application web pour gestion de stationnement de moto',
-      description: 'Application web de gestion de stationnement de moto, chaque ticket est relié à la photo de la personne qui a le ticket. lorsque le ticket est remis et que la personne prend sa moto, le ticket redevient automatiquement disponible.',
+      title: 'Gestion de stationnement de motos',
+      description: 'Application de suivi des tickets de stationnement, associés à la photo du détenteur et remis à disposition après le départ de la moto.',
       link: 'https://ticketmoto.gt.tc',
-      technologies: ['PHP', 'CSS', 'MysQl']
+      technologies: ['PHP', 'CSS', 'MySQL']
     },
     {
       id: 5,
       key: 'resto.com',
       image: restau,
-      title: 'Site web + Application web de gestion de caisse pour restaurant, Lounge, maquis etc...',
-      description: 'Application web avec gestion de caisse intégré, suivie de la caisse à distance et en temps réel.',
+      title: 'Site et gestion de caisse pour restaurant',
+      description: 'Application web de caisse avec suivi à distance de l’activité du restaurant.',
       link: 'https://restau.free.nf/',
-      technologies: ['PHP', 'CSS', 'MysQl']
+      technologies: ['PHP', 'CSS', 'MySQL']
     },
     {
       id: 4,
       key: 'formdev',
       image: formdev,
-      title: 'Site web de formation',
-      description: 'Un site web qui propose des formations complètes en développement web (frontend, backend, full-stack) et en design professionnel avec Figma, pensé pour accompagner chaque apprenant vers l’autonomie.',
+      title: 'Site de formation au développement',
+      description: 'Site présentant des formations en développement web — frontend, backend et fullstack — ainsi qu’en design avec Figma.',
       link: 'https://formation-dev.vercel.app',
       technologies: ['HTML', 'CSS', 'Bootstrap']
     },
@@ -213,36 +215,30 @@ export default function Projects() {
       id: 3,
       key: 'gestionstock',
       image: gestionstock,
-      title: 'Application Web de Gestion',
-      description: 'Gestion Moins Chère est une application complète et intuitive conçue pour aider les entreprises, boutiques et commerces à gérer efficacement leurs activités au quotidien. Grâce à une interface moderne et simple d utilisation etc...',
+      title: 'Gestion Moins Chère',
+      description: 'Application de gestion destinée aux entreprises, boutiques et commerces, avec une interface web pour le suivi de leurs activités.',
       link: 'https://gestiontest.page.gd',
-      technologies: ['PHP', 'CSS', 'MysQl']
+      technologies: ['PHP', 'CSS', 'MySQL']
     },
     {
       id: 2,
       key: 'odholding',
       image: odholding,
-      title: 'Site web Entreprise informatique',
-      description: 'Solutions informatiques professionnelles dédiées à la digitalisation totale de vos projets, de la conception à la mise en production.',
+      title: 'Site web d’entreprise informatique',
+      description: 'Site vitrine présentant les services et l’accompagnement informatique de l’entreprise.',
       link: 'https://od-holding.vercel.app',
-      technologies: ['React js', 'CSS']
+      technologies: ['React.js', 'CSS']
     },
     {
       id: 1,
       key: 'digitrobo',
       image: digitrobo,
       title: 'Site web pour entreprise électronique',
-      description: 'Une boutique complète d’accessoires technologiques : caméras, drones, smartphones, casques virtuels, PC gamer, consoles et plusieurs autres équipements modernes.',
+      description: 'Boutique en ligne présentant des équipements et accessoires technologiques, dont des caméras, drones, smartphones et ordinateurs.',
       link: 'https://digitrobo.vercel.app',
       technologies: ['HTML', 'CSS', 'Bootstrap']
     }
   ];
-
-  const renderProjectImage = (project) => {
-    return (
-      <img src={project.image} alt={project.title} loading="lazy" decoding="async" className="project-image" />
-    );
-  };
 
   const renderProjectTechnologies = (project) => {
     if (!project.technologies?.length) return null;
@@ -264,7 +260,7 @@ export default function Projects() {
     }
 
     if (project.link) {
-      window.open(project.link, '_blank');
+      window.open(project.link, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -277,18 +273,18 @@ export default function Projects() {
       id: 7,
       key: 'sos ivoire mobile',
       image: sosivoiremobile,
-      title: 'Projet d\'envergure national (version mobile)',
-      description: 'Saas de sos pour chaque ville, synchronisé à la version web. Posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
-      technologies: ['React native - Expo', 'Laravel', 'Api Rest', 'Mysql']
+      title: 'Plateforme SOS — mobile',
+      description: 'Version mobile du service SOS, synchronisée avec le web, pour signaler des objets perdus ou volés et retrouver les services publics locaux. Non publiée sur les stores.',
+      technologies: ['React Native / Expo', 'Laravel', 'API REST', 'MySQL']
     },
     {
       id: 6,
       key: 'sos ivoire',
       image: sosivoire,
       video: saasSosVideo,
-      title: 'Projet d\'envergure national',
-      description: 'Saas de sos pour chaque ville, posibilité de poster des articels perdu ou volé, les coordonnées des dispensaires, commissariat, gendarmerie etc... sont disponible avec leurs numéros, localisation etc... (pas encore en ligne).',
-      technologies: ['React Js', 'Css', 'Laravel', 'Api Rest', 'Mysql']
+      title: 'Plateforme SOS ivoirienne',
+      description: 'Service web de signalement d’objets perdus ou volés et de consultation des coordonnées et localisations des services publics. Pas encore en ligne.',
+      technologies: ['React.js', 'CSS', 'Laravel', 'API REST', 'MySQL']
     },
     {
       id:5,
@@ -296,8 +292,8 @@ export default function Projects() {
       image: sipcimobile,
       video: sipciMobileVideo,
       title: 'Application mobile de sipci.org',
-      description: 'Application mobile de sipci.org, c\'est la version mobile, elle est synchronisé à la version web. (pas encore en ligne sur appStore et playStore).',
-      technologies: ['React native - Expo', 'Laravel', 'Api Rest', 'Mysql']
+      description: 'Application mobile associée au site SIPCI et synchronisée avec sa version web. Pas encore publiée sur l’App Store ou Google Play.',
+      technologies: ['React Native / Expo', 'Laravel', 'API REST', 'MySQL']
     },
     {
       id: 4,
@@ -305,62 +301,86 @@ export default function Projects() {
       image: gsfmobile,
       video: gsfMobileVideo,
       title: 'Application mobile pour Établissement',
-      description: 'Application mobile de Groupe Sup\'Formation. Synchronisé à la version web. (pas encore en ligne sur appStore et playStore).',
-      technologies: ['React native - Expo', 'Laravel', 'Api Rest', 'Mysql']
+      description: 'Application mobile de Groupe Sup’Formation synchronisée avec la plateforme web. Pas encore publiée sur l’App Store ou Google Play.',
+      technologies: ['React Native / Expo', 'Laravel', 'API REST', 'MySQL']
     },
     {
       id: 3,
       key: 'moneglisemobile',
       image: moneglisemobile,
       video: aebeciMobileVideo,
-      title: 'Application mobile réseau social pour les églises (en vente) version mobile',
-      description: 'Application mobile pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter. (pas encore en ligne sur appStore et playStore).',
-      technologies: ['React native - Expo', 'Laravel', 'Api Rest', 'Mysql']
+      title: 'Réseau social pour églises — mobile',
+      description: 'Application mobile permettant aux églises de publier des actualités et des activités sous forme de texte, d’image ou de vidéo. Projet disponible à la vente, non publié sur les stores.',
+      technologies: ['React Native / Expo', 'Laravel', 'API REST', 'MySQL']
     },
     {
       id: 2,
       key: 'socialeglise',
       image: socialeglise,
       video: aebeciWebVideo,
-      title: 'Application web réseau social pour les églises (en vente)',
-      description: 'Application web pour église, un réseau social qui vous permet de publier des informations, activité etc... imgae, texte, vidéo avec bien d autres fonctionnalité. l application est en vente donc si vous êtes intéresé veuillez me contacter. (pas encore mis en ligne).',
-      technologies: ['React native - Expo', 'Laravel', 'Api Rest', 'Mysql']
+      title: 'Réseau social pour églises — web',
+      description: 'Application web permettant aux églises de partager des actualités et des activités sous forme de texte, d’image ou de vidéo. Projet disponible à la vente, non publié.',
+      technologies: ['React.js', 'Laravel', 'API REST', 'MySQL']
     },
     {
       id: 1,
       key: 'gestioneglise',
       image: gestioneglise,
       video: gsegliseVideo,
-      title: 'Application web de gestion pour les églises (en vente)',
-      description: 'Application web de gestion d eglise. Cette application vous permet d avoir les données des fidèles de l église et bien d autres fonctionnalités.  (pas encore en ligne).',
-      technologies: ['React Js', 'Css', 'Laravel', 'Api Rest', 'Mysql']
+      title: 'Gestion d’église — application web',
+      description: 'Application de gestion des informations des fidèles et des activités d’une église. Projet disponible à la vente, non publié.',
+      technologies: ['React.js', 'CSS', 'Laravel', 'API REST', 'MySQL']
     },
 
   ];
 
-  const renderProject2Image = (project2) => {
-    return (
-      <img src={project2.image} alt={project2.title} loading="lazy" decoding="async" className="project-image" />
-    );
-  };
+  const allProjects = [...projects, ...projects2];
+  const projectFilters = [
+    { id: 'all', label: 'Tous' },
+    { id: 'web', label: 'Web & métier' },
+    { id: 'mobile', label: 'Mobile' },
+  ];
+  const filteredProjects = allProjects.filter((project) => {
+    const isMobile = project.technologies.includes('React Native / Expo');
+    return activeFilter === 'all' || (activeFilter === 'mobile' ? isMobile : !isMobile);
+  });
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
   return (
     <>
     <div className="projects-container">
       <div className="projects-content">
-        <h1 className="projects-main-title">Tous mes Projets (25)</h1>
-
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-card">
+        <h2 className="projects-main-title">Tous mes projets (25)</h2>
+        <div className="project-filters" role="group" aria-label="Filtrer les projets">
+          {projectFilters.map((filter) => (
+            <button
+              key={filter.id}
+              type="button"
+              className={`project-filter${activeFilter === filter.id ? ' is-active' : ''}`}
+              aria-pressed={activeFilter === filter.id}
+              aria-controls="projects-grid"
+              onClick={() => setActiveFilter(filter.id)}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+        <p className="project-results-count" role="status" aria-live="polite">
+          {showAll
+            ? `${filteredProjects.length} ${filteredProjects.length === 1 ? 'projet' : 'projets'}`
+            : `${visibleProjects.length} ${visibleProjects.length === 1 ? 'projet affiché' : 'projets affichés'}`}
+        </p>
+        <div className="projects-grid" id="projects-grid">
+          {visibleProjects.map((project) => (
+            <div key={`${project.key}-${project.id}`} className="project-card">
               <button
                 type="button"
                 onClick={() => handleProjectClick(project)}
                 className="project-image-link"
-                aria-label={project.video ? `Lire la vidéo du projet ${project.title}` : `Ouvrir le projet ${project.title}`}
+                aria-label={project.video ? `Lire la vidéo du projet ${project.title}` : `Visiter le site ${project.title}`}
               >
                 <span className="project-image-wrapper">
-                  {renderProjectImage(project)}
+                  <img src={project.image} alt="" loading="lazy" decoding="async" className="project-image" />
                   <span className="project-overlay">
                     <Eye className="project-eye-icon" />
                   </span>
@@ -375,36 +395,14 @@ export default function Projects() {
             </div>
           ))}
         </div>
-      </div>
-    </div>
-
-    <div className="projects-container">
-      <div className="projects-content">
-        <div className="projects-grid">
-          {projects2.map((project2) => (
-            <div key={project2.id} className="project-card">
-              <button
-                type="button"
-                onClick={() => handleProjectClick(project2)}
-                className="project-image-link"
-                aria-label={project2.video ? `Lire la vidéo du projet ${project2.title}` : `Ouvrir le projet ${project2.title}`}
-              >
-                <span className="project-image-wrapper">
-                  {renderProject2Image(project2)}
-                  <span className="project-overlay">
-                    <Eye className="project-eye-icon" />
-                  </span>
-                </span>
-              </button>
-              
-              <div className="project-info">
-                <h2 className="project-title">{project2.title}</h2>
-                <p className="project-description">{project2.description}</p>
-                {renderProjectTechnologies(project2)}
-              </div>
-            </div>
-          ))}
-        </div>
+        {!showAll && (
+          <div className="all-projects-action">
+            <Link className="all-projects-button" to="/projets">
+              Voir tous les projets
+              <ArrowRight size={17} aria-hidden="true" />
+            </Link>
+          </div>
+        )}
       </div>
     </div>
 
@@ -457,7 +455,6 @@ export default function Projects() {
         document.body
       )
     )}
-
     </>
   );
 }

@@ -53,7 +53,7 @@ export default function CV() {
   return (
     <div className="cv-container">
       <div className="cv-content">
-        <h1 className="cv-main-title">Curriculum Vitae</h1>
+        <h2 className="cv-main-title">Curriculum Vitae</h2>
 
         {/* Section Diplômes et Formations */}
         <section className="cv-section technologies-section">
@@ -131,6 +131,7 @@ export default function CV() {
             <h2 className="cv-section-title">Expériences</h2>
           </div>
 
+          <div className="timeline">
             <div className="timeline-item">
               <div className="timeline-period">10 Octobre 2025 au 18 Juillet 2026</div>
               <div className="timeline-content">
@@ -144,7 +145,6 @@ export default function CV() {
               </div>
             </div>
 
-          <div className="timeline">
             <div className="timeline-item">
               <div className="timeline-period">24 Janvier 2024 à nos jours</div>
               <div className="timeline-content">
