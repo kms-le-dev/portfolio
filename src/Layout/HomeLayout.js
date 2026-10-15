@@ -217,6 +217,40 @@ function HomeLayout() {
   }, []);
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const desktopViewport = window.matchMedia('(min-width: 681px)');
+    const backgroundSections = document.querySelectorAll('.background-section');
+    let animationFrame = null;
+
+    if (!desktopViewport.matches || reduceMotion.matches) return undefined;
+
+    const updateParallax = () => {
+      if (animationFrame !== null) return;
+
+      animationFrame = window.requestAnimationFrame(() => {
+        backgroundSections.forEach((section) => {
+          const bounds = section.getBoundingClientRect();
+          const distanceFromCenter = window.innerHeight / 2 - (bounds.top + bounds.height / 2);
+          const offset = Math.max(-42, Math.min(42, distanceFromCenter * 0.035));
+          section.style.setProperty('--parallax-offset', `${offset}px`);
+        });
+        animationFrame = null;
+      });
+    };
+
+    updateParallax();
+    window.addEventListener('scroll', updateParallax, { passive: true });
+    window.addEventListener('resize', updateParallax);
+
+    return () => {
+      window.removeEventListener('scroll', updateParallax);
+      window.removeEventListener('resize', updateParallax);
+      if (animationFrame !== null) window.cancelAnimationFrame(animationFrame);
+      backgroundSections.forEach((section) => section.style.removeProperty('--parallax-offset'));
+    };
+  }, []);
+
+  useEffect(() => {
     const sections = navItems
       .map(({ id }) => document.getElementById(id))
       .filter(Boolean);

@@ -6,10 +6,13 @@
 .certificats-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
   gap: 18px;
 }
 
 .certificats-card {
+  width: 100%;
+  text-align: center;
   background: rgba(255,255,255,0.02);
   border: 1px solid var(--stroke);
   border-radius: 22px;
@@ -21,9 +24,11 @@
 }
 
 .certificats-image {
+  display: block;
   width: 100%;
   height: 220px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 .certificats-description {
@@ -40,6 +45,6 @@
 
 @media (max-width: 680px) {
   .certificats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
