@@ -71,13 +71,6 @@ const serviceItems = [
   },
 ];
 
-const proofPoints = [
-  { label: 'Développement', value: 'Web & mobile' },
-  { label: 'Stack principale', value: 'React · Laravel' },
-  { label: 'Expérience', value: 'Freelance & équipe' },
-  { label: 'Langue', value: 'Français' },
-];
-
 const skills = [
   {
     title: 'Frontend',
@@ -416,14 +409,6 @@ function HomeLayout() {
               </a>
             </div>
 
-            <div className="proof-row" aria-label="Preuves">
-              {proofPoints.map((item) => (
-                <div key={item.label} className="proof-pill">
-                  <span className="proof-value">{item.value}</span>
-                  <span className="proof-label">{item.label}</span>
-                </div>
-              ))}
-            </div>
           </div>
           </section>
 

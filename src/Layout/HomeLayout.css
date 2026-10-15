@@ -254,23 +254,19 @@ main [id] {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   grid-template-areas:
-    "badge visual"
     "title visual"
     "subtitle visual"
     "actions visual"
-    "social visual"
-    "proof proof";
+    "social visual";
   align-items: center;
   column-gap: 38px;
 }
 
-.eyebrow-badge { grid-area: badge; }
 .hero-copy h1 { grid-area: title; }
 .hero-visual { grid-area: visual; }
 .hero-subtitle { grid-area: subtitle; }
 .cta-row { grid-area: actions; }
 .social-row { grid-area: social; }
-.proof-row { grid-area: proof; }
 
 .eyebrow-badge {
   display: inline-flex;
@@ -361,40 +357,6 @@ main [id] {
   border: 1px solid var(--stroke);
   background: rgba(255, 255, 255, 0.02);
   color: var(--muted-strong);
-}
-
-.proof-row {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.proof-pill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 6px;
-  padding: 16px 14px;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--stroke);
-}
-
-.proof-value {
-  font-family: var(--title-family);
-  font-size: 1.3rem;
-  color: var(--text);
-}
-
-.proof-label {
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.74rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 
 .hero-visual {
@@ -621,18 +583,19 @@ main [id] {
 }
 
 .skill-card {
-  background: rgba(12, 13, 20, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #00d9f5;
+  border: 1px solid #65efff;
   border-radius: var(--radius-md);
   padding: 24px 20px;
   min-height: 220px;
+  box-shadow: 0 12px 32px rgba(0, 217, 245, 0.14);
 }
 
 .skill-card h3 {
   font-family: var(--title-family);
   font-size: 1.2rem;
   margin-bottom: 18px;
-  color: #ff9a55;
+  color: #062b36;
 }
 
 .skill-card ul {
@@ -646,11 +609,11 @@ main [id] {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #d0d3db;
+  color: #07313b;
 }
 
 .skill-card li svg {
-  color: var(--accent-2);
+  color: #075b6b;
 }
 
 .timeline {
@@ -1025,17 +988,14 @@ main [id] {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
-      "badge"
       "title"
       "visual"
       "subtitle"
       "actions"
-      "social"
-      "proof";
+      "social";
     justify-items: center;
   }
 
-  .proof-row,
   .skill-grid,
   .process-grid,
   .proof-grid {
@@ -1154,7 +1114,6 @@ main [id] {
     flex-direction: column;
   }
 
-  .proof-row,
   .skill-grid,
   .process-grid,
   .proof-grid {
@@ -1180,10 +1139,6 @@ main [id] {
     justify-content: center;
     gap: 6px;
     text-align: center;
-  }
-
-  .proof-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .timeline-item {

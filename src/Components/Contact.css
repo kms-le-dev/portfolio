@@ -18,6 +18,7 @@
   letter-spacing: -0.05em;
   margin-bottom: 22px;
   color: var(--text);
+  text-align: center;
 }
 
 .contact-form {
@@ -118,11 +119,13 @@
   font-size: 1.2rem;
   color: var(--text);
   margin-bottom: 14px;
+  text-align: center;
 }
 
 .contact-links {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -134,9 +137,30 @@
   min-height: 48px;
   padding: 0 16px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid var(--stroke);
-  color: var(--muted-strong);
+  background: #ff6a00;
+  border: 1px solid #ff8a3d;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.contact-link:link,
+.contact-link:visited,
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  background: #ff8a3d;
+  border-color: #ffb274;
+  transform: translateY(-2px);
+}
+
+.contact-link:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
 }
 
 @media (max-width: 680px) {

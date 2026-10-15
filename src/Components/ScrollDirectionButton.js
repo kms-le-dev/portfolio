@@ -32,8 +32,8 @@ export default function ScrollDirectionButton() {
       return;
     }
 
-    window.scrollBy({
-      top: Math.max(window.innerHeight * 0.75, 400),
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
       behavior: reducedMotion ? 'auto' : 'smooth',
     });
   };
