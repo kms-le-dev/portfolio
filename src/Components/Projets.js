@@ -100,7 +100,7 @@ export default function Projects({ showAll = false }) {
       image: btp,
       title: 'AIG BTP',
       description: 'Site vitrine pour une entreprise de BTP, avec présentation de ses activités et de ses prestations.',
-      link: 'https://btptest.vercel.app',
+      link: 'https://aigbtp.com',
       technologies: ['React.js', 'CSS']
     },
     {
