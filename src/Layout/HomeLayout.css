@@ -8,6 +8,7 @@
 .background-section {
   position: relative;
   isolation: isolate;
+  overflow: clip;
   background-color: var(--bg);
 }
 
@@ -514,8 +515,9 @@ main [id] {
 
 .accordion-trigger {
   width: 100%;
+  min-height: 96px;
   display: grid;
-  grid-template-columns: 64px 1fr 30px;
+  grid-template-columns: 64px minmax(0, 1fr) 40px;
   align-items: center;
   gap: 18px;
   padding: 24px 22px;
@@ -546,26 +548,51 @@ main [id] {
 }
 
 .accordion-copy {
+  min-width: 0;
+  align-self: center;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
 .accordion-label {
+  overflow-wrap: anywhere;
   font-size: 1.1rem;
   font-weight: 700;
   color: #fff;
 }
 
 .accordion-excerpt {
+  overflow-wrap: anywhere;
   color: rgba(255, 255, 255, 0.84);
   font-size: 0.93rem;
+  line-height: 1.55;
 }
 
 .accordion-icon {
+  justify-self: center;
   color: #ffb274;
   font-size: 2rem;
   line-height: 1;
+}
+
+@media (min-width: 1121px) {
+  .accordion-trigger {
+    grid-template-columns: 64px minmax(0, 1fr) 44px;
+    gap: 24px;
+    min-height: 112px;
+    padding: 24px 30px;
+  }
+
+  .accordion-label {
+    font-size: 1.16rem;
+  }
+
+  .accordion-excerpt {
+    display: block;
+    max-width: 78ch;
+    white-space: normal;
+  }
 }
 
 .accordion-panel {
@@ -603,12 +630,12 @@ main [id] {
 }
 
 .skill-card {
-  background: #00d9f5;
-  border: 1px solid #65efff;
+  background: #b9d5d9;
+  border: 1px solid #c9e0e3;
   border-radius: var(--radius-md);
   padding: 24px 20px;
   min-height: 220px;
-  box-shadow: 0 12px 32px rgba(0, 217, 245, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 90, 105, 0.08);
 }
 
 .skill-card h3 {
@@ -737,14 +764,14 @@ main [id] {
 }
 
 .metric-box {
-  background: #00d9f5;
-  border: 1px solid #65efff;
+  background: #b9d5d9;
+  border: 1px solid #c9e0e3;
   border-radius: var(--radius-md);
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  box-shadow: 0 12px 32px rgba(0, 217, 245, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 90, 105, 0.08);
 }
 
 .metric-label {
@@ -807,12 +834,12 @@ main [id] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #00d9f5;
-  border: 1px solid #65efff;
+  background: #b9d5d9;
+  border: 1px solid #c9e0e3;
   border-radius: var(--radius-md);
   padding: 22px 20px;
   text-align: center;
-  box-shadow: 0 12px 32px rgba(0, 217, 245, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 90, 105, 0.08);
 }
 
 .process-number {
@@ -1190,7 +1217,8 @@ main [id] {
   }
 
   .accordion-trigger {
-    grid-template-columns: 52px 1fr 26px;
+    grid-template-columns: 52px minmax(0, 1fr) 26px;
+    min-height: 84px;
     padding: 18px 16px;
   }
 

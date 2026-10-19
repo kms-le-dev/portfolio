@@ -115,14 +115,14 @@
 }
 
 .cv-container .technology-card {
-  background: #ff6a00;
-  border: 1px solid #ff9a55;
+  background: #d98a52;
+  border: 1px solid #e4a576;
   border-radius: 18px;
   padding: 18px 14px;
   display: grid;
   place-items: center;
   gap: 10px;
-  box-shadow: 0 12px 32px rgba(255, 106, 0, 0.18);
+  box-shadow: 0 8px 22px rgba(165, 75, 24, 0.1);
 }
 
 .cv-container .technology-logo-wrap {
