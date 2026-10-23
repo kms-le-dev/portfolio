@@ -226,7 +226,7 @@ export default function Projects({ showAll = false }) {
       image: odholding,
       title: 'Site web d’entreprise informatique',
       description: 'Site vitrine présentant les services et l’accompagnement informatique de l’entreprise.',
-      link: 'https://od-holding.vercel.app',
+      link: 'https://odholding.site',
       technologies: ['React.js', 'CSS']
     },
     {
