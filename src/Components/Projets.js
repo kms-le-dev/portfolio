@@ -36,6 +36,7 @@ import sipciMobileVideo from '../assets/optimized/videos/sipci-mobile.mp4';
 import saasSosVideo from '../assets/optimized/videos/saas-sos.mp4';
 import gsfGestionVideo from '../assets/optimized/videos/gsf-gestion.mp4';
 import ferkeVideo from '../assets/optimized/videos/ferke.mp4';
+import poissonnerie from '../assets/optimized/poissonnerie.webp';
 
 
 
@@ -76,6 +77,15 @@ export default function Projects({ showAll = false }) {
   }, [activeVideo]);
 
   const projects = [
+    {
+      id: 19,
+      key: 'Gestion de Poissonnerie',
+      image: poissonnerie,
+      title: 'Gestion de Poissonnerie',
+      description: 'Application de gestion de poissonnerie, configuré en Pwa, possibilité de gerer les stock, caisse, vue regisseur etc...',
+      link: 'https://poissonnerietest.gt.tc', 
+      technologies: ['PHP', 'CSS', 'MySQL']
+    },
     {
       id: 18,
       key: 'FERKE.COM',
@@ -350,7 +360,7 @@ export default function Projects({ showAll = false }) {
     <>
     <div className="projects-container">
       <div className="projects-content">
-        <h2 className="projects-main-title">Tous mes projets (25)</h2>
+        <h2 className="projects-main-title">Tous mes projets (26)</h2>
         <div className="project-filters" role="group" aria-label="Filtrer les projets">
           {projectFilters.map((filter) => (
             <button
